@@ -48,6 +48,7 @@ Hazards
   game over screen
   player death
     respawn
+  level timer
     
   Tutorial level
   main level
