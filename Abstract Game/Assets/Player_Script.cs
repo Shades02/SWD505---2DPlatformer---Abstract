@@ -151,6 +151,12 @@ public class Player_Script : MonoBehaviour
                 collision.GetComponent<BoxCollider2D>().isTrigger = false;
             }
         }
+
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
