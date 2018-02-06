@@ -53,3 +53,8 @@ Hazards
   Tutorial level
   main level
   boss level
+  
+  TODO
+  Mines need to addForce
+  Spikes need to damage when you stay on them
+  Bullets need collision
