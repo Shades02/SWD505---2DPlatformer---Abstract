@@ -6,10 +6,10 @@ public class Pickup_Script : MonoBehaviour
 {
     public enum pickupType
     {
-        white, red, blue, green
+        white, red, blue, green, ammo
     }
 
-    public pickupType pickupColour;
+    public pickupType thisPickupType;
 
     private SpriteRenderer myRenderer;
 
@@ -17,19 +17,22 @@ public class Pickup_Script : MonoBehaviour
     {
         myRenderer = GetComponent<SpriteRenderer>();
 
-        switch (pickupColour)
+        switch (thisPickupType)
         {
-            case Pickup_Script.pickupType.white:
+            case pickupType.white:
                 myRenderer.color = Color.white;
                 break;
-            case Pickup_Script.pickupType.blue:
+            case pickupType.blue:
                 myRenderer.color = Color.blue;
                 break;
-            case Pickup_Script.pickupType.green:
+            case pickupType.green:
                 myRenderer.color = Color.green;
                 break;
-            case Pickup_Script.pickupType.red:
+            case pickupType.red:
                 myRenderer.color = Color.red;
+                break;
+            case pickupType.ammo:
+                myRenderer.color = Color.black;
                 break;
         }
     }
