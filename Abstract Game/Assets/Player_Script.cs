@@ -18,7 +18,7 @@ public class Player_Script : MonoBehaviour
 
     private float currentWallJumpCD;
     private int health;
-    private int ammo;
+    private int ammo = 0;
 
     private Pickup_Script.pickupType currentColour;
 
@@ -103,8 +103,9 @@ public class Player_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Pickup"))
         {
-            switch (collision.GetComponent<Pickup_Script>().pickupColour)
+            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
             {
+                //colour pickups
                 case Pickup_Script.pickupType.white:
                     myRenderer.color = Color.white;
                     currentColour = Pickup_Script.pickupType.white;
@@ -120,6 +121,11 @@ public class Player_Script : MonoBehaviour
                 case Pickup_Script.pickupType.red:
                     myRenderer.color = Color.red;
                     currentColour = Pickup_Script.pickupType.red;
+                    break;
+
+                //non colour pickups
+                case Pickup_Script.pickupType.ammo:
+                    ammo += 10;
                     break;
             }
 
