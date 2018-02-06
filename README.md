@@ -55,6 +55,6 @@ Hazards
   boss level
   
   TODO
-  Mines need to addForce
+  Mines need to addForce - can inherit from spike?
   Spikes need to damage when you stay on them
   Bullets need collision
