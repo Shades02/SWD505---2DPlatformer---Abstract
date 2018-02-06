@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212025534790456152}
   - component: {fileID: 61973377229946538}
   - component: {fileID: 114373748702556696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RedWall
   m_TagString: ColourWall
   m_Icon: {fileID: 0}
