@@ -31,6 +31,9 @@ public class Player_Script : MonoBehaviour
         myRenderer = GetComponent<SpriteRenderer>();
         currentColour = Pickup_Script.pickupType.white;
         health = maxHealth;
+
+        //Temporary
+        ammo = 50;
     }
 	
 	void Update ()
@@ -42,23 +45,28 @@ public class Player_Script : MonoBehaviour
         healthText.text = "Health: " + health.ToString("00");
         ammoText.text = "Ammo: " + ammo.ToString("00");
 
-        //shoot
+        //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
-        if(Input.GetButtonDown("Fire1"))
+        if(ammo > 0)
         {
-            //positive velocity is to the right
-            if(myRigid.velocity.x >= 0)
+            if (Input.GetButtonDown("Fire1"))
             {
-                GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                go.GetComponent<Rigidbody2D>().AddForce(Vector2.right * firePower);
-            }
-            //negative velocity is to the left
-            else if(myRigid.velocity.x < 0)
-            {
-                GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                go.GetComponent<Rigidbody2D>().AddForce(Vector2.left * firePower);
-            }
+                //positive velocity is to the right
+                if (myRigid.velocity.x >= 0)
+                {
+                    GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.right * firePower);
+                }
+                //negative velocity is to the left
+                else if (myRigid.velocity.x < 0)
+                {
+                    GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.left * firePower);
+                }
 
+                ammo -= 1;          //use 1 ammo per shot
+                ammoText.text = "Ammo: " + ammo.ToString("00");                 //do I need this line???
+            }
         }
 	}
 
@@ -127,6 +135,9 @@ public class Player_Script : MonoBehaviour
                 case Pickup_Script.pickupType.ammo:
                     ammo += 10;
                     break;
+                case Pickup_Script.pickupType.health:
+                    health += 5;        //add 5 health currently
+                    break;
             }
 
             Destroy(collision.gameObject);
@@ -148,6 +159,14 @@ public class Player_Script : MonoBehaviour
         {
             //when you stop touching a colour wall, it becomes a trigger again
             collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Spike"))
+        {
+            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
         }
     }
 }
