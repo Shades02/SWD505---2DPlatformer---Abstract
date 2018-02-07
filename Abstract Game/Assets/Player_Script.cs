@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum colour
+{
+    white, black, red, blue, yellow, green, orange, purple
+}
+
 public class Player_Script : MonoBehaviour
 {
     public int moveSpeed;
@@ -20,7 +25,7 @@ public class Player_Script : MonoBehaviour
     private int health;
     private int ammo = 0;
 
-    private Pickup_Script.pickupType currentColour;
+    private colour currentColour;
 
     private Rigidbody2D myRigid;
     private SpriteRenderer myRenderer;
@@ -29,7 +34,7 @@ public class Player_Script : MonoBehaviour
     {
         myRigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
-        currentColour = Pickup_Script.pickupType.white;
+        currentColour = colour.white;
         health = maxHealth;
 
         //Temporary
@@ -114,21 +119,70 @@ public class Player_Script : MonoBehaviour
             switch (collision.GetComponent<Pickup_Script>().thisPickupType)
             {
                 //colour pickups
-                case Pickup_Script.pickupType.white:
-                    myRenderer.color = Color.white;
-                    currentColour = Pickup_Script.pickupType.white;
-                    break;
+                case Pickup_Script.pickupType.yellow:        
                 case Pickup_Script.pickupType.blue:
-                    myRenderer.color = Color.blue;
-                    currentColour = Pickup_Script.pickupType.blue;
-                    break;
-                case Pickup_Script.pickupType.green:
-                    myRenderer.color = Color.green;
-                    currentColour = Pickup_Script.pickupType.green;
-                    break;
                 case Pickup_Script.pickupType.red:
-                    myRenderer.color = Color.red;
-                    currentColour = Pickup_Script.pickupType.red;
+                    switch (currentColour)
+                    {
+                        case colour.white:
+                            switch(collision.GetComponent<Pickup_Script>().thisPickupType)
+                            {
+                                case Pickup_Script.pickupType.red:
+                                    currentColour = colour.red;
+                                    break;
+                                case Pickup_Script.pickupType.blue:
+                                    currentColour = colour.blue;
+                                    break;
+                                case Pickup_Script.pickupType.yellow:
+                                    currentColour = colour.yellow;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case colour.red:
+                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
+                            {
+                                case Pickup_Script.pickupType.blue:
+                                    currentColour = colour.purple;
+                                    break;
+                                case Pickup_Script.pickupType.yellow:
+                                    currentColour = colour.orange;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case colour.blue:
+                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
+                            {
+                                case Pickup_Script.pickupType.red:
+                                    currentColour = colour.purple;
+                                    break;
+                                case Pickup_Script.pickupType.yellow:
+                                    currentColour = colour.green;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case colour.yellow:
+                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
+                            {
+                                case Pickup_Script.pickupType.red:
+                                    currentColour = colour.orange;
+                                    break;
+                                case Pickup_Script.pickupType.blue:
+                                    currentColour = colour.green;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        default:
+                            currentColour = colour.black;
+                            break;
+                    }
                     break;
 
                 //non colour pickups
@@ -139,6 +193,9 @@ public class Player_Script : MonoBehaviour
                     health += 5;        //add 5 health currently
                     break;
             }
+
+            //update colour
+            updateColour();
 
             Destroy(collision.gameObject);
         }
@@ -173,6 +230,37 @@ public class Player_Script : MonoBehaviour
         if(collision.gameObject.CompareTag("Spike"))
         {
             health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+        }
+    }
+
+    private void updateColour()
+    {
+        switch (currentColour)
+        {
+            case colour.white:
+                myRenderer.color = Color.white;
+                break;
+            case colour.black:
+                myRenderer.color = Color.black;
+                break;
+            case colour.red:
+                myRenderer.color = Color.red;
+                break;
+            case colour.blue:
+                myRenderer.color = Color.blue;
+                break;
+            case colour.yellow:
+                myRenderer.color = Color.yellow;
+                break;
+            case colour.green:
+                myRenderer.color = Color.green;
+                break;
+            case colour.purple:
+                myRenderer.color = Color.magenta;
+                break;
+            case colour.orange:
+                myRenderer.color = Color.grey;
+                break;
         }
     }
 }

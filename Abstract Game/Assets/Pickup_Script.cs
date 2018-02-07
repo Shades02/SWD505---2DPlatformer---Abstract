@@ -6,7 +6,7 @@ public class Pickup_Script : MonoBehaviour
 {
     public enum pickupType
     {
-        white, red, blue, green, ammo, health
+        red, blue, yellow, ammo, health
     }
 
     public pickupType thisPickupType;
@@ -19,17 +19,14 @@ public class Pickup_Script : MonoBehaviour
 
         switch (thisPickupType)
         {
-            case pickupType.white:
-                myRenderer.color = Color.white;
-                break;
             case pickupType.blue:
                 myRenderer.color = Color.blue;
                 break;
-            case pickupType.green:
-                myRenderer.color = Color.green;
-                break;
             case pickupType.red:
                 myRenderer.color = Color.red;
+                break;
+            case pickupType.yellow:
+                myRenderer.color = Color.yellow;
                 break;
             case pickupType.ammo:
                 myRenderer.color = Color.black;         //black = ammo currently

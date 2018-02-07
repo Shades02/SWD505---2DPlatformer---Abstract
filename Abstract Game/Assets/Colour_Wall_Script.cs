@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Colour_Wall_Script : MonoBehaviour
 {
-    public Pickup_Script.pickupType wallColour;
+    public colour wallColour;
 
     private SpriteRenderer myRenderer;
 
@@ -14,16 +14,16 @@ public class Colour_Wall_Script : MonoBehaviour
 
         switch (wallColour)
         {
-            case Pickup_Script.pickupType.white:
+            case colour.white:
                 myRenderer.color = Color.white;
                 break;
-            case Pickup_Script.pickupType.blue:
+            case colour.blue:
                 myRenderer.color = Color.blue;
                 break;
-            case Pickup_Script.pickupType.green:
+            case colour.green:
                 myRenderer.color = Color.green;
                 break;
-            case Pickup_Script.pickupType.red:
+            case colour.red:
                 myRenderer.color = Color.red;
                 break;
         }
