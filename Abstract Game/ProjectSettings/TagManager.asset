@@ -8,6 +8,7 @@ TagManager:
   - ColourWall
   - Spike
   - Mine
+  - Water
   layers:
   - Default
   - TransparentFX

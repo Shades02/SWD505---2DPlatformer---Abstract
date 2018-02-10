@@ -214,6 +214,13 @@ public class Player_Script : MonoBehaviour
             health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
             Destroy(collision.gameObject);
         }
+
+        if(collision.gameObject.CompareTag("Water"))
+        {
+            //touching the water clears off any paint/colour
+            currentColour = colour.white;
+            updateColour();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
