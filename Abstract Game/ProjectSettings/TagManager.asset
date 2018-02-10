@@ -9,6 +9,7 @@ TagManager:
   - Spike
   - Mine
   - Water
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

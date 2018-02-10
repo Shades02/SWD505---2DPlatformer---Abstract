@@ -238,6 +238,11 @@ public class Player_Script : MonoBehaviour
         {
             health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
         }
+
+        if(collision.gameObject.CompareTag("EnemyBullet"))
+        {
+
+        }
     }
 
     private void updateColour()

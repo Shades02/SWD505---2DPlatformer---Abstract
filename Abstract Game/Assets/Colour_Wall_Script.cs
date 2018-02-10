@@ -20,11 +20,23 @@ public class Colour_Wall_Script : MonoBehaviour
             case colour.blue:
                 myRenderer.color = Color.blue;
                 break;
-            case colour.green:
-                myRenderer.color = Color.green;
+            case colour.yellow:
+                myRenderer.color = Color.yellow;
                 break;
             case colour.red:
                 myRenderer.color = Color.red;
+                break;
+            case colour.green:
+                myRenderer.color = Color.green;
+                break;
+            case colour.purple:
+                myRenderer.color = Color.magenta;
+                break;
+            case colour.orange:
+                myRenderer.color = Color.grey;
+                break;
+            case colour.black:
+                myRenderer.color = Color.black;
                 break;
         }
     }
