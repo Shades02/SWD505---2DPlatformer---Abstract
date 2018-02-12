@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mine_Script : MonoBehaviour
+public class Mine_Script : Spike_Script
 {
-    public int damage;
-
-	void Start ()
+    private void Start()
     {
-		
-	}
-	
-    internal int getDamage()
-    {
-        return damage;
+        
     }
 }
