@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum colour
@@ -15,6 +16,7 @@ public class Player_Script : MonoBehaviour
     public int maxWallJumpCD;
     public int firePower;
     public int maxHealth;
+    public float maxShootCD;
 
     public GameObject bulletPrefab;
 
@@ -23,6 +25,7 @@ public class Player_Script : MonoBehaviour
     public Text timerText;
 
     private float currentWallJumpCD;
+    private float currentShootCD;
     private int health;
     private int ammo = 0;
     private float levelTimer = 0;
@@ -47,18 +50,29 @@ public class Player_Script : MonoBehaviour
 	
 	void Update ()
     {
+        //Death check
+        if(health <= 0)
+        {
+            //Reloads the current scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         //counter updates
+        //Cooldowns count down until it can be used again
         currentWallJumpCD -= Time.deltaTime;
+        currentShootCD -= Time.deltaTime;
         levelTimer += Time.deltaTime;
 
         //text updates
         healthText.text = "Health: " + health.ToString("00");
+        if (health < 0) healthText.text = "Health: 00";
+
         ammoText.text = "Ammo: " + ammo.ToString("00");
         timerText.text = "Time: " + levelTimer.ToString("0000");
 
         //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
-        if(ammo > 0 && !Pause_Menu_Script.isPaused)                 //makes sure the game isnt paused else it still instantiates when paused
+        if(ammo > 0 && currentShootCD <= 0 && !Pause_Menu_Script.isPaused)                 //makes sure the game isnt paused else it still instantiates when paused
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -77,6 +91,7 @@ public class Player_Script : MonoBehaviour
 
                 ammo -= 1;          //use 1 ammo per shot
                 ammoText.text = "Ammo: " + ammo.ToString("00");                 //do I need this line???
+                currentShootCD = maxShootCD;
 
                 soundManager.PlaySFX("SplashTest");
             }

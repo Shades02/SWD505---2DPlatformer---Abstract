@@ -2,28 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1_Script : MonoBehaviour
+public class Shooting_Enemy_Script : Enemy_Script
 {
-    public int health;
-    public float shootCooldown;
+    public float maxShootCD;
     public int shootPower;
-    public int detectRange;
 
     public GameObject projectile;
 
-    private float curShootCD = 0;
-    private GameObject player;
+    private float curShootCD;
 
-	void Start ()
+    void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-	}
-	
-	void Update ()
-    {
-        curShootCD += Time.deltaTime;
+        curShootCD -= Time.deltaTime;
 
-        if(curShootCD >= shootCooldown)
+        shoot();
+    }
+
+    void shoot()
+    {
+        if (curShootCD <= 0)
         {
             float xDistance = player.transform.position.x - transform.position.x;
             //check for player range
@@ -40,8 +37,8 @@ public class Enemy1_Script : MonoBehaviour
                     go.GetComponent<Rigidbody2D>().AddForce(Vector2.left * shootPower);
                 }
 
-                curShootCD = 0;
+                curShootCD = maxShootCD;
             }
         }
-	}
+    }
 }
