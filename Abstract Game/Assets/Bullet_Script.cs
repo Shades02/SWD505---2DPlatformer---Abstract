@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_Script : MonoBehaviour
+public class Bullet_Script : Timed_Object_Script
 {
-    public float maxLifetime;
-    private float currentLifetime = 0;
-	
-	void Update ()
+    private void Start()
     {
-        currentLifetime += Time.deltaTime;
 
-        if (currentLifetime >= maxLifetime)
-            Destroy(gameObject);
-	}
+    }
 }

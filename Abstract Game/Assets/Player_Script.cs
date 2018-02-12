@@ -20,10 +20,12 @@ public class Player_Script : MonoBehaviour
 
     public Text healthText;
     public Text ammoText;
+    public Text timerText;
 
     private float currentWallJumpCD;
     private int health;
     private int ammo = 0;
+    private float levelTimer = 0;
 
     private colour currentColour;
 
@@ -45,10 +47,12 @@ public class Player_Script : MonoBehaviour
     {
         //counter updates
         currentWallJumpCD -= Time.deltaTime;
+        levelTimer += Time.deltaTime;
 
         //text updates
         healthText.text = "Health: " + health.ToString("00");
         ammoText.text = "Ammo: " + ammo.ToString("00");
+        timerText.text = "Time: " + levelTimer.ToString("0000");
 
         //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
