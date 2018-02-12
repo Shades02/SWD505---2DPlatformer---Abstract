@@ -31,4 +31,9 @@ public class Pause_Menu_Script : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }

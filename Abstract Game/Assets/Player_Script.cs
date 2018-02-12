@@ -31,13 +31,15 @@ public class Player_Script : MonoBehaviour
 
     private Rigidbody2D myRigid;
     private SpriteRenderer myRenderer;
+    private Sound_Manager_Script soundManager;
 
-	void Start ()
+    void Start ()
     {
         myRigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
         currentColour = colour.white;
         health = maxHealth;
+        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
 
         //Temporary
         ammo = 50;
@@ -56,7 +58,7 @@ public class Player_Script : MonoBehaviour
 
         //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
-        if(ammo > 0)
+        if(ammo > 0 && !Pause_Menu_Script.isPaused)                 //makes sure the game isnt paused else it still instantiates when paused
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -75,6 +77,8 @@ public class Player_Script : MonoBehaviour
 
                 ammo -= 1;          //use 1 ammo per shot
                 ammoText.text = "Ammo: " + ammo.ToString("00");                 //do I need this line???
+
+                soundManager.PlaySFX("SplashTest");
             }
         }
 	}
