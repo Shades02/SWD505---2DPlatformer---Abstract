@@ -10,6 +10,8 @@ TagManager:
   - Mine
   - Water
   - EnemyBullet
+  - PlayerBullet
+  - Land
   layers:
   - Default
   - TransparentFX

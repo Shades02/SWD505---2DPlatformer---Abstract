@@ -18,6 +18,8 @@ public class Player_Script : MonoBehaviour
     public int maxHealth;
     public float maxShootCD;
 
+    public GameObject rightShootPoint;
+    public GameObject leftShootPoint;
     public GameObject bulletPrefab;
 
     public Text healthText;
@@ -30,6 +32,7 @@ public class Player_Script : MonoBehaviour
     private int health;
     private int ammo = 0;
     private float levelTimer = 0;
+    private bool facingRight;
 
     private colour currentColour;
 
@@ -79,17 +82,19 @@ public class Player_Script : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                //positive velocity is to the right
-                if (myRigid.velocity.x >= 0)
+                if (facingRight)
                 {
-                    GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.right * firePower);
+                    GameObject go = Instantiate(bulletPrefab, rightShootPoint.transform.position, Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().velocity = Vector2.right * firePower;
+                    go.GetComponent<Bullet_Script>().setTag("PlayerBullet");
+                    go.GetComponent<Bullet_Script>().setColour(currentColour);
                 }
-                //negative velocity is to the left
-                else if (myRigid.velocity.x < 0)
+                else
                 {
-                    GameObject go = Instantiate(bulletPrefab, new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.left * firePower);
+                    GameObject go = Instantiate(bulletPrefab, leftShootPoint.transform.position, Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().velocity = Vector2.left * firePower;
+                    go.GetComponent<Bullet_Script>().setTag("PlayerBullet");
+                    go.GetComponent<Bullet_Script>().setColour(currentColour);
                 }
 
                 ammo -= 1;          //use 1 ammo per shot
@@ -106,8 +111,12 @@ public class Player_Script : MonoBehaviour
         //move left/right
         myRigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRigid.velocity.y);
 
+        //get direction
+        if (myRigid.velocity.x > 0) facingRight = true;
+        else if (myRigid.velocity.x < 0) facingRight = false;
+
         //jump
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             if (Physics2D.Linecast(transform.position,
             transform.position + new Vector3(0, -1.0f, 0),              //distance down slightly more than half the height of the sprite
@@ -217,6 +226,7 @@ public class Player_Script : MonoBehaviour
                     break;
                 case Pickup_Script.pickupType.health:
                     health += 5;        //add 5 health currently
+                    if (health > maxHealth) health = maxHealth;     //can't go over max health
                     break;
             }
 
@@ -267,7 +277,8 @@ public class Player_Script : MonoBehaviour
 
         if(collision.gameObject.CompareTag("EnemyBullet"))
         {
-
+            health -= collision.gameObject.GetComponent<Bullet_Script>().damage;
+            Destroy(collision.gameObject);
         }
     }
 

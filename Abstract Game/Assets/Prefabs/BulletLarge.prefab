@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114341933754733068}
   m_Layer: 0
   m_Name: BulletLarge
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 3
+  damage: 2
 --- !u!212 &212354824267028766
 SpriteRenderer:
   m_ObjectHideFlags: 1

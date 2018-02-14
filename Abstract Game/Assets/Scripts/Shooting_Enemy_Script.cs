@@ -8,17 +8,22 @@ public class Shooting_Enemy_Script : Enemy_Script
     public int shootPower;
 
     public GameObject projectile;
+    public GameObject rightShotPoint;
+    public GameObject leftShotPoint;
 
     private float curShootCD;
 
     void Update()
     {
+        deathCheck();
+        getDirection();
+
         curShootCD -= Time.deltaTime;
 
-        shoot();
+        shootPlayer();
     }
 
-    void shoot()
+    void shootPlayer()
     {
         if (curShootCD <= 0)
         {
@@ -28,13 +33,17 @@ public class Shooting_Enemy_Script : Enemy_Script
             {
                 if (player.transform.position.x > transform.position.x)
                 {
-                    GameObject go = Instantiate(projectile, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.right * shootPower);
+                    GameObject go = Instantiate(projectile, rightShotPoint.transform.position, Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().velocity = Vector2.right * shootPower;
+                    go.GetComponent<Bullet_Script>().setTag("EnemyBullet");
+                    go.GetComponent<Bullet_Script>().setColour(thisColour);
                 }
                 else if (player.transform.position.x < transform.position.x)
                 {
-                    GameObject go = Instantiate(projectile, new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z), Quaternion.identity);
-                    go.GetComponent<Rigidbody2D>().AddForce(Vector2.left * shootPower);
+                    GameObject go = Instantiate(projectile, leftShotPoint.transform.position, Quaternion.identity);
+                    go.GetComponent<Rigidbody2D>().velocity = Vector2.left * shootPower;
+                    go.GetComponent<Bullet_Script>().setTag("EnemyBullet");
+                    go.GetComponent<Bullet_Script>().setColour(thisColour);
                 }
 
                 curShootCD = maxShootCD;
