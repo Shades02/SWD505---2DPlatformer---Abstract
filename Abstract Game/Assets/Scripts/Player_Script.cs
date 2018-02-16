@@ -22,16 +22,10 @@ public class Player_Script : MonoBehaviour
     public GameObject leftShootPoint;
     public GameObject bulletPrefab;
 
-    public Text healthText;
-    public Text ammoText;
-    public Text colourText;
-    public Text timerText;
-
     private float currentWallJumpCD;
     private float currentShootCD;
     private int health;
     private int ammo = 0;
-    private float levelTimer = 0;
     private bool facingRight;
 
     private colour currentColour;
@@ -66,16 +60,6 @@ public class Player_Script : MonoBehaviour
         //Cooldowns count down until it can be used again
         currentWallJumpCD -= Time.deltaTime;
         currentShootCD -= Time.deltaTime;
-        levelTimer += Time.deltaTime;
-
-        //text updates
-        healthText.text = "Health: " + health.ToString("00");
-        if (health < 0) healthText.text = "Health: 00";
-
-        ammoText.text = "Ammo: " + ammo.ToString("00");
-        timerText.text = "Time: " + levelTimer.ToString("0000");
-
-        colourText.text = "Colour: " + currentColour;
 
         //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
@@ -99,7 +83,6 @@ public class Player_Script : MonoBehaviour
                 }
                 
                 ammo -= 1;          //use 1 ammo per shot
-                ammoText.text = "Ammo: " + ammo.ToString("00");                 //do I need this line???
                 currentShootCD = maxShootCD;
 
                 soundManager.PlaySFX("SplashTest");
@@ -229,7 +212,7 @@ public class Player_Script : MonoBehaviour
                     ammo += 10;
                     break;
                 case Pickup_Script.pickupType.health:
-                    health += 5;        //add 5 health currently
+                    health += 1;        //add 1 health currently
                     if (health > maxHealth) health = maxHealth;     //can't go over max health
                     break;
             }
@@ -264,6 +247,21 @@ public class Player_Script : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
+    }
+
+    internal int getHealth()
+    {
+        return health;
+    }
+
+    internal int getAmmo()
+    {
+        return ammo;
+    }
+
+    internal colour getColour()
+    {
+        return currentColour;
     }
 
     private void setColourLayer()
