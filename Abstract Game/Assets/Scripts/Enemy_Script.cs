@@ -8,8 +8,8 @@ public class Enemy_Script : MonoBehaviour
     public int detectRange;
     public colour thisColour;
     
-    private bool facingRight;
-    private Rigidbody2D myRigid;
+    protected bool facingRight;
+    protected Rigidbody2D myRigid;
 
     protected GameObject player;
 
@@ -38,22 +38,6 @@ public class Enemy_Script : MonoBehaviour
     {
         health -= damage;
     }
-
-    //protected void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("EnemyBullet"))
-    //    {
-    //        if(collision.gameObject.GetComponent<Bullet_Script>().getColour() == thisColour)
-    //        {
-    //            health -= collision.gameObject.GetComponent<Bullet_Script>().damage;
-    //            Destroy(collision.gameObject);
-    //        }
-    //        else
-    //        {
-    //            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-    //        }
-    //    }
-    //}
 
     private void setColourLayer()
     {
