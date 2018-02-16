@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212087749676364896}
   - component: {fileID: 61391196292238610}
   - component: {fileID: 114605465876821412}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ColourWall
   m_TagString: ColourWall
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: a3cd6bd44224e8943b45c0e6930296a5, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

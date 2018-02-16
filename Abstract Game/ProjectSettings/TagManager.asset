@@ -12,6 +12,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Land
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -33,14 +34,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - white
+  - black
+  - red
+  - blue
+  - yellow
+  - green
+  - orange
+  - purple
   - 
   - 
   - 

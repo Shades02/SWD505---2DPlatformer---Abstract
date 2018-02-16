@@ -45,6 +45,7 @@ public class Player_Script : MonoBehaviour
         myRigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
         currentColour = colour.white;
+        setColourLayer();
         health = maxHealth;
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
 
@@ -96,7 +97,7 @@ public class Player_Script : MonoBehaviour
                     go.GetComponent<Bullet_Script>().setTag("PlayerBullet");
                     go.GetComponent<Bullet_Script>().setColour(currentColour);
                 }
-
+                
                 ammo -= 1;          //use 1 ammo per shot
                 ammoText.text = "Ammo: " + ammo.ToString("00");                 //do I need this line???
                 currentShootCD = maxShootCD;
@@ -119,8 +120,11 @@ public class Player_Script : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             if (Physics2D.Linecast(transform.position,
-            transform.position + new Vector3(0, -1.0f, 0),              //distance down slightly more than half the height of the sprite
-            1 << LayerMask.NameToLayer("Land")))
+                transform.position + new Vector3(0, -1.0f, 0),              //distance down slightly more than half the height of the sprite
+                1 << LayerMask.NameToLayer("Land")) ||
+                Physics2D.Linecast(transform.position,                      //second linecast checks if you are standing on an entity (wall, enemy, bullet?) of the same colour
+                transform.position + new Vector3(0, -1.0f, 0),
+                1 << LayerMask.NameToLayer(currentColour.ToString())))
             {
                 myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
                 myRigid.AddForce(new Vector2(0, jumpStrength));
@@ -232,39 +236,20 @@ public class Player_Script : MonoBehaviour
 
             //update colour
             updateColour();
+            setColourLayer();
 
             Destroy(collision.gameObject);
         }
-
-        if(collision.gameObject.CompareTag("ColourWall"))
-        {
-            if(currentColour == collision.GetComponent<Colour_Wall_Script>().wallColour)
-            {
-                Debug.Log("Colour Match");
-                collision.GetComponent<BoxCollider2D>().isTrigger = false;
-            }
-        }
-
-        if (collision.gameObject.CompareTag("Mine"))
+        else if (collision.gameObject.CompareTag("Mine"))
         {
             health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
             Destroy(collision.gameObject);
         }
-
-        if(collision.gameObject.CompareTag("Water"))
+        else if(collision.gameObject.CompareTag("Water"))
         {
             //touching the water clears off any paint/colour
             currentColour = colour.white;
             updateColour();
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ColourWall"))          
-        {
-            //when you stop touching a colour wall, it becomes a trigger again
-            collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 
@@ -274,11 +259,41 @@ public class Player_Script : MonoBehaviour
         {
             health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
         }
+    }
 
-        if(collision.gameObject.CompareTag("EnemyBullet"))
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+    }
+
+    private void setColourLayer()
+    {
+        switch (currentColour)
         {
-            health -= collision.gameObject.GetComponent<Bullet_Script>().damage;
-            Destroy(collision.gameObject);
+            case colour.white:
+                gameObject.layer = 20;
+                break;
+            case colour.black:
+                gameObject.layer = 21;
+                break;
+            case colour.red:
+                gameObject.layer = 22;
+                break;
+            case colour.blue:
+                gameObject.layer = 23;
+                break;
+            case colour.yellow:
+                gameObject.layer = 24;
+                break;
+            case colour.green:
+                gameObject.layer = 25;
+                break;
+            case colour.orange:
+                gameObject.layer = 26;
+                break;
+            case colour.purple:
+                gameObject.layer = 27;
+                break;
         }
     }
 

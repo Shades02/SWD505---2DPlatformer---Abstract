@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50644744166284438}
   m_Layer: 12
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   detectRange: 10
-  thisColour: 4
+  thisColour: 0
   maxShootCD: 2
   shootPower: 10
   projectile: {fileID: 1619515461954288, guid: 5c3c149f7b20106499da724c1ceba8a2, type: 2}
