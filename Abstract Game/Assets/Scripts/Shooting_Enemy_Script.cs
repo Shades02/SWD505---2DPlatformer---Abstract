@@ -11,7 +11,7 @@ public class Shooting_Enemy_Script : Enemy_Script
     public GameObject rightShotPoint;
     public GameObject leftShotPoint;
 
-    private float curShootCD = 0;
+    protected float curShootCD = 0;
 
     void Update()
     {
@@ -23,7 +23,7 @@ public class Shooting_Enemy_Script : Enemy_Script
         shootPlayer();
     }
 
-    void shootPlayer()
+    protected void shootPlayer()
     {
         if (curShootCD <= 0)
         {

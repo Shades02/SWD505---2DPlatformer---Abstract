@@ -10,7 +10,6 @@ public class UI_Script : MonoBehaviour
     public GameObject heartContainer;
 
     public Text ammoText;
-    public Text colourText;
     public Text timerText;
 
     void Start ()
@@ -77,8 +76,5 @@ public class UI_Script : MonoBehaviour
 
         //ammo
         ammoText.text = player.getAmmo().ToString("00");
-
-        //colour
-        colourText.text = "Colour: " + player.getColour();
     }
 }

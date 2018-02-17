@@ -16,6 +16,7 @@ public class Player_Script : MonoBehaviour
     public int maxWallJumpCD;
     public int firePower;
     public int maxHealth;
+    public int maxAmmo;
     public float maxShootCD;
 
     public GameObject rightShootPoint;
@@ -44,7 +45,7 @@ public class Player_Script : MonoBehaviour
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
 
         //Temporary
-        ammo = 50;
+        ammo = maxAmmo;
     }
 	
 	void Update ()
@@ -209,10 +210,10 @@ public class Player_Script : MonoBehaviour
 
                 //non colour pickups
                 case Pickup_Script.pickupType.ammo:
-                    ammo += 10;
+                    ammo = maxAmmo;
                     break;
                 case Pickup_Script.pickupType.health:
-                    health += 1;        //add 1 health currently
+                    health = maxHealth;        //add 1 health currently
                     if (health > maxHealth) health = maxHealth;     //can't go over max health
                     break;
             }
