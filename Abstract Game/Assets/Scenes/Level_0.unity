@@ -113,6 +113,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4627392437674016, guid: 4bdec867417836641a26643ada08e6a6,
     type: 2}
   m_PrefabInternal: {fileID: 734459944}
+--- !u!1 &63118341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 63118342}
+  m_Layer: 5
+  m_Name: LeftShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63118342
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63118341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 188755484}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &75807609
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +214,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9ee14283fe7f7418e764d1763c93fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 4
+  detectRange: 10
+  thisColour: 3
+  maxShootCD: 0.2
+  shootPower: 15
+  projectile: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06, type: 2}
+  rightShotPoint: {fileID: 1656106217}
+  leftShotPoint: {fileID: 63118341}
+  moveSpeed: 4
 --- !u!61 &188755481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -281,8 +318,10 @@ Transform:
   m_GameObject: {fileID: 188755479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 40, y: -1, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_Children: []
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1656106218}
+  - {fileID: 63118342}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2327,6 +2366,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4627392437674016, guid: 4bdec867417836641a26643ada08e6a6,
     type: 2}
   m_PrefabInternal: {fileID: 1242161943}
+--- !u!1 &1656106217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1656106218}
+  m_Layer: 5
+  m_Name: RightShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1656106218
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656106217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 188755484}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1669717296
 GameObject:
   m_ObjectHideFlags: 0

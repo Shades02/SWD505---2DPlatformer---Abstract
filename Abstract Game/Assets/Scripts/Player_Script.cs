@@ -100,14 +100,18 @@ public class Player_Script : MonoBehaviour
         if (myRigid.velocity.x > 0) facingRight = true;
         else if (myRigid.velocity.x < 0) facingRight = false;
 
+        float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;
+        Vector3 linecastStart = new Vector3(transform.position.x, transform.position.y - spriteHeight / 2 - 0.1f, transform.position.z);
+        Debug.DrawLine(linecastStart, linecastStart + new Vector3(0, -0.1f, 0));
+
         //jump
         if (Input.GetButtonDown("Jump"))
         {
-            if (Physics2D.Linecast(transform.position,
-                transform.position + new Vector3(0, -1.0f, 0),              //distance down slightly more than half the height of the sprite
+            if (Physics2D.Linecast(linecastStart,                           //off set the linecast down to avoid it finding itself
+                linecastStart + new Vector3(0, -0.1f, 0),                   //distance down slightly more than half the height of the sprite
                 1 << LayerMask.NameToLayer("Land")) ||
-                Physics2D.Linecast(transform.position,                      //second linecast checks if you are standing on an entity (wall, enemy, bullet?) of the same colour
-                transform.position + new Vector3(0, -1.0f, 0),
+                Physics2D.Linecast(linecastStart,                           //second linecast checks if you are standing on an entity of the same colour
+                linecastStart + new Vector3(0, -0.1f, 0),
                 1 << LayerMask.NameToLayer(currentColour.ToString())))
             {
                 myRigid.velocity = new Vector2(myRigid.velocity.x, 0);

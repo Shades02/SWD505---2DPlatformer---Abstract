@@ -11,7 +11,7 @@ public class Pause_Menu_Script : MonoBehaviour
 	void Update ()
     {
         //escape key to pause
-		if(Input.GetKeyDown(KeyCode.Escape))        
+		if(Input.GetButtonDown("Pause"))        
         {
             if (isPaused) resume();
             else pause();

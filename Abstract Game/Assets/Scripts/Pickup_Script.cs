@@ -36,9 +36,5 @@ public class Pickup_Script : MonoBehaviour
                 break;
         }
     }
-	
-	void Update ()
-    {
-		
-	}
+
 }
