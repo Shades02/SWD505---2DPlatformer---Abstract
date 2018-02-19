@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ed482ace70f214394a385868b0a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPickupType: 0
+  thisPickupType: 3
 --- !u!212 &212571039184240994
 SpriteRenderer:
   m_ObjectHideFlags: 1

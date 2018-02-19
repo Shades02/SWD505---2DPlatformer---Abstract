@@ -13,6 +13,8 @@ TagManager:
   - PlayerBullet
   - Land
   - Enemy
+  - Dispenser
+  - PaintDrop
   layers:
   - Default
   - TransparentFX

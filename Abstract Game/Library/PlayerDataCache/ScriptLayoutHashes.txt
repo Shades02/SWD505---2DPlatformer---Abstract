@@ -114,6 +114,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
+2411a2735f5c756839a6862315efe215 Assembly-CSharp.dll:.PaintDrop_Script
 f60607b9e34b5b0db06a1432ef63e881 Assembly-CSharp.dll:.Enemy_Script
 a054e777845f3de35e7b20fcf4e9437d Assembly-CSharp.dll:.Pause_Menu_Script
 a2cc5b43ead40e4ae01465637ede8606 Assembly-CSharp.dll:.Camera_Script
@@ -131,6 +132,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+e3043b30059a136c542e362fa8635c0f Assembly-CSharp.dll:.Dispenser_Script
 b84ddbbbe32d7e98b29a383f9c5d671a Assembly-CSharp.dll:.Pickup_Script
 17aafd7850aafb3ba95321c4b93cb218 Assembly-CSharp.dll:.Shooting_Enemy_Script
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback

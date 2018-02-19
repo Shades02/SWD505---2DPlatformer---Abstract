@@ -145,86 +145,13 @@ public class Player_Script : MonoBehaviour
         {
             switch (collision.GetComponent<Pickup_Script>().thisPickupType)
             {
-                //colour pickups
-                case Pickup_Script.pickupType.yellow:        
-                case Pickup_Script.pickupType.blue:
-                case Pickup_Script.pickupType.red:
-                    switch (currentColour)
-                    {
-                        case colour.white:
-                            switch(collision.GetComponent<Pickup_Script>().thisPickupType)
-                            {
-                                case Pickup_Script.pickupType.red:
-                                    currentColour = colour.red;
-                                    break;
-                                case Pickup_Script.pickupType.blue:
-                                    currentColour = colour.blue;
-                                    break;
-                                case Pickup_Script.pickupType.yellow:
-                                    currentColour = colour.yellow;
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case colour.red:
-                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
-                            {
-                                case Pickup_Script.pickupType.blue:
-                                    currentColour = colour.purple;
-                                    break;
-                                case Pickup_Script.pickupType.yellow:
-                                    currentColour = colour.orange;
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case colour.blue:
-                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
-                            {
-                                case Pickup_Script.pickupType.red:
-                                    currentColour = colour.purple;
-                                    break;
-                                case Pickup_Script.pickupType.yellow:
-                                    currentColour = colour.green;
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        case colour.yellow:
-                            switch (collision.GetComponent<Pickup_Script>().thisPickupType)
-                            {
-                                case Pickup_Script.pickupType.red:
-                                    currentColour = colour.orange;
-                                    break;
-                                case Pickup_Script.pickupType.blue:
-                                    currentColour = colour.green;
-                                    break;
-                                default:
-                                    break;
-                            }
-                            break;
-                        default:
-                            currentColour = colour.black;
-                            break;
-                    }
-                    break;
-
-                //non colour pickups
                 case Pickup_Script.pickupType.ammo:
-                    ammo = maxAmmo;
+                    ammo = maxAmmo;                                 //set to max ammo
                     break;
                 case Pickup_Script.pickupType.health:
-                    health = maxHealth;        //add 1 health currently
-                    if (health > maxHealth) health = maxHealth;     //can't go over max health
+                    health = maxHealth;                             //set to max health
                     break;
             }
-
-            //update colour
-            updateColour();
-            setColourLayer();
 
             Destroy(collision.gameObject);
         }
@@ -238,6 +165,78 @@ public class Player_Script : MonoBehaviour
             //touching the water clears off any paint/colour
             currentColour = colour.white;
             updateColour();
+        }
+        else if (collision.gameObject.CompareTag("Dispenser"))      //if the player jumps onto the top of the dispenser, it will trigger a dispense
+        {
+            collision.transform.parent.gameObject.GetComponent<Dispenser_Script>().dispense();
+        }
+        else if(collision.gameObject.CompareTag("PaintDrop"))
+        {
+            switch (currentColour)
+            {
+                case colour.white:
+                    switch (collision.GetComponent<PaintDrop_Script>().currentColour)
+                    {
+                        case colour.red:
+                            currentColour = colour.red;
+                            break;
+                        case colour.blue:
+                            currentColour = colour.blue;
+                            break;
+                        case colour.yellow:
+                            currentColour = colour.yellow;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case colour.red:
+                    switch (collision.GetComponent<PaintDrop_Script>().currentColour)
+                    {
+                        case colour.blue:
+                            currentColour = colour.purple;
+                            break;
+                        case colour.yellow:
+                            currentColour = colour.orange;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case colour.blue:
+                    switch (collision.GetComponent<PaintDrop_Script>().currentColour)
+                    {
+                        case colour.red:
+                            currentColour = colour.purple;
+                            break;
+                        case colour.yellow:
+                            currentColour = colour.green;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case colour.yellow:
+                    switch (collision.GetComponent<PaintDrop_Script>().currentColour)
+                    {
+                        case colour.red:
+                            currentColour = colour.orange;
+                            break;
+                        case colour.blue:
+                            currentColour = colour.green;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    currentColour = colour.black;
+                    break;
+            }
+
+            Destroy(collision.gameObject);
+            updateColour();
+            setColourLayer();
         }
     }
 
