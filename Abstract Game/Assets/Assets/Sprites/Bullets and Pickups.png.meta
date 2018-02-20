@@ -1,21 +1,25 @@
 fileFormatVersion: 2
-guid: 59b3c42333aa62d4095865249c7df21d
-timeCreated: 1519134730
+guid: 34b49146363435a4b9aabe23296dc0f8
+timeCreated: 1519136624
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BulletsandPickups_0
-    21300002: BulletsandPickups_1
-    21300004: BulletsandPickups_2
-    21300006: BulletsandPickups_3
-    21300008: BulletsandPickups_4
-    21300010: BulletsandPickups_5
-    21300012: BulletsandPickups_6
-    21300014: BulletsandPickups_7
-    21300016: BulletsandPickups_8
-    21300018: BulletsandPickups_9
-    21300020: BulletsandPickups_10
-    21300022: BulletsandPickups_11
+    21300000: Bullets and Pickups_0
+    21300002: Bullets and Pickups_1
+    21300004: Bullets and Pickups_2
+    21300006: Bullets and Pickups_3
+    21300008: Bullets and Pickups_4
+    21300010: Bullets and Pickups_5
+    21300012: Bullets and Pickups_6
+    21300014: Bullets and Pickups_7
+    21300016: Bullets and Pickups_8
+    21300018: Bullets and Pickups_9
+    21300020: Bullets and Pickups_10
+    21300022: Bullets and Pickups_11
+    21300024: Bullets and Pickups_12
+    21300026: Bullets and Pickups_13
+    21300028: Bullets and Pickups_14
+    21300030: Bullets and Pickups_15
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -95,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BulletsandPickups_0
+      name: Bullets and Pickups_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,7 +113,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_1
+      name: Bullets and Pickups_1
       rect:
         serializedVersion: 2
         x: 64
@@ -123,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_2
+      name: Bullets and Pickups_2
       rect:
         serializedVersion: 2
         x: 128
@@ -137,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_3
+      name: Bullets and Pickups_3
       rect:
         serializedVersion: 2
         x: 192
@@ -151,7 +155,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_4
+      name: Bullets and Pickups_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bullets and Pickups_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bullets and Pickups_6
       rect:
         serializedVersion: 2
         x: 0
@@ -165,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_5
+      name: Bullets and Pickups_7
       rect:
         serializedVersion: 2
         x: 64
@@ -179,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_6
+      name: Bullets and Pickups_8
       rect:
         serializedVersion: 2
         x: 128
@@ -193,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_7
+      name: Bullets and Pickups_9
       rect:
         serializedVersion: 2
         x: 192
@@ -207,7 +239,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_8
+      name: Bullets and Pickups_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bullets and Pickups_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Bullets and Pickups_12
       rect:
         serializedVersion: 2
         x: 0
@@ -221,7 +281,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_9
+      name: Bullets and Pickups_13
       rect:
         serializedVersion: 2
         x: 64
@@ -235,10 +295,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_10
+      name: Bullets and Pickups_14
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 0
         width: 64
         height: 64
@@ -249,10 +309,10 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BulletsandPickups_11
+      name: Bullets and Pickups_15
       rect:
         serializedVersion: 2
-        x: 192
+        x: 256
         y: 0
         width: 64
         height: 64
