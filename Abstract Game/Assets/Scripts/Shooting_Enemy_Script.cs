@@ -33,19 +33,21 @@ public class Shooting_Enemy_Script : Enemy_Script
                 //check for player range
                 if (Mathf.Abs(xDistance) <= detectRange)
                 {
-                    if (player.transform.position.x > transform.position.x)
+                    if (player.transform.position.x > transform.position.x)         //shoot right
                     {
                         GameObject go = Instantiate(projectile, rightShotPoint.transform.position, Quaternion.identity);
                         go.GetComponent<Rigidbody2D>().velocity = Vector2.right * shootPower;
                         go.GetComponent<Bullet_Script>().setTag("EnemyBullet");
-                        go.GetComponent<Bullet_Script>().setColour(thisColour);
+                        facingRight = true;
+                        go.GetComponent<Bullet_Script>().setColour(thisColour, facingRight);
                     }
-                    else if (player.transform.position.x < transform.position.x)
+                    else if (player.transform.position.x < transform.position.x)    //shoot left
                     {
                         GameObject go = Instantiate(projectile, leftShotPoint.transform.position, Quaternion.identity);
                         go.GetComponent<Rigidbody2D>().velocity = Vector2.left * shootPower;
                         go.GetComponent<Bullet_Script>().setTag("EnemyBullet");
-                        go.GetComponent<Bullet_Script>().setColour(thisColour);
+                        facingRight = false;
+                        go.GetComponent<Bullet_Script>().setColour(thisColour, facingRight);
                     }
 
                     curShootCD = maxShootCD;

@@ -73,14 +73,14 @@ public class Player_Script : MonoBehaviour
                     GameObject go = Instantiate(bulletPrefab, rightShootPoint.transform.position, Quaternion.identity);
                     go.GetComponent<Rigidbody2D>().velocity = Vector2.right * firePower;
                     go.GetComponent<Bullet_Script>().setTag("PlayerBullet");
-                    go.GetComponent<Bullet_Script>().setColour(currentColour);
+                    go.GetComponent<Bullet_Script>().setColour(currentColour, facingRight);
                 }
                 else
                 {
                     GameObject go = Instantiate(bulletPrefab, leftShootPoint.transform.position, Quaternion.identity);
                     go.GetComponent<Rigidbody2D>().velocity = Vector2.left * firePower;
                     go.GetComponent<Bullet_Script>().setTag("PlayerBullet");
-                    go.GetComponent<Bullet_Script>().setColour(currentColour);
+                    go.GetComponent<Bullet_Script>().setColour(currentColour, facingRight);
                 }
                 
                 ammo -= 1;          //use 1 ammo per shot

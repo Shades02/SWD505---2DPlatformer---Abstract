@@ -8,7 +8,7 @@ public class Enemy_Script : MonoBehaviour
     public int detectRange;
     public colour thisColour;
     
-    protected bool facingRight;
+    protected bool facingRight = true;
     protected Rigidbody2D myRigid;
 
     protected GameObject player;

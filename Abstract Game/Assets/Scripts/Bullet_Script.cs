@@ -19,11 +19,16 @@ public class Bullet_Script : Timed_Object_Script
         gameObject.tag = tag;
     }
 
-    public void setColour(colour colourToSet)
+    public void setColour(colour colourToSet, bool facingRight)
     {
+        Debug.Log("Colour Set");
         currentColour = colourToSet;
-        setColourLayer();
-        //change visible colour
+        GetComponent<ColourUpdate_Script>().updateColour(currentColour);
+
+        if(!facingRight)
+        {
+            transform.localScale *= -1;
+        }
     }
 
     public colour getColour()
@@ -60,65 +65,4 @@ public class Bullet_Script : Timed_Object_Script
         }
     }
 
-    private void setColourLayer()
-    {
-        switch(currentColour)
-        {
-            case colour.white:
-                gameObject.layer = 20;
-                break;
-            case colour.black:
-                gameObject.layer = 21;
-                break;
-            case colour.red:
-                gameObject.layer = 22;
-                break;
-            case colour.blue:
-                gameObject.layer = 23;
-                break;
-            case colour.yellow:
-                gameObject.layer = 24;
-                break;
-            case colour.green:
-                gameObject.layer = 25;
-                break;
-            case colour.orange:
-                gameObject.layer = 26;
-                break;
-            case colour.purple:
-                gameObject.layer = 27;
-                break;
-        }
-    }
-
-    private void updateColour()
-    {
-        switch (currentColour)
-        {
-            case colour.white:
-                myRenderer.color = Color.white;
-                break;
-            case colour.black:
-                myRenderer.color = Color.black;
-                break;
-            case colour.red:
-                myRenderer.color = Color.red;
-                break;
-            case colour.blue:
-                myRenderer.color = Color.blue;
-                break;
-            case colour.yellow:
-                myRenderer.color = Color.yellow;
-                break;
-            case colour.green:
-                myRenderer.color = Color.green;
-                break;
-            case colour.purple:
-                myRenderer.color = Color.magenta;
-                break;
-            case colour.orange:
-                myRenderer.color = Color.grey;
-                break;
-        }
-    }
 }

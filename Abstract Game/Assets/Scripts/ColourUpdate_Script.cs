@@ -22,7 +22,9 @@ public class ColourUpdate_Script : MonoBehaviour
 	
     internal void updateColour(colour currentColour)
     {
-        switch(currentColour)
+        myRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        switch (currentColour)
         {
             case colour.white:
                 myRenderer.sprite = whiteSprite;
