@@ -59,19 +59,38 @@ MonoBehaviour:
   - PlayerShooting
   - ProjectileImpact
   - PickupHealth
-  - PickupAmmo
   - PickupColour
   - EnemyRunning
   - EnemyShooting
-  - EnemyGrowling
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyCharge
+  - EnemyIdle
+  - EnemyAggravated
+  - EnemyDeath
+  - BossIdle
+  - BossAlerted
+  - BossShooting
+  - BossMelee
+  - BossDeath
+  - CanvasTear
+  - PlayerDeath
   SFXs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}

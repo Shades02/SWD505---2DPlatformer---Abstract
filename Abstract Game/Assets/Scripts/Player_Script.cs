@@ -86,7 +86,7 @@ public class Player_Script : MonoBehaviour
                 ammo -= 1;          //use 1 ammo per shot
                 currentShootCD = maxShootCD;
 
-                soundManager.PlaySFX("SplashTest");
+                //soundManager.PlaySFX("SplashTest");
             }
         }
 	}

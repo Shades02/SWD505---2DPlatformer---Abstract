@@ -1662,16 +1662,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
-        type: 2}
-      propertyPath: SFXs.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: aa7d6e414297e9042861316f2b7e45a4, type: 3}
-    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
-        type: 2}
-      propertyPath: SFXNames.Array.data[0]
-      value: SplashTest
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1, type: 2}
   m_IsPrefabParent: 0
