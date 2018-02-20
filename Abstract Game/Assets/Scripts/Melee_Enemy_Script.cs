@@ -25,44 +25,47 @@ public class Melee_Enemy_Script : Enemy_Script
 
     private void FixedUpdate()
     {
-        float xDistance = player.transform.position.x - transform.position.x;
+        if (thisColour == player.GetComponent<Player_Script>().getColour())     //only "sees" the player if they are the same colour
+        {
+            float xDistance = player.transform.position.x - transform.position.x;
 
-        if (currentRetreatTime < maxRetreatDuration)
-        {
-            //retreating
-            if (xDistance > 0)       //player is to the right, retreat to the left
+            if (currentRetreatTime < maxRetreatDuration)
             {
-                myRigid.velocity = new Vector2(-moveSpeed * 2, myRigid.velocity.y);
-            }
-            else
-            {
-                myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
-            }
-        }
-        else if (Mathf.Abs(xDistance) <= chargeRange)
-        {
-            //Charge at player
-            if (xDistance > 0)       //charge at player to the right
-            {
-                myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
-            }
-            else
-            {
-                myRigid.velocity = new Vector2(-moveSpeed * 2, myRigid.velocity.y);
-            }
-        }
-        else
-        {
-            //Tracking Player
-            if (Mathf.Abs(xDistance) <= detectRange)        //if player is within detect range
-            {
-                if (xDistance > 0)  //move right
+                //retreating
+                if (xDistance > 0)       //player is to the right, retreat to the left
                 {
-                    myRigid.velocity = new Vector2(moveSpeed, myRigid.velocity.y);
+                    myRigid.velocity = new Vector2(-moveSpeed * 2, myRigid.velocity.y);
                 }
-                else                //move left
+                else
                 {
-                    myRigid.velocity = new Vector2(-moveSpeed, myRigid.velocity.y);
+                    myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
+                }
+            }
+            else if (Mathf.Abs(xDistance) <= chargeRange)
+            {
+                //Charge at player
+                if (xDistance > 0)       //charge at player to the right
+                {
+                    myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
+                }
+                else
+                {
+                    myRigid.velocity = new Vector2(-moveSpeed * 2, myRigid.velocity.y);
+                }
+            }
+            else
+            {
+                //Tracking Player
+                if (Mathf.Abs(xDistance) <= detectRange)        //if player is within detect range
+                {
+                    if (xDistance > 0)  //move right
+                    {
+                        myRigid.velocity = new Vector2(moveSpeed, myRigid.velocity.y);
+                    }
+                    else                //move left
+                    {
+                        myRigid.velocity = new Vector2(-moveSpeed, myRigid.velocity.y);
+                    }
                 }
             }
         }

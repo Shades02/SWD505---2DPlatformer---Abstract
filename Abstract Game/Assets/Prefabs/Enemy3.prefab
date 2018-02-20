@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954701147798142}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RightShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 50778817073585062}
   - component: {fileID: 61758967680748240}
   - component: {fileID: 114525963552587802}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Enemy3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4409362028958724}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LeftShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61758967680748240
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -159,13 +159,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 4
   detectRange: 10
-  thisColour: 3
+  thisColour: 0
   maxShootCD: 0.2
   shootPower: 15
   projectile: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06, type: 2}
   rightShotPoint: {fileID: 1697516165953064}
   leftShotPoint: {fileID: 1808625375574406}
   moveSpeed: 4
+  shootRange: 5
 --- !u!212 &212597689447411376
 SpriteRenderer:
   m_ObjectHideFlags: 1

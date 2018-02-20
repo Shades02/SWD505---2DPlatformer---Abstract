@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4526260547537514}
   - component: {fileID: 212103604663492480}
   - component: {fileID: 61199332010703056}
-  - component: {fileID: 114422176725171670}
   - component: {fileID: 50644744166284438}
-  m_Layer: 12
+  - component: {fileID: 114422176725171670}
+  m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4749491821194290}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: LeftShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937768664919048}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RightShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61199332010703056
 BoxCollider2D:
   m_ObjectHideFlags: 1
