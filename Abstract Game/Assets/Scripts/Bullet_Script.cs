@@ -33,7 +33,7 @@ public class Bullet_Script : Timed_Object_Script
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Land") || collision.gameObject.CompareTag("ColourWall"))
+        if (collision.gameObject.CompareTag("Land") || collision.gameObject.CompareTag("ColourWall") || collision.gameObject.CompareTag("Dispenser"))
         {
             Destroy(gameObject);
         }

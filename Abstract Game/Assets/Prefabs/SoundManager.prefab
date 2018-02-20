@@ -53,6 +53,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SFXPrefab: {fileID: 1824166933129546, guid: 340d921a7f750694e9eef7a72099a994, type: 2}
   SFXNames:
+  - PlayerRunning
+  - PlayerJumping
+  - PlayerLanding
+  - PlayerShooting
+  - ProjectileImpact
+  - PickupHealth
+  - PickupAmmo
+  - PickupColour
+  - EnemyRunning
+  - EnemyShooting
+  - EnemyGrowling
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   SFXs:
   - {fileID: 0}
