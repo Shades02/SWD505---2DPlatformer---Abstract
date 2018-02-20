@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Dispenser
   - PaintDrop
+  - Tear
   layers:
   - Default
   - TransparentFX

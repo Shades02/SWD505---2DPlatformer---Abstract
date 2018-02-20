@@ -238,6 +238,11 @@ public class Player_Script : MonoBehaviour
             updateColour();
             setColourLayer();
         }
+        else if(collision.gameObject.CompareTag("Tear"))
+        {
+            //end of level
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

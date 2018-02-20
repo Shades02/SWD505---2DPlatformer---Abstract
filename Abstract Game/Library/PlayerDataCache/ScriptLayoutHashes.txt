@@ -45,7 +45,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-62970ca40cd0bef0077f322e6272ad8c Assembly-CSharp.dll:.MoveShoot_Enemy_Script
+37110a789999cba41625f9a221a5fb7a Assembly-CSharp.dll:.MoveShoot_Enemy_Script
 0161a93d6ac60fe0cbb27a35a7fe7834 Assembly-CSharp.dll:.Melee_Enemy_Script
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -148,3 +148,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Spike_Script
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Mine_Script
 2806eb56805376b061b2a50979ac3e11 Assembly-CSharp.dll:.UI_Script
+f26544d3dbcd74917542d4ff388e84fb Assembly-CSharp.dll:.ColourUpdate_Script
