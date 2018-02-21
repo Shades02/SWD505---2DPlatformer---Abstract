@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Main_Menu_Script : MonoBehaviour
 {
     private Sound_Manager_Script soundManager;
+    public GameObject settingsMenuCanvas;
 
 	void Start ()
     {
@@ -21,5 +22,10 @@ public class Main_Menu_Script : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+    }
+
+    public void settings()
+    {
+        settingsMenuCanvas.SetActive(true);
     }
 }

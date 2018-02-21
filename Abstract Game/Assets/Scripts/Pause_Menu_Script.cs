@@ -7,6 +7,7 @@ public class Pause_Menu_Script : MonoBehaviour
     static public bool isPaused = false;
 
     public GameObject pauseMenuCanvas;
+    public GameObject settingsMenuCanvas;
 	
 	void Update ()
     {
@@ -35,5 +36,10 @@ public class Pause_Menu_Script : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
+    }
+
+    public void settings()
+    {
+        settingsMenuCanvas.SetActive(true);
     }
 }
