@@ -12,6 +12,10 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Land
+  - Enemy
+  - Dispenser
+  - PaintDrop
+  - Tear
   layers:
   - Default
   - TransparentFX
@@ -33,14 +37,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - white
+  - black
+  - red
+  - blue
+  - yellow
+  - green
+  - orange
+  - purple
   - 
   - 
   - 

@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4526260547537514}
   - component: {fileID: 212103604663492480}
   - component: {fileID: 61199332010703056}
-  - component: {fileID: 114422176725171670}
   - component: {fileID: 50644744166284438}
-  m_Layer: 12
+  - component: {fileID: 114422176725171670}
+  m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4749491821194290}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: LeftShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937768664919048}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: RightShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61199332010703056
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -157,10 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8a1aaaacf497543a32bc5843b53a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   detectRange: 10
-  thisColour: 4
-  maxShootCD: 2
+  thisColour: 0
+  maxShootCD: 0.5
   shootPower: 10
   projectile: {fileID: 1619515461954288, guid: 5c3c149f7b20106499da724c1ceba8a2, type: 2}
   rightShotPoint: {fileID: 1955957806884052}

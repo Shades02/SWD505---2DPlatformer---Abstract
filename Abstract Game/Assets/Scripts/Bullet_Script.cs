@@ -7,10 +7,11 @@ public class Bullet_Script : Timed_Object_Script
     public int damage;
 
     private colour currentColour;
+    private SpriteRenderer myRenderer;
 
     private void Start()
     {
-
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void setTag(string tag)
@@ -18,10 +19,16 @@ public class Bullet_Script : Timed_Object_Script
         gameObject.tag = tag;
     }
 
-    public void setColour(colour colourToSet)
+    public void setColour(colour colourToSet, bool facingRight)
     {
+        Debug.Log("Colour Set");
         currentColour = colourToSet;
-        //change visible colour
+        GetComponent<ColourUpdate_Script>().updateColour(currentColour);
+
+        if(!facingRight)
+        {
+            transform.localScale *= -1;
+        }
     }
 
     public colour getColour()
@@ -31,26 +38,31 @@ public class Bullet_Script : Timed_Object_Script
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("EnemyBullet"))
+        if (collision.gameObject.CompareTag("Land") || collision.gameObject.CompareTag("ColourWall") || collision.gameObject.CompareTag("Dispenser"))
         {
-            //check colour here
-            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Land"))
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
+            if(gameObject.CompareTag("PlayerBullet"))       //only hurts the enemies if this is a player bullet
+            {
+                collision.gameObject.GetComponent<Enemy_Script>().takeDamage(damage);
+                Destroy(gameObject);
+            }
+        }
+        else if(collision.gameObject.CompareTag("Player"))
+        {
+            if(gameObject.CompareTag("EnemyBullet"))        //only hurts the player if this is an enemy bullet
+            {
+                collision.gameObject.GetComponent<Player_Script>().takeDamage(damage);
+                Destroy(gameObject);
+            }
+        }
+        else if (collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("ColourWall"))
-        {
-            if(collision.gameObject.GetComponent<Colour_Wall_Script>().wallColour == currentColour)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
 }

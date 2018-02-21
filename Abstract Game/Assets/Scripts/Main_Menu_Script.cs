@@ -14,7 +14,7 @@ public class Main_Menu_Script : MonoBehaviour
 	
     public void startGame()
     {
-        //currently loads scene 1, the onyl scene
+        //currently loads scene 1, the only other scene
         SceneManager.LoadScene(1);
     }
 
