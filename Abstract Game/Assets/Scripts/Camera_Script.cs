@@ -27,4 +27,4 @@ public class Camera_Script : MonoBehaviour
             Mathf.Clamp(transform.position.y, minY, maxY),                  //bottom point = minY     top point = maxY
             -10);                                                           //-10
     }
-}
+}   
