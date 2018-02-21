@@ -5,12 +5,13 @@ using UnityEngine;
 public class Camera_Script : MonoBehaviour
 {
     private GameObject player;
-    private Vector2 origin;
+    public float minX;
     public float maxX;
+    public float minY;
+    public float maxY;
 
     void Start ()
     {
-        origin = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -22,8 +23,8 @@ public class Camera_Script : MonoBehaviour
     private void LateUpdate()
     {
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, origin.x, maxX),              //left point = origin   right point = maxX
-            Mathf.Clamp(transform.position.y, origin.y, 99),                //bottom point = origin     top point = 99
+            Mathf.Clamp(transform.position.x, minX, maxX),                  //left point = minX       right point = maxX
+            Mathf.Clamp(transform.position.y, minY, maxY),                  //bottom point = minY     top point = maxY
             -10);                                                           //-10
     }
 }
