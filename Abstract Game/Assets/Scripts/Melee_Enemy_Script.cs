@@ -82,5 +82,9 @@ public class Melee_Enemy_Script : Enemy_Script
                 currentRetreatTime = 0;
             }
         }
+        else if(collision.gameObject.CompareTag("Spike"))
+        {
+            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+        }
     }
 }

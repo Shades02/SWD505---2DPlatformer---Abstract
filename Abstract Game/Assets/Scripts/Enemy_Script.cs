@@ -39,6 +39,23 @@ public class Enemy_Script : MonoBehaviour
         health -= damage;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+        }
+    }
+
     private void setColourLayer()
     {
         switch (thisColour)

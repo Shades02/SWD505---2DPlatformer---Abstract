@@ -13,7 +13,6 @@ public class Player_Script : MonoBehaviour
 {
     public int moveSpeed;
     public int jumpStrength;
-    public int maxWallJumpCD;
     public int firePower;
     public int maxHealth;
     public int maxAmmo;
@@ -23,7 +22,6 @@ public class Player_Script : MonoBehaviour
     public GameObject leftShootPoint;
     public GameObject bulletPrefab;
 
-    private float currentWallJumpCD;
     private float currentShootCD;
     private int health;
     private int ammo = 0;
@@ -59,7 +57,6 @@ public class Player_Script : MonoBehaviour
 
         //counter updates
         //Cooldowns count down until it can be used again
-        currentWallJumpCD -= Time.deltaTime;
         currentShootCD -= Time.deltaTime;
 
         //shoot - only check if you have ammo to shoot
@@ -116,25 +113,6 @@ public class Player_Script : MonoBehaviour
             {
                 myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
                 myRigid.AddForce(new Vector2(0, jumpStrength));
-            }
-            else if (currentWallJumpCD <= 0)            //if wall jump is not on cooldown, check for wall jump
-            {
-                currentWallJumpCD = maxWallJumpCD;      //reset wall jump cooldown
-
-                if (Physics2D.Linecast(transform.position,
-                transform.position + new Vector3(1.0f, 0, 0),               //right side check
-                1 << LayerMask.NameToLayer("Land")))
-                {
-                    myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
-                    myRigid.AddForce(new Vector2(0, jumpStrength));
-                }
-                else if (Physics2D.Linecast(transform.position,
-                transform.position + new Vector3(-1.0f, 0, 0),              //left side check
-                1 << LayerMask.NameToLayer("Land")))
-                {
-                    myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
-                    myRigid.AddForce(new Vector2(0, jumpStrength));
-                }
             }
         }
     }
