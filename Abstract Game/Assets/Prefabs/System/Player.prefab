@@ -116,7 +116,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a3cd6bd44224e8943b45c0e6930296a5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -159,7 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpStrength: 350
-  maxWallJumpCD: 2
   firePower: 15
   maxHealth: 5
   maxAmmo: 50
