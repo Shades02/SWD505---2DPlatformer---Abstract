@@ -12,9 +12,7 @@ public class Dispenser_Script : MonoBehaviour
     {
         if (facingRight)        //asset for dispenser faces left by default
         {
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 

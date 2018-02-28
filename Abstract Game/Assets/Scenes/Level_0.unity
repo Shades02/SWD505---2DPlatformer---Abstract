@@ -509,7 +509,7 @@ Prefab:
     - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
         type: 2}
       propertyPath: facingRight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
@@ -611,6 +611,27 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114364547255619292, guid: eaa4ceddc19042d4d899103ef9dca0e4,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364547255619292, guid: eaa4ceddc19042d4d899103ef9dca0e4,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364547255619292, guid: eaa4ceddc19042d4d899103ef9dca0e4,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931162772687946, guid: eaa4ceddc19042d4d899103ef9dca0e4,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bcfb23e558e96c14dbefacb639493dd8,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa4ceddc19042d4d899103ef9dca0e4, type: 2}
   m_IsPrefabParent: 0

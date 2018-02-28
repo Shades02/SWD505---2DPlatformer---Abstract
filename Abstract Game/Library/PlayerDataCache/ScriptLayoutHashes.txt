@@ -1,4 +1,5 @@
 WindowsStandalone
+dbb24350b8c67f21b5bff0b693a24177 Assembly-CSharp.dll:.SpriteColorChanger
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -116,7 +117,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 2411a2735f5c756839a6862315efe215 Assembly-CSharp.dll:.PaintDrop_Script
 f60607b9e34b5b0db06a1432ef63e881 Assembly-CSharp.dll:.Enemy_Script
-5fe99bb4ed4d579155350f7e99776d64 Assembly-CSharp.dll:.Pause_Menu_Script
+f2d31b0c26ab97f8d0b5a55595b84938 Assembly-CSharp.dll:.Pause_Menu_Script
 a98e70b48df902fc6eaf7b71776d2210 Assembly-CSharp.dll:.Camera_Script
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -132,7 +133,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-e3043b30059a136c542e362fa8635c0f Assembly-CSharp.dll:.Dispenser_Script
+ce02bafcc62606838f892c5677d81574 Assembly-CSharp.dll:.Dispenser_Script
 b84ddbbbe32d7e98b29a383f9c5d671a Assembly-CSharp.dll:.Pickup_Script
 17aafd7850aafb3ba95321c4b93cb218 Assembly-CSharp.dll:.Shooting_Enemy_Script
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -148,5 +149,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Spike_Script
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Mine_Script
 2806eb56805376b061b2a50979ac3e11 Assembly-CSharp.dll:.UI_Script
-f26544d3dbcd74917542d4ff388e84fb Assembly-CSharp.dll:.ColourUpdate_Script
 0d9a980b5a26d7192827dc2ae664e4c6 Assembly-CSharp.dll:.Settings_Script
+f26544d3dbcd74917542d4ff388e84fb Assembly-CSharp.dll:.ColourUpdate_Script
