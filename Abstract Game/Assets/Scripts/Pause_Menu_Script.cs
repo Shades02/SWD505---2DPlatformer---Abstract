@@ -6,6 +6,7 @@ public class Pause_Menu_Script : MonoBehaviour
 {
     static public bool isPaused = false;
 
+    public GameObject inGameUI;
     public GameObject pauseMenuCanvas;
     public GameObject settingsMenuCanvas;
 	
@@ -22,6 +23,7 @@ public class Pause_Menu_Script : MonoBehaviour
     public void resume()
     {
         pauseMenuCanvas.SetActive(false);
+        inGameUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -29,6 +31,7 @@ public class Pause_Menu_Script : MonoBehaviour
     void pause()
     {
         pauseMenuCanvas.SetActive(true);
+        inGameUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
     }

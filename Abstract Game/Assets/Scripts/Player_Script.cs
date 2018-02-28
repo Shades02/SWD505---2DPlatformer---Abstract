@@ -142,6 +142,7 @@ public class Player_Script : MonoBehaviour
         {
             //touching the water clears off any paint/colour
             currentColour = colour.white;
+            setColourLayer();
             updateColour();
         }
         else if (collision.gameObject.CompareTag("Dispenser"))      //if the player jumps onto the top of the dispenser, it will trigger a dispense
