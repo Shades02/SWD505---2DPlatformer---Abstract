@@ -161,7 +161,7 @@ MonoBehaviour:
   jumpStrength: 350
   firePower: 15
   maxHealth: 5
-  maxAmmo: 50
+  maxAmmo: 20
   maxShootCD: 0.2
   rightShootPoint: {fileID: 1497621790430704}
   leftShootPoint: {fileID: 1777586372884808}

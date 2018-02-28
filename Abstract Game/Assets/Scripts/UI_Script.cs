@@ -22,7 +22,7 @@ public class UI_Script : MonoBehaviour
         //timer
         levelTimer += Time.deltaTime;
         int seconds = Mathf.RoundToInt(levelTimer % 60);
-        int minutes = Mathf.RoundToInt(levelTimer - seconds);
+        int minutes = Mathf.RoundToInt(levelTimer - seconds) / 60;
         timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
         //health
