@@ -6,19 +6,12 @@ using UnityEngine.UI;
 public class Settings_Script : MonoBehaviour
 {
     public GameObject fullscreenButton;
-    private bool isPaused = false;
 
     void Start ()
     {
         fullscreenButton.GetComponent<Toggle>().isOn = Screen.fullScreen;
-
 	}
 	
-	void Update ()
-    {
-		
-	}
-
     public void setFullscreen(bool toggle)
     {
         Screen.fullScreen = toggle;
@@ -31,7 +24,7 @@ public class Settings_Script : MonoBehaviour
     }
 
 
-    public void returnToPause()
+    public void returnToMenu()
     {
         gameObject.SetActive(false);
     }
