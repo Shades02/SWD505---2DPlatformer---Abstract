@@ -6,7 +6,8 @@ public class Boss_Script : MonoBehaviour {
 
     public float moveSpeed,
         minX,
-        maxX;
+        maxX,
+        radius;
     public GameObject[] shapes;
 
     private Vector2 moveDirection;
@@ -27,11 +28,21 @@ public class Boss_Script : MonoBehaviour {
         }
     }
 
-    private void setShapeVelocitytoPoint(Vector2 point)
+    private void setShapeVelocitytoPoint(Vector3 point)     //Set shape velocity to move towards a point
     {
         for (int i = 0; i < shapes.Length; ++i)
         {
-
+            Vector2 distance = point - shapes[i].transform.position;
+            shapes[i].GetComponent<Rigidbody2D>().velocity = distance.normalized * moveSpeed;
         }
+    }
+
+    private bool shapesInRadius()       //Returns true if shapes are in radius
+    {
+        float distX = transform.position.x - shapes[0].transform.position.x,
+            distY = transform.position.y - shapes[0].transform.position.y,
+            distance = Mathf.Sqrt((distX * distX) + (distY * distY));
+
+        return (distance <= radius);
     }
 }
