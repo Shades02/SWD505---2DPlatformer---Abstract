@@ -2,20 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Script : MonoBehaviour {
+public class Boss_Script : Enemy_Script
+{
 
     public float moveSpeed,
         minX,
         maxX,
-        radius;
+        radius,
+        orbitSpeed;
     public GameObject[] shapes;
 
     private Vector2 moveDirection;
     private bool patrolling = false;
+    private int p2Health;
 
     private void Start()
     {
         moveDirection = new Vector2(-1, 0);
+        for (int i = 0; i < shapes.Length; ++i) health += shapes[i].GetComponent<Enemy_Script>().health;
+        p2Health = health / 2;
+    }
+
+    private void FixedUpdate()
+    {
+        patrol();
+        orbitShapes();
     }
 
     private void patrol()       //Boss moves left and right within boundaries
@@ -35,6 +46,11 @@ public class Boss_Script : MonoBehaviour {
             Vector2 distance = point - shapes[i].transform.position;
             shapes[i].GetComponent<Rigidbody2D>().velocity = distance.normalized * moveSpeed;
         }
+    }
+
+    private void orbitShapes()      //Shapes orbit centre of boss
+    {
+        if (!shapesInRadius()) setShapeVelocitytoPoint(transform.position);
     }
 
     private bool shapesInRadius()       //Returns true if shapes are in radius
