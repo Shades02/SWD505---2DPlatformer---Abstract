@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pause_Menu_Script : MonoBehaviour
@@ -77,5 +78,15 @@ public class Pause_Menu_Script : MonoBehaviour
     {
         if (toggle) QualitySettings.SetQualityLevel(0);
         else QualitySettings.SetQualityLevel(5);
+    }
+
+    public void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);       //reload current scene
+    }
+
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene(0);  //scene 0 is the main menu
     }
 }

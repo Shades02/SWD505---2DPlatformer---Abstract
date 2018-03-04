@@ -1,5 +1,4 @@
 WindowsStandalone
-dbb24350b8c67f21b5bff0b693a24177 Assembly-CSharp.dll:.SpriteColorChanger
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -107,7 +106,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-72c94459f2a2ca46e87363a5dd140fc7 Assembly-CSharp.dll:.Player_Script
+a04340c9300b14a223985df990d5bd40 Assembly-CSharp.dll:.Player_Script
 65791e1fac7673fb330aff002cdd228b Assembly-CSharp.dll:.Main_Menu_Script
 ac5b274916992b9aa1880a57ef7da475 Assembly-CSharp.dll:.Bullet_Script
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -151,3 +150,4 @@ ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Mine_Script
 2806eb56805376b061b2a50979ac3e11 Assembly-CSharp.dll:.UI_Script
 0d9a980b5a26d7192827dc2ae664e4c6 Assembly-CSharp.dll:.Settings_Script
 f26544d3dbcd74917542d4ff388e84fb Assembly-CSharp.dll:.ColourUpdate_Script
+dbb24350b8c67f21b5bff0b693a24177 Assembly-CSharp.dll:.SpriteColorChanger

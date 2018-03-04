@@ -21,6 +21,7 @@ public class Player_Script : MonoBehaviour
     public GameObject rightShootPoint;
     public GameObject leftShootPoint;
     public GameObject bulletPrefab;
+    public GameObject gameOverScreen;
 
     private float currentShootCD;
     private int health;
@@ -52,7 +53,10 @@ public class Player_Script : MonoBehaviour
         if(health <= 0)
         {
             //Reloads the current scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            gameOverScreen.SetActive(true);         //put up the game over screen
+            Destroy(gameObject);                    //Destroy the player
         }
 
         //counter updates

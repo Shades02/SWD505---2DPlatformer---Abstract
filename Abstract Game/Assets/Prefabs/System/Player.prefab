@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1611046179211806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.97, y: -0.36, z: 0}
+  m_LocalPosition: {x: -3.37, y: 1.07, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 4364076168319618}
@@ -166,6 +166,8 @@ MonoBehaviour:
   rightShootPoint: {fileID: 1497621790430704}
   leftShootPoint: {fileID: 1777586372884808}
   bulletPrefab: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06,
+    type: 2}
+  gameOverScreen: {fileID: 1167609843657948, guid: eaa4ceddc19042d4d899103ef9dca0e4,
     type: 2}
 --- !u!212 &212997743006609618
 SpriteRenderer:
