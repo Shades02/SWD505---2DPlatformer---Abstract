@@ -21,15 +21,17 @@ public class Boss_Script : Enemy_Script
         moveDirection = new Vector2(-1, 0);
         for (int i = 0; i < shapes.Length; ++i)
         {
-            health += shapes[i].GetComponent<Enemy_Script>().health;
+            health += shapes[i].GetComponent<Shape_Script>().health;
             shapes[i].GetComponent<Shape_Script>().orbitSpeed = orbitSpeed;
         }
         p2Health = health / 2;
+        for (int i = 0; i < shapes.Length; i++) shapes[i].GetComponent<Shape_Script>().shoot(player);
     }
 
     private void FixedUpdate()
     {
         orbitShapes();
+        
 
         if (health > p2Health)
         {
