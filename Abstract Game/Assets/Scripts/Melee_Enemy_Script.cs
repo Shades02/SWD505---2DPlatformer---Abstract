@@ -19,6 +19,8 @@ public class Melee_Enemy_Script : Enemy_Script
         currentAttackCD -= Time.deltaTime;
         currentRetreatTime += Time.deltaTime;
 
+        myAnim.SetFloat("runSpeed", Mathf.Abs(myRigid.velocity.x));        //check to see if moving
+
         getDirection();
 
         //Enemy specific, not in the parent class

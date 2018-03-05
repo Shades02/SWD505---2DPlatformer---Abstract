@@ -13,7 +13,18 @@ public class MoveShoot_Enemy_Script : Shooting_Enemy_Script
         getDirection();
 
         curShootCD -= Time.deltaTime;
-       
+
+        myAnim.SetFloat("runSpeed", Mathf.Abs(myRigid.velocity.x));        //check to see if moving
+
+        //Enemy specific, not in the parent class
+        if (facingRight)           //slow shoot enemy sprite is left by default, so if facing right, flip sprite
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing left
+        }
     }
 
     private void FixedUpdate()

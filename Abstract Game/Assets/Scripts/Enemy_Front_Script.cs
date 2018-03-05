@@ -15,6 +15,8 @@ public class Enemy_Front_Script : MonoBehaviour
 	
 	void Update ()
     {
+        myAnim.SetFloat("runSpeed", Mathf.Abs(myEnemy.gameObject.GetComponent<Rigidbody2D>().velocity.x));        //check to see if moving
+
         if (!myEnemy.returnDirection())           //melee enemy sprite is right by default, so if facing left, flip sprite
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
