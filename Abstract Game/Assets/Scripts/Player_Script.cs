@@ -264,6 +264,11 @@ public class Player_Script : MonoBehaviour
         return currentColour;
     }
 
+    internal bool returnDirection()
+    {
+        return facingRight;
+    }
+
     private void killPlayer()
     {
         gameOverScreen.SetActive(true);         //put up the game over screen
