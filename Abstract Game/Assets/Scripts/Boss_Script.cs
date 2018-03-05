@@ -9,7 +9,10 @@ public class Boss_Script : Enemy_Script
         minX,
         maxX,
         radius,
-        orbitSpeed;
+        p1OrbitSpeed,
+        p2OrbitSpeed,
+        p1ShootCD,
+        p2ShootCD;
     public GameObject[] shapes;
 
     private Vector2 moveDirection;
@@ -22,16 +25,17 @@ public class Boss_Script : Enemy_Script
         for (int i = 0; i < shapes.Length; ++i)
         {
             health += shapes[i].GetComponent<Shape_Script>().health;
-            shapes[i].GetComponent<Shape_Script>().orbitSpeed = orbitSpeed;
+            shapes[i].GetComponent<Shape_Script>().orbitSpeed = p1OrbitSpeed;
+            shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
-        for (int i = 0; i < shapes.Length; i++) shapes[i].GetComponent<Shape_Script>().shoot(player);
+        for (int i = 0; i < shapes.Length; i++) shapes[i].GetComponent<Shape_Script>().shoot();
     }
 
     private void FixedUpdate()
     {
         orbitShapes();
-        
+        for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
 
         if (health > p2Health)
         {
@@ -39,6 +43,11 @@ public class Boss_Script : Enemy_Script
         }
         else
         {
+            for (int i = 0; i < shapes.Length; ++i)
+            {
+                shapes[i].GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
+                shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
+            }
             patrol();
         }
     }
