@@ -118,7 +118,6 @@ GameObject:
   m_Component:
   - component: {fileID: 156301388}
   - component: {fileID: 156301387}
-  - component: {fileID: 156301386}
   - component: {fileID: 156301389}
   - component: {fileID: 156301385}
   m_Layer: 0
@@ -161,27 +160,6 @@ PolygonCollider2D:
       - {x: 0.06497002, y: -0.123684645}
       - {x: 0.11184502, y: -0.07944052}
       - {x: 0.11184502, y: -0.008215031}
---- !u!50 &156301386
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50968655844757022, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 156301384}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &156301387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -250,6 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!4 &179409925 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4627392437674016, guid: 4bdec867417836641a26643ada08e6a6,
@@ -327,6 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4d1a54cc66f044c897e23353a9276f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
   moveSpeed: 2
   minX: -25
   maxX: -15
@@ -752,7 +736,6 @@ GameObject:
   m_Component:
   - component: {fileID: 715229458}
   - component: {fileID: 715229457}
-  - component: {fileID: 715229456}
   - component: {fileID: 715229459}
   - component: {fileID: 715229455}
   m_Layer: 0
@@ -788,27 +771,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.16580808}
   m_EdgeRadius: 0
---- !u!50 &715229456
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50749107168307836, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 715229454}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &715229457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -877,6 +839,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &731464209
 Prefab:
   m_ObjectHideFlags: 0
@@ -1008,7 +973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 733882420}
   - component: {fileID: 733882419}
-  - component: {fileID: 733882418}
   - component: {fileID: 733882421}
   - component: {fileID: 733882417}
   m_Layer: 0
@@ -1051,27 +1015,6 @@ PolygonCollider2D:
       - {x: 0.11184502, y: -0.046875}
       - {x: 0.11184502, y: 0.012993972}
       - {x: 0.03125, y: 0.09490459}
---- !u!50 &733882418
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50214841419676178, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 733882416}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &733882419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1140,6 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &818756351
 Prefab:
   m_ObjectHideFlags: 0
@@ -1231,7 +1177,6 @@ GameObject:
   m_Component:
   - component: {fileID: 849425172}
   - component: {fileID: 849425171}
-  - component: {fileID: 849425170}
   - component: {fileID: 849425169}
   - component: {fileID: 849425173}
   m_Layer: 0
@@ -1272,27 +1217,6 @@ PolygonCollider2D:
       - {x: 0.125, y: -0.125}
       - {x: 0.125, y: -0.091425024}
       - {x: 0.014992396, y: 0.045186758}
---- !u!50 &849425170
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50648371918419118, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 849425168}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &849425171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1361,6 +1285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &923985457
 Prefab:
   m_ObjectHideFlags: 0
@@ -1455,7 +1382,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1004738088}
   - component: {fileID: 1004738087}
-  - component: {fileID: 1004738086}
   - component: {fileID: 1004738089}
   - component: {fileID: 1004738085}
   m_Layer: 0
@@ -1496,27 +1422,6 @@ PolygonCollider2D:
       - {x: 0.125, y: -0.125}
       - {x: 0.12586913, y: -0.08686861}
       - {x: 0.07810402, y: 0.030360144}
---- !u!50 &1004738086
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50057100638163716, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1004738084}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1004738087
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1585,6 +1490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &1220214987
 Prefab:
   m_ObjectHideFlags: 0
@@ -1974,7 +1882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1774628282}
   - component: {fileID: 1774628281}
-  - component: {fileID: 1774628280}
   - component: {fileID: 1774628283}
   - component: {fileID: 1774628279}
   m_Layer: 0
@@ -2010,27 +1917,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.98922735, y: 1.0158386}
   m_EdgeRadius: 0
---- !u!50 &1774628280
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50781735269612452, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774628278}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1774628281
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2099,6 +1985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1 &1821221491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +1998,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1821221495}
   - component: {fileID: 1821221494}
-  - component: {fileID: 1821221493}
   - component: {fileID: 1821221496}
   - component: {fileID: 1821221492}
   m_Layer: 0
@@ -2135,27 +2023,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.125
---- !u!50 &1821221493
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50029924303700252, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1821221491}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &1821221494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2224,6 +2091,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &1854138360
 Prefab:
   m_ObjectHideFlags: 0
@@ -2516,7 +2386,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2001309814}
   - component: {fileID: 2001309813}
-  - component: {fileID: 2001309812}
   - component: {fileID: 2001309815}
   - component: {fileID: 2001309811}
   m_Layer: 0
@@ -2559,27 +2428,6 @@ PolygonCollider2D:
       - {x: 0.07984289, y: -0.046823345}
       - {x: 0.07984352, y: -0.00092085206}
       - {x: 0.030319214, y: 0.03296777}
---- !u!50 &2001309812
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 50289029731149174, guid: c9bfab47759f2a6458866b34c5943e97,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2001309810}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!212 &2001309813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2648,6 +2496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343bfdc5dccd8ab4795b4b62034e4ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  detectRange: 0
+  thisColour: 0
 --- !u!1001 &2024485658
 Prefab:
   m_ObjectHideFlags: 0

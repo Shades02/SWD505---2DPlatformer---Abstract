@@ -19,7 +19,11 @@ public class Boss_Script : Enemy_Script
     private void Start()
     {
         moveDirection = new Vector2(-1, 0);
-        for (int i = 0; i < shapes.Length; ++i) health += shapes[i].GetComponent<Enemy_Script>().health;
+        for (int i = 0; i < shapes.Length; ++i)
+        {
+            health += shapes[i].GetComponent<Enemy_Script>().health;
+            shapes[i].GetComponent<Shape_Script>().orbitSpeed = orbitSpeed;
+        }
         p2Health = health / 2;
     }
 
@@ -43,14 +47,19 @@ public class Boss_Script : Enemy_Script
     {
         for (int i = 0; i < shapes.Length; ++i)
         {
-            Vector2 distance = point - shapes[i].transform.position;
-            shapes[i].GetComponent<Rigidbody2D>().velocity = distance.normalized * moveSpeed;
+            shapes[i].GetComponent<Shape_Script>().orbitDirection = point - shapes[i].transform.position;
+            shapes[i].GetComponent<Shape_Script>().orbitDirection.x /= Mathf.Abs(shapes[i].GetComponent<Shape_Script>().orbitDirection.x);
+            shapes[i].GetComponent<Shape_Script>().orbitDirection.y /= Mathf.Abs(shapes[i].GetComponent<Shape_Script>().orbitDirection.y);
         }
     }
 
     private void orbitShapes()      //Shapes orbit centre of boss
     {
         if (!shapesInRadius()) setShapeVelocitytoPoint(transform.position);
+        else
+        {
+            for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
+        }
     }
 
     private bool shapesInRadius()       //Returns true if shapes are in radius
