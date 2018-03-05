@@ -56,10 +56,7 @@ public class Boss_Script : Enemy_Script
     private void orbitShapes()      //Shapes orbit centre of boss
     {
         if (!shapesInRadius()) setShapeVelocitytoPoint(transform.position);
-        else
-        {
-            for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
-        }
+        for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
     }
 
     private bool shapesInRadius()       //Returns true if shapes are in radius

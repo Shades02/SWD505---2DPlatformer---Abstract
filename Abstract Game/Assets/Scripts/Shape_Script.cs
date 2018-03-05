@@ -9,6 +9,8 @@ public class Shape_Script : Enemy_Script
 
     internal void moveShape()
     {
-        transform.position += orbitDirection.normalized * orbitSpeed * Time.deltaTime;
+        Debug.Log(orbitSpeed);
+        Debug.Log(orbitDirection);
+        transform.Translate(orbitDirection.normalized * orbitSpeed * Time.deltaTime);
     }
 }
