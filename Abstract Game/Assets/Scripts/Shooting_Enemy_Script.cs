@@ -20,6 +20,16 @@ public class Shooting_Enemy_Script : Enemy_Script
 
         curShootCD -= Time.deltaTime;
 
+        //Enemy specific, not in the parent class
+        if (!facingRight)           //sentry enemy sprite is right by default, so if facing left, flip sprite
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
+        }
+
         shootPlayer();
     }
 
