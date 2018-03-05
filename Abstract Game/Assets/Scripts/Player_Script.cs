@@ -27,14 +27,17 @@ public class Player_Script : MonoBehaviour
 
     private Rigidbody2D myRigid;
     private SpriteRenderer myRenderer;
+    private Animator myAnim;
     private Sound_Manager_Script soundManager;
 
     void Start ()
     {
         myRigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
-        currentColour = colour.white;
-        setColourLayer();
+        myAnim = GetComponent<Animator>();
+        //currentColour = colour.white;
+        //setColourLayer();
+        Colour_Changer_Script.setColour(gameObject, currentColour);     //set colour and colour layer
         health = maxHealth;
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
 
@@ -50,8 +53,8 @@ public class Player_Script : MonoBehaviour
             //Reloads the current scene
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-            gameOverScreen.SetActive(true);         //put up the game over screen
-            Destroy(gameObject);                    //Destroy the player
+            myAnim.SetBool("isDead", true);
+            Invoke("killPlayer", 0.5f);             //calls the function to kill the player after a delay
         }
 
         //counter updates
@@ -91,10 +94,22 @@ public class Player_Script : MonoBehaviour
     {
         //move left/right
         myRigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRigid.velocity.y);
+        myAnim.SetFloat("runSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));        //set velocity for animator to decide if the player is moving
 
         //get direction
         if (myRigid.velocity.x > 0) facingRight = true;
         else if (myRigid.velocity.x < 0) facingRight = false;
+
+        //change sprite facing
+        if (!facingRight)           //player sprite is right by default, so if facing left, flip sprite
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
+        }
+
 
         float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;
         Vector3 linecastStart = new Vector3(transform.position.x, transform.position.y - spriteHeight / 2 - 0.1f, transform.position.z);
@@ -141,8 +156,7 @@ public class Player_Script : MonoBehaviour
         {
             //touching the water clears off any paint/colour
             currentColour = colour.white;
-            setColourLayer();
-            updateColour();
+            Colour_Changer_Script.setColour(gameObject, currentColour);     //updates the colour and colour layer
         }
         else if (collision.gameObject.CompareTag("Dispenser"))      //if the player jumps onto the top of the dispenser, it will trigger a dispense
         {
@@ -213,8 +227,7 @@ public class Player_Script : MonoBehaviour
             }
 
             Destroy(collision.gameObject);
-            updateColour();
-            setColourLayer();
+            Colour_Changer_Script.setColour(gameObject, currentColour);     //updates the colour and colour layer
         }
         else if(collision.gameObject.CompareTag("Tear"))
         {
@@ -251,65 +264,10 @@ public class Player_Script : MonoBehaviour
         return currentColour;
     }
 
-    private void setColourLayer()
+    private void killPlayer()
     {
-        switch (currentColour)
-        {
-            case colour.white:
-                gameObject.layer = 20;
-                break;
-            case colour.black:
-                gameObject.layer = 21;
-                break;
-            case colour.red:
-                gameObject.layer = 22;
-                break;
-            case colour.blue:
-                gameObject.layer = 23;
-                break;
-            case colour.yellow:
-                gameObject.layer = 24;
-                break;
-            case colour.green:
-                gameObject.layer = 25;
-                break;
-            case colour.orange:
-                gameObject.layer = 26;
-                break;
-            case colour.purple:
-                gameObject.layer = 27;
-                break;
-        }
+        gameOverScreen.SetActive(true);         //put up the game over screen
+        Destroy(gameObject);                    //Destroy the player
     }
 
-    private void updateColour()
-    {
-        switch (currentColour)
-        {
-            case colour.white:
-                myRenderer.color = Color.white;
-                break;
-            case colour.black:
-                myRenderer.color = Color.black;
-                break;
-            case colour.red:
-                myRenderer.color = Color.red;
-                break;
-            case colour.blue:
-                myRenderer.color = Color.blue;
-                break;
-            case colour.yellow:
-                myRenderer.color = Color.yellow;
-                break;
-            case colour.green:
-                myRenderer.color = Color.green;
-                break;
-            case colour.purple:
-                myRenderer.color = Color.magenta;
-                break;
-            case colour.orange:
-                myRenderer.color = Color.grey;
-                break;
-        }
-    }
 }
