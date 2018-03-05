@@ -29,33 +29,40 @@ public class Boss_Script : Enemy_Script
 
     private void FixedUpdate()
     {
-        patrol();
         orbitShapes();
+
+        if (health > p2Health)
+        {
+
+        }
+        else
+        {
+            patrol();
+        }
     }
 
     private void patrol()       //Boss moves left and right within boundaries
     {
-        if (!patrolling) GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
-        else if (transform.position.x >= maxX || transform.position.x <= minX)
+        if (transform.position.x >= maxX || transform.position.x <= minX)
         {
             moveDirection = -moveDirection;
             patrolling = false;
         }
+
+        if (!patrolling) GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
     }
 
-    private void setShapeVelocitytoPoint(Vector3 point)     //Set shape velocity to move towards a point
+    private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards a point
     {
         for (int i = 0; i < shapes.Length; ++i)
         {
             shapes[i].GetComponent<Shape_Script>().orbitDirection = point - shapes[i].transform.position;
-            shapes[i].GetComponent<Shape_Script>().orbitDirection.x /= Mathf.Abs(shapes[i].GetComponent<Shape_Script>().orbitDirection.x);
-            shapes[i].GetComponent<Shape_Script>().orbitDirection.y /= Mathf.Abs(shapes[i].GetComponent<Shape_Script>().orbitDirection.y);
         }
     }
 
     private void orbitShapes()      //Shapes orbit centre of boss
     {
-        if (!shapesInRadius()) setShapeVelocitytoPoint(transform.position);
+        if (!shapesInRadius()) setShapeDirectiontoPoint(transform.position);
         for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
     }
 
