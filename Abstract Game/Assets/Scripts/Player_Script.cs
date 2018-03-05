@@ -4,11 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum colour
-{
-    white, black, red, blue, yellow, green, orange, purple
-}
-
 public class Player_Script : MonoBehaviour
 {
     public int moveSpeed;

@@ -21,10 +21,10 @@ public class Bullet_Script : Timed_Object_Script
 
     public void setColour(colour colourToSet, bool facingRight)
     {
-        Debug.Log("Colour Set");
         currentColour = colourToSet;
         GetComponent<ColourUpdate_Script>().updateColour(currentColour);
 
+        //This is wrong VV
         if(!facingRight)
         {
             transform.localScale *= -1;

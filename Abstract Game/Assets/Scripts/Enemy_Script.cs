@@ -19,7 +19,9 @@ public class Enemy_Script : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         myRigid = gameObject.GetComponent<Rigidbody2D>();
         myAnim = gameObject.GetComponent<Animator>();
-        setColourLayer();
+        //setColourLayer();
+
+        Colour_Changer_Script.setColour(gameObject, thisColour);
     }
 
     protected void getDirection()       //need to call in update
@@ -45,6 +47,11 @@ public class Enemy_Script : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
+    }
+
+    public bool returnDirection()
+    {
+        return facingRight;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

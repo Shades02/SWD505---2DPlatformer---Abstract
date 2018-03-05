@@ -21,7 +21,17 @@ public class Melee_Enemy_Script : Enemy_Script
 
         getDirection();
 
-	}
+        //Enemy specific, not in the parent class
+        if (!facingRight)           //melee enemy sprite is right by default, so if facing left, flip sprite
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
+        }
+
+    }
 
     private void FixedUpdate()
     {
