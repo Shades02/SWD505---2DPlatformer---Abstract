@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: edc5efc1495e9f945a2fba65d9d0dabe
-timeCreated: 1519762998
+guid: 026bc943d1824d445a9ddc88bdd998ed
+timeCreated: 1520261090
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Pickup and bullet final_0
     21300002: Pickup and bullet final_1
+    21300004: Pickup and bullet final_2
+    21300006: Pickup and bullet final_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -23,7 +25,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -89,7 +91,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -103,6 +105,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup and bullet final_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup and bullet final_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 64
         height: 64
