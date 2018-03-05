@@ -10,6 +10,7 @@ public class Enemy_Script : MonoBehaviour
     
     protected bool facingRight = true;
     protected Rigidbody2D myRigid;
+    protected Animator myAnim;
 
     protected GameObject player;
 
@@ -17,6 +18,7 @@ public class Enemy_Script : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         myRigid = gameObject.GetComponent<Rigidbody2D>();
+        myAnim = gameObject.GetComponent<Animator>();
         setColourLayer();
     }
 
@@ -30,8 +32,14 @@ public class Enemy_Script : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(gameObject);
+            myAnim.SetBool("isDead", true);     //when dead, changes animation
+            Invoke("destroyEnemy", 0.5f);       //delay may need editing to allow for more the animation
         }
+    }
+
+    private void destroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
     public void takeDamage(int damage)

@@ -1488,7 +1488,52 @@ Prefab:
         type: 2}
       propertyPath: SFXs.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: f48ec9593f88292409273810116484ca, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 803402a8a6bab12419455b7f38049eb2, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c71c99dd7206934c93a0e1f082a7e38, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e52098607d9a35d4c87d279bfbb2746a, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: ddd743ac52d319641a332d2f122951c4, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3d9b93a7ceb98d4ba246e008b833420, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: eeec1f9d663a6a64e89536ad0fce0d91, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c71c99dd7206934c93a0e1f082a7e38, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 115c559375a6e8346b9ba4e6f9479024, type: 3}
+    - target: {fileID: 114228784595458630, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1,
+        type: 2}
+      propertyPath: SFXs.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 221d249b9c646864fb94334cad02dfa6, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28ae51dd4aa38b74ca243ccf2cfdb1d1, type: 2}
   m_IsPrefabParent: 0
