@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   detectRange: 10
-  thisColour: 0
+  thisColour: 2
   moveSpeed: 2
   maxAttackCD: 1
   damage: 1

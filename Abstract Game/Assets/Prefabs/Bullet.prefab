@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50767526967876468}
   - component: {fileID: 60586350793440742}
   - component: {fileID: 114858449899225572}
-  - component: {fileID: 114634471135738076}
+  - component: {fileID: 95596334941226672}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883421588753732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.966934, y: -5.16, z: 0}
+  m_LocalPosition: {x: -10.483118, y: -0.34702158, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,25 +96,23 @@ PolygonCollider2D:
       - {x: 0.234375, y: -0.0703125}
       - {x: 0.234375, y: 0.0859375}
       - {x: 0.2265625, y: 0.1171875}
---- !u!114 &114634471135738076
-MonoBehaviour:
+--- !u!95 &95596334941226672
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1883421588753732}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa373dfc900af34885d240a4fb5dfc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whiteSprite: {fileID: 21300016, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  blackSprite: {fileID: 21300004, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  redSprite: {fileID: 21300012, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  blueSprite: {fileID: 21300000, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  yellowSprite: {fileID: 21300024, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  orangeSprite: {fileID: 21300014, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  greenSprite: {fileID: 21300002, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
-  purpleSprite: {fileID: 21300026, guid: 34b49146363435a4b9aabe23296dc0f8, type: 3}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4cfbad141001a443821a014b08d88c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114858449899225572
 MonoBehaviour:
   m_ObjectHideFlags: 1

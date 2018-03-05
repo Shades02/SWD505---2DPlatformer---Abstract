@@ -21,13 +21,15 @@ public class Bullet_Script : Timed_Object_Script
 
     public void setColour(colour colourToSet, bool facingRight)
     {
-        currentColour = colourToSet;
-        GetComponent<ColourUpdate_Script>().updateColour(currentColour);
+        Colour_Changer_Script.setColour(gameObject, colourToSet);
 
-        //This is wrong VV
-        if(!facingRight)
+        if (!facingRight)           //bullet sprite is right by default, so if facing left, flip sprite
         {
-            transform.localScale *= -1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
         }
     }
 

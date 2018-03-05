@@ -19,9 +19,8 @@ public class Enemy_Script : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         myRigid = gameObject.GetComponent<Rigidbody2D>();
         myAnim = gameObject.GetComponent<Animator>();
-        //setColourLayer();
 
-        Colour_Changer_Script.setColour(gameObject, thisColour);
+        Colour_Changer_Script.setColour(gameObject, thisColour);        //set colour layer as well
     }
 
     protected void getDirection()       //need to call in update
@@ -71,34 +70,4 @@ public class Enemy_Script : MonoBehaviour
         }
     }
 
-    private void setColourLayer()
-    {
-        switch (thisColour)
-        {
-            case colour.white:
-                gameObject.layer = 20;
-                break;
-            case colour.black:
-                gameObject.layer = 21;
-                break;
-            case colour.red:
-                gameObject.layer = 22;
-                break;
-            case colour.blue:
-                gameObject.layer = 23;
-                break;
-            case colour.yellow:
-                gameObject.layer = 24;
-                break;
-            case colour.green:
-                gameObject.layer = 25;
-                break;
-            case colour.orange:
-                gameObject.layer = 26;
-                break;
-            case colour.purple:
-                gameObject.layer = 27;
-                break;
-        }
-    }
 }
