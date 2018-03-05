@@ -16,6 +16,7 @@ TagManager:
   - Dispenser
   - PaintDrop
   - Tear
+  - BossShape
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shape_Script : Enemy_Script
+public class Shape_Script : Shooting_Enemy_Script
 {
     internal float orbitSpeed;
     internal Vector3 orbitDirection;
