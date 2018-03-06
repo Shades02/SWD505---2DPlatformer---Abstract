@@ -108,6 +108,9 @@ public class Boss_Script : Enemy_Script
                 {
                     meleeAttacking = false;
                     meleeCD = maxMeleeCD;
+
+                    shooting = true;
+                    patrolling = true;
                 }
             }
         }
