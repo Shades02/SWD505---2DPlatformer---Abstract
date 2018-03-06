@@ -95,7 +95,7 @@ public class Colour_Changer_Script : MonoBehaviour
     }
 
 
-    static Vector4 RGBValuesToColorValues(Vector4 values) // helpful website https://www.rapidtables.com/web/color/RGB_Color.html
+    static public Vector4 RGBValuesToColorValues(Vector4 values) // helpful website https://www.rapidtables.com/web/color/RGB_Color.html
     {
         values.x /= 255;
         values.y /= 255;
