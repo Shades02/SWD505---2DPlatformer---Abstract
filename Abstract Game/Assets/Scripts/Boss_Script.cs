@@ -55,18 +55,18 @@ public class Boss_Script : Enemy_Script
                 shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
             }
             patrol();
+            meleeAttack();
         }
     }
 
-    private void patrol()       //Boss moves left and right within boundaries
+    private void patrol()       //Boss moves left & right within boundaries
     {
-        if (transform.position.x >= maxX || transform.position.x <= minX)
+        if (patrolling &&
+            (transform.position.x >= maxX || transform.position.x <= minX))       //If patrolling outside boundaries
         {
-            moveDirection = -moveDirection;
-            patrolling = false;
+            moveDirection = -moveDirection;     //Reverse move direction
+            restartPatrolling();        //Move in other direction
         }
-
-        if (!patrolling) GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
     }
 
     private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards a point
@@ -85,39 +85,45 @@ public class Boss_Script : Enemy_Script
 
     private void meleeAttack()      //Charges at player
     {
-        if (meleeCD <= 0)
+        if (meleeCD <= 0)       //If meleeCD finished counting down
         {
             shooting = false;
-            patrolling = false;
+            patrolling = false;     //Stop patrolling & shooting
 
-            if (!meleeAttacking)
+            if (!meleeAttacking)        //If not currently attacking
             {
-                setShapeDirectiontoPoint(transform.position);
+                setShapeDirectiontoPoint(transform.position);       //Centre shapes
 
-                if (shapesInCentre())
+                if (shapesInCentre())       //When shapes centred...
                 {
                     targetPosition = player.transform.position;
-                    setShapeDirectiontoPoint(targetPosition);
+                    setShapeDirectiontoPoint(targetPosition);       //Charge shapes at player
                     meleeAttacking = true;
                 }
             }
-            else
+            else        //If currently attacking
             {
-                if (shapes[0].transform.position == targetPosition) targetPosition = transform.position;
-                else if (shapesInCentre())
+                if (shapes[0].transform.position == targetPosition) targetPosition = transform.position;        //Recentre shapes when target hit position
+                else if (shapesInCentre())       //When shapes recentred...
                 {
                     meleeAttacking = false;
-                    meleeCD = maxMeleeCD;
+                    meleeCD = maxMeleeCD;       //Reset meleeCD
 
                     shooting = true;
                     patrolling = true;
+                    restartPatrolling();        //Return to patrolling & shooting
                 }
             }
         }
         else
         {
-            meleeCD -= Time.deltaTime;
+            meleeCD -= Time.deltaTime;      //Countdown meleeCD
         }
+    }
+
+    private void restartPatrolling()      //Set velocity
+    {
+        GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
     }
 
     private bool shapesInRadius()       //Returns true if shapes are in radius
