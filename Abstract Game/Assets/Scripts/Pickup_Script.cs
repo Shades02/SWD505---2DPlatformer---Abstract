@@ -10,6 +10,8 @@ public class Pickup_Script : MonoBehaviour
     }
 
     public pickupType thisPickupType;
+    public Sprite healthSprite;
+    public Sprite ammoSprite;
 
     private SpriteRenderer myRenderer;
 
@@ -20,10 +22,10 @@ public class Pickup_Script : MonoBehaviour
         switch (thisPickupType)
         {
             case pickupType.ammo:
-                myRenderer.color = Color.black;         //black = ammo currently
+                myRenderer.sprite = ammoSprite;
                 break;
             case pickupType.health:
-                myRenderer.color = Color.magenta;       //magenta = health currently
+                myRenderer.sprite = healthSprite;
                 break;
         }
     }

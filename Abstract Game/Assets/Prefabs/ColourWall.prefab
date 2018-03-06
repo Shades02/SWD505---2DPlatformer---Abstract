@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212087749676364896}
   - component: {fileID: 61391196292238610}
   - component: {fileID: 114605465876821412}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: ColourWall
   m_TagString: ColourWall
   m_Icon: {fileID: 0}
@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8745bd332de25e748805e9c924e3fa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallColour: 2
+  wallColour: 4
+  vertical: 1
 --- !u!212 &212087749676364896
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -111,7 +112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 304f82d6762c37a4098f225d41c0060e, type: 3}
+  m_Sprite: {fileID: 21300014, guid: f47bfc0c04362ab4ba32e13e7bdae18c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

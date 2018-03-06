@@ -14,6 +14,8 @@ public class Dispenser_Script : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
+
+        Colour_Changer_Script.setColourWithoutLayer(gameObject, colourToDrop);      //sets the colour, but not the layer so it can still be interacted with
     }
 
     public void dispense()

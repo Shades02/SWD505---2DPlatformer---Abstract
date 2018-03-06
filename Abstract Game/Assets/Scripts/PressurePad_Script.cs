@@ -18,6 +18,8 @@ public class PressurePad_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            gameObject.GetComponent<Animation>().Play("PressurePadAnim");
+            linkedDoor.GetComponent<Animation>().Play("DoorAnim");
             Destroy(linkedDoor);
         }
     }
