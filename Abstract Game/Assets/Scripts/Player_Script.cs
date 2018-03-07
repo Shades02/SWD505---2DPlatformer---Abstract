@@ -12,6 +12,7 @@ public class Player_Script : MonoBehaviour
     public int maxHealth;
     public int maxAmmo;
     public float maxShootCD;
+    public float ammoRegenTime;
 
     public GameObject rightShootPoint;
     public GameObject leftShootPoint;
@@ -19,6 +20,7 @@ public class Player_Script : MonoBehaviour
     public GameObject gameOverScreen;
 
     private float currentShootCD;
+    private float currentAmmoRegenTime;
     private int health;
     private int ammo = 0;
     private bool facingRight;
@@ -60,6 +62,15 @@ public class Player_Script : MonoBehaviour
         //counter updates
         //Cooldowns count down until it can be used again
         currentShootCD -= Time.deltaTime;
+        currentAmmoRegenTime -= Time.deltaTime;
+
+        //Ammo Regen
+        if (currentAmmoRegenTime <= 0)
+        {
+            if(ammo < maxAmmo)
+                ammo += 1;
+            currentAmmoRegenTime = ammoRegenTime;
+        }
 
         //shoot - only check if you have ammo to shoot
         //Could use object pool here instead of instantiating?
@@ -85,7 +96,7 @@ public class Player_Script : MonoBehaviour
                 ammo -= 1;          //use 1 ammo per shot
                 currentShootCD = maxShootCD;
 
-                //soundManager.PlaySFX("SplashTest");
+                soundManager.PlaySFX("PlayerShooting");
             }
         }
 	}
@@ -95,6 +106,18 @@ public class Player_Script : MonoBehaviour
         //move left/right
         myRigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRigid.velocity.y);
         myAnim.SetFloat("runSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));        //set velocity for animator to decide if the player is moving
+
+        //check for movement for movement sound
+        if(myRigid.velocity.x != 0)
+        {
+            if(!gameObject.GetComponent<AudioSource>().isPlaying)
+                gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            if (gameObject.GetComponent<AudioSource>().isPlaying)
+                gameObject.GetComponent<AudioSource>().Stop();
+        }
 
         //get direction
         if (myRigid.velocity.x > 0) facingRight = true;
@@ -127,6 +150,7 @@ public class Player_Script : MonoBehaviour
             {
                 myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
                 myRigid.AddForce(new Vector2(0, jumpStrength));
+                soundManager.PlaySFX("PlayerJumping");
             }
         }
     }
@@ -141,6 +165,7 @@ public class Player_Script : MonoBehaviour
                     ammo = maxAmmo;                                 //set to max ammo
                     break;
                 case Pickup_Script.pickupType.health:
+                    soundManager.PlaySFX("PickupHealth");
                     health = maxHealth;                             //set to max health
                     break;
             }

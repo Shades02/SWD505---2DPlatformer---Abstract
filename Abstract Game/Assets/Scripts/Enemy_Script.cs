@@ -13,12 +13,14 @@ public class Enemy_Script : MonoBehaviour
     protected Animator myAnim;
 
     protected GameObject player;
+    protected Sound_Manager_Script soundManager;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         myRigid = gameObject.GetComponent<Rigidbody2D>();
         myAnim = gameObject.GetComponent<Animator>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
 
         Colour_Changer_Script.setColour(gameObject, thisColour);        //set colour layer as well
     }
@@ -34,6 +36,7 @@ public class Enemy_Script : MonoBehaviour
         if(health <= 0)
         {
             myAnim.SetBool("isDead", true);     //when dead, changes animation
+            soundManager.PlaySFX("EnemyDeath");
             Invoke("destroyEnemy", 0.5f);       //delay may need editing to allow for more the animation
         }
     }

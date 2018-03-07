@@ -240,7 +240,7 @@ MonoBehaviour:
   thisColour: 2
   maxShootCD: 0.5
   shootPower: 10
-  projectile: {fileID: 1105461214743096, guid: 5c3c149f7b20106499da724c1ceba8a2, type: 2}
+  projectile: {fileID: 1292323136584426, guid: 5c3c149f7b20106499da724c1ceba8a2, type: 2}
   rightShotPoint: {fileID: 1955957806884052}
   leftShotPoint: {fileID: 1791038994485886}
 --- !u!212 &212079178401555716

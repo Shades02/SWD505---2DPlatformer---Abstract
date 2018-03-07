@@ -8,10 +8,12 @@ public class Bullet_Script : Timed_Object_Script
 
     private colour currentColour;
     private SpriteRenderer myRenderer;
+    private Sound_Manager_Script soundManager;
 
     private void Start()
     {
         myRenderer = GetComponent<SpriteRenderer>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
     }
 
     public void setTag(string tag)
@@ -42,6 +44,7 @@ public class Bullet_Script : Timed_Object_Script
     {
         if (collision.gameObject.CompareTag("Land") || collision.gameObject.CompareTag("ColourWall") || collision.gameObject.CompareTag("Dispenser"))
         {
+            soundManager.PlaySFX("ProjectileImpact");
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
@@ -49,6 +52,7 @@ public class Bullet_Script : Timed_Object_Script
             if(gameObject.CompareTag("PlayerBullet"))       //only hurts the enemies if this is a player bullet
             {
                 collision.gameObject.GetComponent<Enemy_Script>().takeDamage(damage);
+                soundManager.PlaySFX("ProjectileImpact");
                 Destroy(gameObject);
             }
         }
@@ -57,11 +61,13 @@ public class Bullet_Script : Timed_Object_Script
             if(gameObject.CompareTag("EnemyBullet"))        //only hurts the player if this is an enemy bullet
             {
                 collision.gameObject.GetComponent<Player_Script>().takeDamage(damage);
+                soundManager.PlaySFX("ProjectileImpact");
                 Destroy(gameObject);
             }
         }
         else if (collision.gameObject.CompareTag("PlayerBullet") || collision.gameObject.CompareTag("EnemyBullet"))
         {
+            soundManager.PlaySFX("ProjectileImpact");
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

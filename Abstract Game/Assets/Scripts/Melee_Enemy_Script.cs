@@ -56,11 +56,12 @@ public class Melee_Enemy_Script : Enemy_Script
             else if (Mathf.Abs(xDistance) <= chargeRange)
             {
                 //Charge at player
+                soundManager.PlaySFX("EnemyCharge");
                 if (xDistance > 0)       //charge at player to the right
                 {
                     myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
                 }
-                else
+                else                    //charge at player to the left
                 {
                     myRigid.velocity = new Vector2(-moveSpeed * 2, myRigid.velocity.y);
                 }
