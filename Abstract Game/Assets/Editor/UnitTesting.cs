@@ -13,6 +13,7 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         string tag = "Red";
         var testObject = new GameObject();
+        //GameObject go = Instantiate()  ???
         testObject.AddComponent<Bullet_Script>();
 
         //Act

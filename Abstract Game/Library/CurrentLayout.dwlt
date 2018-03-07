@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 43
+    x: -8
+    y: 51
     width: 1920
     height: 1037
   m_ShowMode: 4
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 342}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 11
+  controlID: 115
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 108
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 30
+  controlID: 161
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -311,8 +311,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 438
-    y: 677
+    x: 430
+    y: 685
     width: 1086
     height: 381
   m_IsSceneBased: 0
@@ -382,14 +382,14 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    - id: '[C:/Users/Shades02/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
+    - id: '[C:/Users/3peara60/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
         Game/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
-      fullName: C:/Users/Shades02/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
+      fullName: C:/Users/3peara60/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
         Game/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 2
-      duration: 0.5068905
-      messages: One or more child tests had errors
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -715,13 +715,23 @@ MonoBehaviour:
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: getHealthPlayerTest (0.005s)
+    m_ResultText: 'UnitTesting (0.497s)
+
+      ---
+
+      One or more child tests had errors
+
+      ---
+
+      You are trying to create a MonoBehaviour using the ''new'' keyword.  This is
+      not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
+      your script can inherit from ScriptableObject or no base class at all'
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f59123fa
-      m_LastClickedID: -98332171
-      m_ExpandedIDs: 546f33ae38c151d7dfb2bee4ffffff7f
+      m_SelectedIDs: 546f33ae
+      m_LastClickedID: -1372360876
+      m_ExpandedIDs: 546f33ae38c151d7f92f76d8dfb2bee4ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -886,8 +896,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 92
+    x: -8
+    y: 100
     width: 434
     height: 463
   m_SearchFilter:
@@ -902,20 +912,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Editor
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets
+  - Assets/Editor
   m_LastFoldersGridSize: 53
-  m_LastProjectPath: C:\Users\Shades02\Documents\GitHub\SWD505---2DPlatformer---Abstract\Abstract
+  m_LastProjectPath: C:\Users\3peara60\Documents\GitHub\SWD505---2DPlatformer---Abstract\Abstract
     Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40260000
-    m_LastClickedID: 9792
-    m_ExpandedIDs: 000000004026000046260000d82600007e2c000000ca9a3bffffff7f
+    m_SelectedIDs: 562d0000
+    m_LastClickedID: 11606
+    m_ExpandedIDs: 000000002a2d0000302d0000782d0000bc2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -943,7 +953,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004026000046260000d82600007e2c0000
+    m_ExpandedIDs: 000000002a2d0000302d0000782d0000bc2e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1020,8 +1030,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1528
-    y: 92
+    x: 1520
+    y: 100
     width: 392
     height: 966
   m_ScrollPosition: {x: 0, y: 0}
@@ -1053,15 +1063,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 576
+    x: -8
+    y: 584
     width: 434
     height: 482
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 26280000
     m_LastClickedID: 0
-    m_ExpandedIDs: 6a4cffff1e53ffff3862ffff6087ffffb887ffff6a88ffff508dffff4691ffff4495ffff3499ffff2e9dffff2aa1ffff78a5ffff26adffff2ab4ffff64bcffff9ac2ffff48caffff98d0ffff1afcffff00000000
+    m_ExpandedIDs: 66f4ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1079,7 +1089,8 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
-  m_ExpandedScenes: []
+  m_ExpandedScenes:
+  - Level_0
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -1105,8 +1116,8 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 438
-    y: 92
+    x: 430
+    y: 100
     width: 1086
     height: 564
   m_SceneLighting: 1
