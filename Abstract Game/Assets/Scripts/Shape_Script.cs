@@ -14,9 +14,15 @@ public class Shape_Script : MonoBehaviour
 
     internal float orbitSpeed,
         maxShootCD;
-    internal Vector3 orbitDirection;
+    internal Vector3 orbitDirection,
+        startPos;
 
     private float shootCD;
+
+    private void Start()
+    {
+        startPos = transform.position;
+    }
 
     private void FixedUpdate()
     {
@@ -44,6 +50,11 @@ public class Shape_Script : MonoBehaviour
 
             shootCD = maxShootCD;
         }
+    }
+
+    internal Vector3 getStartPos()
+    {
+        return startPos;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -36,6 +36,7 @@ public class Boss_Script : Enemy_Script
             shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
+        health = p2Health;
     }
 
     private void FixedUpdate()
@@ -47,7 +48,7 @@ public class Boss_Script : Enemy_Script
             if (shooting)
                 for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
 
-            if (health < p2Health)
+            if (health <= p2Health)
             {
                 for (int i = 0; i < shapes.Length; ++i)
                 {
@@ -77,7 +78,7 @@ public class Boss_Script : Enemy_Script
         }
     }
 
-    private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards a point
+    private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards point
     {
         for (int i = 0; i < shapes.Length; ++i)
         {
@@ -119,6 +120,7 @@ public class Boss_Script : Enemy_Script
                     meleeCD = maxMeleeCD;       //Reset meleeCD
 
                     shooting = true;
+                    sendShapestoStartPos();     //Send shapes back to edge
                     restartPatrolling();        //Return to patrolling & shooting
                 }
             }
@@ -133,6 +135,14 @@ public class Boss_Script : Enemy_Script
     {
         patrolling = true;
         GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
+    }
+
+    private void sendShapestoStartPos()     //Set shape velocity to move towards a edge
+    {
+        for (int i = 0; i < shapes.Length; ++i)
+        {
+            shapes[i].GetComponent<Shape_Script>().orbitDirection = shapes[i].GetComponent<Shape_Script>().startPos - shapes[i].transform.position;
+        }
     }
 
     private bool shapesInRadius()       //Returns true if shapes in radius
