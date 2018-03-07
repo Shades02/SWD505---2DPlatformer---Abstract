@@ -20,12 +20,14 @@ public class Boss_Script : Enemy_Script
     private Vector3 targetPosition;
     private bool patrolling = false,
         shooting = false,
-        meleeAttacking = false;
+        meleeAttacking = false,
+        aggrovated = false;
     private int p2Health;
     private float meleeCD;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         moveDirection = new Vector2(-1, 0);
         for (int i = 0; i < shapes.Length; ++i)
         {
@@ -34,38 +36,44 @@ public class Boss_Script : Enemy_Script
             shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
-        for (int i = 0; i < shapes.Length; i++) shapes[i].GetComponent<Shape_Script>().shoot();
     }
 
     private void FixedUpdate()
     {
         orbitShapes();
-        if (shooting)
-            for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
 
-        if (health > p2Health)
+        if (aggrovated)
         {
+            if (shooting)
+                for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
 
-        }
-        else
-        {
-            for (int i = 0; i < shapes.Length; ++i)
+            if (health < p2Health)
             {
-                shapes[i].GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
-                shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
+                for (int i = 0; i < shapes.Length; ++i)
+                {
+                    shapes[i].GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
+                    shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
+                }
+                patrol();
+                meleeAttack();
             }
-            patrol();
-            meleeAttack();
+        }
+        else if (inDetectRange(player))
+        {
+            aggrovated = true;
+            shooting = true;
         }
     }
 
     private void patrol()       //Boss moves left & right within boundaries
     {
-        if (patrolling &&
-            (transform.position.x >= maxX || transform.position.x <= minX))       //If patrolling outside boundaries
+        if (patrolling)
         {
-            moveDirection = -moveDirection;     //Reverse move direction
-            restartPatrolling();        //Move in other direction
+            if (transform.position.x >= maxX || transform.position.x <= minX)       //If patrolling outside boundaries
+            {
+                moveDirection = -moveDirection;     //Reverse move direction
+                restartPatrolling();        //Move in other direction
+            }
         }
     }
 
@@ -103,14 +111,14 @@ public class Boss_Script : Enemy_Script
             }
             else        //If currently attacking
             {
-                if (shapes[0].transform.position == targetPosition) targetPosition = transform.position;        //Recentre shapes when target hit position
+                if (shapes[0].transform.position.x >= targetPosition.x - 0.1 &&
+            shapes[0].transform.position.y >= targetPosition.y - 0.1) targetPosition = transform.position;        //Recentre shapes when target hit position
                 else if (shapesInCentre())       //When shapes recentred...
                 {
                     meleeAttacking = false;
                     meleeCD = maxMeleeCD;       //Reset meleeCD
 
                     shooting = true;
-                    patrolling = true;
                     restartPatrolling();        //Return to patrolling & shooting
                 }
             }
@@ -123,10 +131,11 @@ public class Boss_Script : Enemy_Script
 
     private void restartPatrolling()      //Set velocity
     {
+        patrolling = true;
         GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
     }
 
-    private bool shapesInRadius()       //Returns true if shapes are in radius
+    private bool shapesInRadius()       //Returns true if shapes in radius
     {
         float distX = transform.position.x - shapes[0].transform.position.x,
             distY = transform.position.y - shapes[0].transform.position.y,
@@ -137,6 +146,16 @@ public class Boss_Script : Enemy_Script
 
     private bool shapesInCentre()       //Returns true if shapes are in the centre of boss
     {
-        return (shapes[0].transform.position == transform.position);
+        return (shapes[0].transform.position.x >= transform.position.x - 0.1 &&
+            shapes[0].transform.position.y >= transform.position.y - 0.1);
+    }
+
+    private bool inDetectRange(GameObject target)       //Returns true if target in detectRange
+    {
+        float distX = transform.position.x - target.transform.position.x,
+            distY = transform.position.y - target.transform.position.y,
+            distance = Mathf.Sqrt((distX * distX) + (distY * distY));
+        
+        return (distance <= detectRange);
     }
 }
