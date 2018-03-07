@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallColour: 4
-  vertical: 1
+  vertical: 0
 --- !u!212 &212087749676364896
 SpriteRenderer:
   m_ObjectHideFlags: 1
