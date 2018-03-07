@@ -8,7 +8,7 @@ public class UnitTesting : MonoBehaviour
     //BulletScript Tests
     //Start
     [Test]
-    public void setTagTest()
+    public void setTagBulletTest()
     {
         //Arrange
         string tag = "Red";
@@ -23,15 +23,15 @@ public class UnitTesting : MonoBehaviour
     }
 
     [Test]
-    public void setColourTest()
+    public void setColourBulletTest()
     {
         //Arrange
         var testObject = new GameObject();
         testObject.AddComponent<SpriteRenderer>();
         testObject.AddComponent<Bullet_Script>();
+        colour testColour = colour.red;
 
         //Act
-        colour testColour = colour.red;
         testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
 
         //Assert
@@ -39,15 +39,15 @@ public class UnitTesting : MonoBehaviour
     }
 
     [Test]
-    public void getColourTest()
+    public void getColourBulletTest()
     {
         //Arrange
         var testObject = new GameObject();
         testObject.AddComponent<SpriteRenderer>();
         testObject.AddComponent<Bullet_Script>();
-        
-        //Act
         colour testColour = colour.red;
+
+        //Act
         testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
 
         //Assert
