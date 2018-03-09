@@ -38,7 +38,6 @@ public class Boss_Script : Enemy_Script
             shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
-        health = p2Health;
         startPos = transform.position;
     }
 
