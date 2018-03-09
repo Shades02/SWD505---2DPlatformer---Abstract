@@ -17,7 +17,8 @@ public class Boss_Script : Enemy_Script
     public GameObject[] shapes;
 
     private Vector2 moveDirection;
-    private Vector3 targetPosition;
+    private Vector3 targetPosition,
+        startPos;
     private bool patrolling = false,
         shooting = false,
         meleeAttacking = false,
@@ -37,6 +38,7 @@ public class Boss_Script : Enemy_Script
         }
         p2Health = health / 2;
         health = p2Health;
+        startPos = transform.position;
     }
 
     private void FixedUpdate()
@@ -140,9 +142,11 @@ public class Boss_Script : Enemy_Script
 
     private void sendShapestoStartPos()     //Set shape velocity to move towards a edge
     {
+        Vector3 distanceFromStart = transform.position - startPos;
+
         for (int i = 0; i < shapes.Length; ++i)
         {
-            shapes[i].GetComponent<Shape_Script>().orbitDirection = shapes[i].GetComponent<Shape_Script>().startPos - shapes[i].transform.position;
+            shapes[i].GetComponent<Shape_Script>().orbitDirection = (shapes[i].GetComponent<Shape_Script>().startPos + distanceFromStart) - shapes[i].transform.position;
         }
     }
 
