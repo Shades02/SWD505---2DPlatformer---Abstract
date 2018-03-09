@@ -38,7 +38,7 @@ public class Boss_Script : Enemy_Script
             shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
-        //health = p2Health;
+        health = p2Health;
         startPos = transform.position;
     }
 
@@ -130,7 +130,9 @@ public class Boss_Script : Enemy_Script
             }
             else        //If currently attacking
             {
-                if (shapesatPoint(targetPosition)) targetPosition = transform.position;        //Recentre shapes when target hit position
+                Debug.Log("Target: " + targetPosition);
+                Debug.Log("Current: " + shapes[0].transform.position);
+                if (shapesatPoint(targetPosition)) setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
                 else if (shapesatPoint(transform.position))       //When shapes recentred...
                 {
                     Debug.Log("MELEE END");
