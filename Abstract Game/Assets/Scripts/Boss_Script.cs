@@ -97,7 +97,8 @@ public class Boss_Script : Enemy_Script
         if (meleeCD <= 0)       //If meleeCD finished counting down
         {
             shooting = false;
-            patrolling = false;     //Stop patrolling & shooting
+            patrolling = false;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
 
             if (!meleeAttacking)        //If not currently attacking
             {
