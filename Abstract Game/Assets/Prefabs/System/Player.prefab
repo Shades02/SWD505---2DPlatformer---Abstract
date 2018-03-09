@@ -327,7 +327,8 @@ MonoBehaviour:
   leftShootPoint: {fileID: 1777586372884808}
   bulletPrefab: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06,
     type: 2}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1167609843657948, guid: eaa4ceddc19042d4d899103ef9dca0e4,
+    type: 2}
 --- !u!212 &212887791462447342
 SpriteRenderer:
   m_ObjectHideFlags: 1
