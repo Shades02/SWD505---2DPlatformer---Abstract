@@ -124,14 +124,13 @@ public class Boss_Script : Enemy_Script
                 if (shapesatPoint(transform.position))       //When shapes centred...
                 {
                     targetPosition = player.transform.position;
-                    setShapeDirectiontoPoint(targetPosition);       //Charge shapes at player
+                    setShapeDirectiontoPoint(targetPosition);
+                    pushShapesinDirection();       //Charge shapes at player
                     meleeAttacking = true;
                 }
             }
             else        //If currently attacking
             {
-                Debug.Log("Target: " + targetPosition);
-                Debug.Log("Current: " + shapes[0].transform.position);
                 if (shapesatPoint(targetPosition)) setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
                 else if (shapesatPoint(transform.position))       //When shapes recentred...
                 {
