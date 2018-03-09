@@ -15,6 +15,7 @@ public class Boss_Script : Enemy_Script
         p2ShootCD,
         maxMeleeCD;
     public GameObject[] shapes;
+    public GameObject tear;
 
     private Vector2 moveDirection;
     private Vector3 targetPosition,
@@ -37,7 +38,6 @@ public class Boss_Script : Enemy_Script
             shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
         p2Health = health / 2;
-        health = p2Health;
         startPos = transform.position;
     }
 
@@ -67,6 +67,12 @@ public class Boss_Script : Enemy_Script
         {
             aggrovated = true;
             shooting = true;
+        }
+
+        if (health <= 0)
+        {
+            GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
@@ -117,13 +123,14 @@ public class Boss_Script : Enemy_Script
                 if (shapesatPoint(transform.position))       //When shapes centred...
                 {
                     targetPosition = player.transform.position;
-                    setShapeDirectiontoPoint(targetPosition);       //Charge shapes at player
+                    setShapeDirectiontoPoint(targetPosition);
+                    pushShapesinDirection();       //Charge shapes at player
                     meleeAttacking = true;
                 }
             }
             else        //If currently attacking
             {
-                if (shapesatPoint(targetPosition)) targetPosition = transform.position;        //Recentre shapes when target hit position
+                if (shapesatPoint(targetPosition)) setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
                 else if (shapesatPoint(transform.position))       //When shapes recentred...
                 {
                     Debug.Log("MELEE END");
@@ -169,8 +176,8 @@ public class Boss_Script : Enemy_Script
 
     private bool shapesatPoint(Vector3 point)       //Returns true if shapes are at the point
     {
-        return (shapes[0].transform.position.x >= point.x - 0.1 &&
-            shapes[0].transform.position.y >= point.y - 0.1);
+        return (shapes[0].transform.position.x >= point.x - 0.2 &&
+            shapes[0].transform.position.y >= point.y - 0.2);
     }
 
     private bool inDetectRange(GameObject target)       //Returns true if target in detectRange
