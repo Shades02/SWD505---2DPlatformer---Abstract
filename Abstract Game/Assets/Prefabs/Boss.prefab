@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561813965388538}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4110166087662688}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4549454257994028}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 212625439249826910}
   - component: {fileID: 114103416802714248}
   - component: {fileID: 60358793410632178}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Shape (5)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 212421009428879608}
   - component: {fileID: 114970551074276562}
   - component: {fileID: 58599878425002226}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Shape (6)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4855929944532694}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4710954289097566}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 212955145402781394}
   - component: {fileID: 114168215672370334}
   - component: {fileID: 60301132025537424}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: Shape (1)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 212911443939518548}
   - component: {fileID: 114813990862340482}
   - component: {fileID: 61860907692325252}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Shape (2)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4734827329923154}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4756188100695372}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4112302856877290}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 212143075009265020}
   - component: {fileID: 114251016732377310}
   - component: {fileID: 60964648254538376}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Shape (4)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 212193001676845580}
   - component: {fileID: 114907120141209134}
   - component: {fileID: 61328080576663872}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Shape (7)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 212458478214757736}
   - component: {fileID: 60705358775864036}
   - component: {fileID: 114752551527125956}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Shape
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4715815077908620}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4956333637360096}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4222711346412484}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 212473728073651406}
   - component: {fileID: 114857587309608730}
   - component: {fileID: 60774367668529550}
-  m_Layer: 0
+  m_Layer: 26
   m_Name: Shape (3)
   m_TagString: BossShape
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4468726565458872}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4540673992473424}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4729226789172416}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4539310871425358}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4940622158849772}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628388798412418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.46, y: 3.49, z: 0}
+  m_LocalPosition: {x: -25.46, y: 1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4538320378245460}
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  detectRange: 4
+  detectRange: 8
   thisColour: 0
   moveSpeed: 7.5
   minX: -40
@@ -1148,8 +1148,8 @@ MonoBehaviour:
   radius: 2
   p1OrbitSpeed: 3
   p2OrbitSpeed: 4
-  p1ShootCD: 0.75
-  p2ShootCD: 0.5
+  p1ShootCD: 1
+  p2ShootCD: 0.75
   maxMeleeCD: 3
   shapes:
   - {fileID: 1569164935271616}
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   - {fileID: 1194319007652682}
   - {fileID: 1218329300516962}
   - {fileID: 1552414168126330}
+  tear: {fileID: 1796778405270562, guid: f3f00c0685b2b814b9ef940e300823da, type: 2}
 --- !u!114 &114970551074276562
 MonoBehaviour:
   m_ObjectHideFlags: 1
