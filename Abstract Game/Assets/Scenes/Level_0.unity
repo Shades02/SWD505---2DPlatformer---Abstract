@@ -1089,6 +1089,12 @@ Prefab:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 114964022306056700, guid: c9bfab47759f2a6458866b34c5943e97,
+        type: 2}
+      propertyPath: tear
+      value: 
+      objectReference: {fileID: 1796778405270562, guid: f3f00c0685b2b814b9ef940e300823da,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
   m_IsPrefabParent: 0
