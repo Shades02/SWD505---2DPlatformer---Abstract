@@ -43,7 +43,9 @@ public class Boss_Script : Enemy_Script
 
     private void FixedUpdate()
     {
-        orbitShapes();
+        if (meleeAttacking &&
+            meleeCD <= 0) pushShapesinDirection();
+        else orbitShapes();
 
         if (aggrovated)
         {
@@ -91,6 +93,11 @@ public class Boss_Script : Enemy_Script
     private void orbitShapes()      //Shapes orbit centre of boss
     {
         if (!shapesInRadius()) setShapeDirectiontoPoint(transform.position);
+        pushShapesinDirection();
+    }
+
+    private void pushShapesinDirection()        //Set shape velocity to move direction
+    {
         for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
     }
 
@@ -104,9 +111,10 @@ public class Boss_Script : Enemy_Script
 
             if (!meleeAttacking)        //If not currently attacking
             {
+                Debug.Log("MELEE START");
                 setShapeDirectiontoPoint(transform.position);       //Centre shapes
 
-                if (shapesInCentre())       //When shapes centred...
+                if (shapesatPoint(transform.position))       //When shapes centred...
                 {
                     targetPosition = player.transform.position;
                     setShapeDirectiontoPoint(targetPosition);       //Charge shapes at player
@@ -115,10 +123,10 @@ public class Boss_Script : Enemy_Script
             }
             else        //If currently attacking
             {
-                if (shapes[0].transform.position.x >= targetPosition.x - 0.1 &&
-            shapes[0].transform.position.y >= targetPosition.y - 0.1) targetPosition = transform.position;        //Recentre shapes when target hit position
-                else if (shapesInCentre())       //When shapes recentred...
+                if (shapesatPoint(targetPosition)) targetPosition = transform.position;        //Recentre shapes when target hit position
+                else if (shapesatPoint(transform.position))       //When shapes recentred...
                 {
+                    Debug.Log("MELEE END");
                     meleeAttacking = false;
                     meleeCD = maxMeleeCD;       //Reset meleeCD
 
@@ -159,10 +167,10 @@ public class Boss_Script : Enemy_Script
         return (distance <= radius);
     }
 
-    private bool shapesInCentre()       //Returns true if shapes are in the centre of boss
+    private bool shapesatPoint(Vector3 point)       //Returns true if shapes are at the point
     {
-        return (shapes[0].transform.position.x >= transform.position.x - 0.1 &&
-            shapes[0].transform.position.y >= transform.position.y - 0.1);
+        return (shapes[0].transform.position.x >= point.x - 0.1 &&
+            shapes[0].transform.position.y >= point.y - 0.1);
     }
 
     private bool inDetectRange(GameObject target)       //Returns true if target in detectRange
