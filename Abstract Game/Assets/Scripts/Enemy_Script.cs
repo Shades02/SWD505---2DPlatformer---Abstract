@@ -48,6 +48,7 @@ public class Enemy_Script : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        soundManager.PlaySFX("EnemyHit");
         health -= damage;
     }
 
@@ -60,7 +61,7 @@ public class Enemy_Script : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Mine"))
         {
-            health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
+            takeDamage(collision.gameObject.GetComponent<Mine_Script>().getDamage());
             Destroy(collision.gameObject);
         }
     }
@@ -69,7 +70,7 @@ public class Enemy_Script : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike"))
         {
-            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
         }
     }
 

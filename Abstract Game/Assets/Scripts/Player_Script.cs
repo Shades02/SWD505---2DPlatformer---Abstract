@@ -56,6 +56,7 @@ public class Player_Script : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             myAnim.SetBool("isDead", true);
+            soundManager.PlaySFX("PlayerDeath");    
             Invoke("killPlayer", 0.5f);             //calls the function to kill the player after a delay
         }
 
@@ -162,6 +163,7 @@ public class Player_Script : MonoBehaviour
             switch (collision.GetComponent<Pickup_Script>().thisPickupType)
             {
                 case Pickup_Script.pickupType.ammo:
+                    soundManager.PlaySFX("AmmoPickup");
                     ammo = maxAmmo;                                 //set to max ammo
                     break;
                 case Pickup_Script.pickupType.health:
@@ -174,7 +176,7 @@ public class Player_Script : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Mine"))
         {
-            health -= collision.gameObject.GetComponent<Mine_Script>().getDamage();
+            takeDamage(collision.gameObject.GetComponent<Mine_Script>().getDamage());
             Destroy(collision.gameObject);
         }
         else if(collision.gameObject.CompareTag("Water"))
@@ -252,6 +254,7 @@ public class Player_Script : MonoBehaviour
             }
 
             Destroy(collision.gameObject);
+            soundManager.PlaySFX("PickupColour");
             Colour_Changer_Script.setColour(gameObject, currentColour);     //updates the colour and colour layer
         }
         else if(collision.gameObject.CompareTag("Tear"))
@@ -265,13 +268,14 @@ public class Player_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Spike"))
         {
-            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
         }
     }
 
     public void takeDamage(int damage)
     {
         health -= damage;
+        soundManager.PlaySFX("PlayerHit");
     }
 
     internal int getHealth()

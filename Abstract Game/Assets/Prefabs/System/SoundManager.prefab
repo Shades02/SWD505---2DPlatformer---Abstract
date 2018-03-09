@@ -73,24 +73,30 @@ MonoBehaviour:
   - BossDeath
   - CanvasTear
   - PlayerDeath
+  - AmmoPickup
+  - PlayerHit
+  - EnemyHit
   SFXs:
+  - {fileID: 8300000, guid: ecd11373b9575ec4e9d69aa9d3a0871c, type: 3}
+  - {fileID: 8300000, guid: a1b0da9e71cb0d144aaea1166496bc98, type: 3}
+  - {fileID: 8300000, guid: 37c31d247207f4c49bab408b290b070c, type: 3}
+  - {fileID: 8300000, guid: 2c71c99dd7206934c93a0e1f082a7e38, type: 3}
+  - {fileID: 8300000, guid: e52098607d9a35d4c87d279bfbb2746a, type: 3}
+  - {fileID: 8300000, guid: fd5a80f9c53293946925c073c967f5f0, type: 3}
+  - {fileID: 8300000, guid: 8595dcc621b8121498961ad7ac41ea60, type: 3}
+  - {fileID: 8300000, guid: 43d7e94e14f67f745833a4a4f2d9d00f, type: 3}
+  - {fileID: 8300000, guid: 2c71c99dd7206934c93a0e1f082a7e38, type: 3}
+  - {fileID: 8300000, guid: eeec1f9d663a6a64e89536ad0fce0d91, type: 3}
+  - {fileID: 8300000, guid: 221d249b9c646864fb94334cad02dfa6, type: 3}
+  - {fileID: 8300000, guid: 115c559375a6e8346b9ba4e6f9479024, type: 3}
+  - {fileID: 8300000, guid: d3d9b93a7ceb98d4ba246e008b833420, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 4a29c47882cc10a428547e20ec9677ab, type: 3}
+  - {fileID: 8300000, guid: a69e540387dc0d744bd91715fdc0d915, type: 3}
+  - {fileID: 8300000, guid: 2f60b4da290d45843868f0f1121834d8, type: 3}
+  - {fileID: 8300000, guid: 15f314ff323e4934caf7f3a33e4f39f8, type: 3}
+  - {fileID: 8300000, guid: e2e4b6ac5cacecf47a989d6065ea2aa6, type: 3}

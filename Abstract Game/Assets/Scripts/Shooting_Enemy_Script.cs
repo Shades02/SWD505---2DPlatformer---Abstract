@@ -61,6 +61,7 @@ public class Shooting_Enemy_Script : Enemy_Script
                     }
 
                     curShootCD = maxShootCD;
+                    soundManager.PlaySFX("EnemyShooting");
                 }
             }
         }
