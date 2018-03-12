@@ -14,7 +14,7 @@ public class Boss_Script : Enemy_Script
         p1ShootCD,
         p2ShootCD,
         maxMeleeCD;
-    public GameObject[] shapes;
+    public List<GameObject> shapes;
     public GameObject tear;
 
     private Vector2 moveDirection;
@@ -31,12 +31,13 @@ public class Boss_Script : Enemy_Script
     {
         player = GameObject.FindGameObjectWithTag("Player");
         moveDirection = new Vector2(-1, 0);
-        for (int i = 0; i < shapes.Length; ++i)
+        foreach (GameObject x in shapes)
         {
-            health += shapes[i].GetComponent<Shape_Script>().health;
-            shapes[i].GetComponent<Shape_Script>().orbitSpeed = p1OrbitSpeed;
-            shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
+            health += x.GetComponent<Shape_Script>().health;
+            x.GetComponent<Shape_Script>().orbitSpeed = p1OrbitSpeed;
+            x.GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
+
         p2Health = health / 2;
         startPos = transform.position;
     }
@@ -50,14 +51,14 @@ public class Boss_Script : Enemy_Script
         if (aggrovated)
         {
             if (shooting)
-                for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
+                foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
 
             if (health <= p2Health)
             {
-                for (int i = 0; i < shapes.Length; ++i)
+                foreach (GameObject x in shapes)
                 {
-                    shapes[i].GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
-                    shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
+                    x.GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
+                    x.GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
                 }
                 patrol();
                 meleeAttack();
@@ -69,6 +70,7 @@ public class Boss_Script : Enemy_Script
             shooting = true;
         }
 
+        shapeDeathCheck();
         if (health <= 0)
         {
             GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);
@@ -90,10 +92,7 @@ public class Boss_Script : Enemy_Script
 
     private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards point
     {
-        for (int i = 0; i < shapes.Length; ++i)
-        {
-            shapes[i].GetComponent<Shape_Script>().orbitDirection = point - shapes[i].transform.position;
-        }
+        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().orbitDirection = point - x.transform.position;
     }
 
     private void orbitShapes()      //Shapes orbit centre of boss
@@ -104,7 +103,7 @@ public class Boss_Script : Enemy_Script
 
     private void pushShapesinDirection()        //Set shape velocity to move direction
     {
-        for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
+        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().moveShape();
     }
 
     private void meleeAttack()      //Charges at player
@@ -159,9 +158,17 @@ public class Boss_Script : Enemy_Script
     {
         Vector3 distanceFromStart = transform.position - startPos;
 
-        for (int i = 0; i < shapes.Length; ++i)
+        foreach (GameObject x in shapes)
         {
-            shapes[i].GetComponent<Shape_Script>().orbitDirection = (shapes[i].GetComponent<Shape_Script>().startPos + distanceFromStart) - shapes[i].transform.position;
+            x.GetComponent<Shape_Script>().orbitDirection = (x.GetComponent<Shape_Script>().startPos + distanceFromStart) - x.transform.position;
+        }
+    }
+
+    internal void shapeDeathCheck()        //Reorganises shapes array if one dies
+    {
+        foreach (GameObject x in shapes)
+        {
+            if (x.GetComponent<Shape_Script>().health <= 0) x.SetActive(false);
         }
     }
 

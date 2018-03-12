@@ -2805,7 +2805,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4120109927397044, guid: 0ad158fd902a9d143890b9ca95cb3caa, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114672893325259554, guid: 0ad158fd902a9d143890b9ca95cb3caa,
         type: 2}
@@ -4710,7 +4710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4627392437674016, guid: 4bdec867417836641a26643ada08e6a6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114949148747443526, guid: 4bdec867417836641a26643ada08e6a6,
         type: 2}
@@ -6896,11 +6896,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4363763849148240, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.255547
+      value: 33.89
       objectReference: {fileID: 0}
     - target: {fileID: 4363763849148240, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.175383
+      value: -16.71
       objectReference: {fileID: 0}
     - target: {fileID: 4363763849148240, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6926,6 +6926,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114857587309608730, guid: c9bfab47759f2a6458866b34c5943e97,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1292323136584426, guid: 5c3c149f7b20106499da724c1ceba8a2,
+        type: 2}
+    - target: {fileID: 114168215672370334, guid: c9bfab47759f2a6458866b34c5943e97,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1292323136584426, guid: 5c3c149f7b20106499da724c1ceba8a2,
+        type: 2}
+    - target: {fileID: 114907120141209134, guid: c9bfab47759f2a6458866b34c5943e97,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1292323136584426, guid: 5c3c149f7b20106499da724c1ceba8a2,
+        type: 2}
+    - target: {fileID: 114103416802714248, guid: c9bfab47759f2a6458866b34c5943e97,
+        type: 2}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1292323136584426, guid: 5c3c149f7b20106499da724c1ceba8a2,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
   m_IsPrefabParent: 0
@@ -27191,7 +27215,7 @@ Transform:
   - {fileID: 870910867}
   - {fileID: 1301087714}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2007513640
 Prefab:
