@@ -13,6 +13,7 @@ public class Player_Script : MonoBehaviour
     public int maxAmmo;
     public float maxShootCD;
     public float ammoRegenTime;
+    public float maxInvDuration;            //max invincible time
 
     public GameObject rightShootPoint;
     public GameObject leftShootPoint;
@@ -21,6 +22,7 @@ public class Player_Script : MonoBehaviour
 
     private float currentShootCD;
     private float currentAmmoRegenTime;
+    private float currentInvTime;           //counts how long you've been invincible
     private int health;
     private int ammo = 0;
     private bool facingRight;
@@ -37,11 +39,10 @@ public class Player_Script : MonoBehaviour
         myRigid = GetComponent<Rigidbody2D>();
         myRenderer = GetComponent<SpriteRenderer>();
         myAnim = GetComponent<Animator>();
-        //currentColour = colour.white;
-        //setColourLayer();
         Colour_Changer_Script.setColour(gameObject, currentColour);     //set colour and colour layer
         health = maxHealth;
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
+        currentInvTime = maxInvDuration;    //so that you dont start the level invincible
 
         //Temporary
         ammo = maxAmmo;
@@ -64,6 +65,14 @@ public class Player_Script : MonoBehaviour
         //Cooldowns count down until it can be used again
         currentShootCD -= Time.deltaTime;
         currentAmmoRegenTime -= Time.deltaTime;
+        currentInvTime += Time.deltaTime;           //counts up asit counts how long youve been invincible
+
+        //Invincibility display
+        if (currentInvTime <= maxInvDuration)        //if you are within the invincibility time
+        {
+            myRenderer.enabled = !myRenderer.enabled;
+        }
+        else myRenderer.enabled = true;
 
         //Ammo Regen
         if (currentAmmoRegenTime <= 0)
@@ -274,8 +283,12 @@ public class Player_Script : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        health -= damage;
-        soundManager.PlaySFX("PlayerHit");
+        if(currentInvTime > maxInvDuration)         //the damage only applies if you are out of invincibility frames
+        {
+            health -= damage;
+            soundManager.PlaySFX("PlayerHit");
+            currentInvTime = 0;     //sets to 0 to start counting invincibility
+        }
     }
 
     internal int getHealth()

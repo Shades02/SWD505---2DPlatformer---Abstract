@@ -323,6 +323,7 @@ MonoBehaviour:
   maxAmmo: 20
   maxShootCD: 0.2
   ammoRegenTime: 1
+  maxInvDuration: 1.5
   rightShootPoint: {fileID: 1497621790430704}
   leftShootPoint: {fileID: 1777586372884808}
   bulletPrefab: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06,

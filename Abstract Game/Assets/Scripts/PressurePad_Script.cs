@@ -5,9 +5,10 @@ using UnityEngine;
 public class PressurePad_Script : MonoBehaviour
 {
     public int id;
+    public Sprite pressedPlate;
 
     private GameObject linkedDoor;
-
+    
 	void Start ()
     {
         string doorName = "Door" + id.ToString();
@@ -18,8 +19,7 @@ public class PressurePad_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponent<Animation>().Play("PressurePadAnim");
-            linkedDoor.GetComponent<Animation>().Play("DoorAnim");
+            GetComponent<SpriteRenderer>().sprite = pressedPlate;
             Destroy(linkedDoor);
         }
     }

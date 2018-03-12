@@ -239,7 +239,7 @@ Prefab:
     - target: {fileID: 114525963552587802, guid: 7facdc3cfc59a944d932992693fc93ea,
         type: 2}
       propertyPath: thisColour
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7facdc3cfc59a944d932992693fc93ea, type: 2}
@@ -764,6 +764,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1628388798412418, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bfab47759f2a6458866b34c5943e97, type: 2}
   m_IsPrefabParent: 0
@@ -847,6 +851,16 @@ Prefab:
     - target: {fileID: 4961954877260936, guid: b6b04d734411e89439bab1766b9a6406, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613604765179516, guid: b6b04d734411e89439bab1766b9a6406,
+        type: 2}
+      propertyPath: thisColour
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613604765179516, guid: b6b04d734411e89439bab1766b9a6406,
+        type: 2}
+      propertyPath: maxChargeSoundTimer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6b04d734411e89439bab1766b9a6406, type: 2}
@@ -991,6 +1005,11 @@ Prefab:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1321242009}
+    - target: {fileID: 114672893325259554, guid: 0ad158fd902a9d143890b9ca95cb3caa,
+        type: 2}
+      propertyPath: maxInvDuration
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ad158fd902a9d143890b9ca95cb3caa, type: 2}
   m_IsPrefabParent: 0

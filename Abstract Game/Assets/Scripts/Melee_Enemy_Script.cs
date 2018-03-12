@@ -9,15 +9,18 @@ public class Melee_Enemy_Script : Enemy_Script
     public int damage;
     public float maxRetreatDuration;
     public int chargeRange;
+    public float maxChargeSoundTimer;
 
     private float currentAttackCD = 0;
     private float currentRetreatTime = 999;     //high so that it starts the enemy not retreating
+    private float currentChargeSoundTimer;
 	
 	void Update ()
     {
         deathCheck();
         currentAttackCD -= Time.deltaTime;
         currentRetreatTime += Time.deltaTime;
+        currentChargeSoundTimer -= Time.deltaTime;
 
         myAnim.SetFloat("runSpeed", Mathf.Abs(myRigid.velocity.x));        //check to see if moving
 
@@ -56,7 +59,13 @@ public class Melee_Enemy_Script : Enemy_Script
             else if (Mathf.Abs(xDistance) <= chargeRange)
             {
                 //Charge at player
-                soundManager.PlaySFX("EnemyCharge");
+                
+                if(currentChargeSoundTimer <= 0)        //play charge sound
+                {
+                    soundManager.PlaySFX("EnemyCharge");
+                    currentChargeSoundTimer = maxChargeSoundTimer;      //now it counts down until it can be played again
+                }
+
                 if (xDistance > 0)       //charge at player to the right
                 {
                     myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);

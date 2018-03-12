@@ -217,7 +217,7 @@ MonoBehaviour:
   health: 4
   detectRange: 10
   thisColour: 2
-  maxShootCD: 0.2
+  maxShootCD: 0.5
   shootPower: 15
   projectile: {fileID: 1883421588753732, guid: 2a8bbf7888264c247aa8f72e8e11da06, type: 2}
   rightShotPoint: {fileID: 1697516165953064}

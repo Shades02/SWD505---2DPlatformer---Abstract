@@ -181,10 +181,11 @@ MonoBehaviour:
   detectRange: 10
   thisColour: 2
   moveSpeed: 2
-  maxAttackCD: 1
+  maxAttackCD: 1.5
   damage: 1
   maxRetreatDuration: 1
   chargeRange: 3
+  maxChargeSoundTimer: 1.5
 --- !u!212 &212568129374827984
 SpriteRenderer:
   m_ObjectHideFlags: 1
