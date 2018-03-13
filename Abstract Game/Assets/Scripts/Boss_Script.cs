@@ -16,6 +16,9 @@ public class Boss_Script : Enemy_Script
         maxMeleeCD;
     public List<GameObject> shapes;
     public GameObject tear;
+    public AudioSource aggroRoar,
+        surprised,
+        deathRoar;
 
     private Vector2 moveDirection;
     private Vector3 targetPosition,
