@@ -62,7 +62,7 @@ public class Shape_Script : MonoBehaviour
         if (collision.CompareTag("PlayerBullet") &&
             collision.GetComponent<Bullet_Script>().getColour() == thisColour)
         {
-            Destroy(collision);
+            Destroy(collision.gameObject);
             --health;
             --Boss.GetComponent<Boss_Script>().health;
         }

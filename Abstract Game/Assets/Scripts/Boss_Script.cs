@@ -48,40 +48,40 @@ public class Boss_Script : Enemy_Script
     private void FixedUpdate()
     {
         if (meleeAttacking &&
-            meleeCD <= 0) pushShapesinDirection();
-        else orbitShapes();
+            meleeCD <= 0) pushShapesinDirection();      //Push shapes out of radius if melee attacking
+        else orbitShapes();     //Orbit shapes within radius if not melee attacking
 
-        if (aggrovated)
+        if (aggrovated)     //If already aggrovated
         {
-            if (shooting)
-                foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
+            //if (shooting)
+            //    foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
 
-            if (health <= p2Health)
+            if (health <= p2Health)     //If health drops below phase 2 boundaries
             {
-                foreach (GameObject x in shapes)
+                foreach (GameObject x in shapes)        //Change orbit and shoot speed
                 {
                     x.GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
                     x.GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
                 }
-                patrol();
-                meleeAttack();
+                patrol();       //Boss patrols
+                meleeAttack();      //Performs melee attack
             }
         }
-        else if (inDetectRange(player))
+        else if (inDetectRange(player))     //If boss sees player when unaggrovated
         {
             aggrovated = true;
-            shooting = true;
+            shooting = true;        //Get aggrovated and start shooting
 
-            aggroRoar.Play();
+            aggroRoar.Play();       //Play aggrovated roar
         }
 
         shapeDeathCheck();
-        if (health <= 0)
+        if (health <= 0)        //If boss dies
         {
-            GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);
+            GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);        //Creates tear
 
-            deathRoar.Play();
-            Destroy(gameObject, 2.26f);
+            deathRoar.Play();       //Plays death roar
+            Destroy(gameObject, 2.26f);     //Destroy game object
         }
     }
 
@@ -175,7 +175,8 @@ public class Boss_Script : Enemy_Script
     {
         foreach (GameObject x in shapes)
         {
-            if (x.GetComponent<Shape_Script>().health <= 0)
+            if (x.activeSelf &&
+                x.GetComponent<Shape_Script>().health <= 0)
             {
                 x.SetActive(false);
                 surprised.Play();
