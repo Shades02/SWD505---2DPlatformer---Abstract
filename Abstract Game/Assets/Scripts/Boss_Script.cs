@@ -71,13 +71,17 @@ public class Boss_Script : Enemy_Script
         {
             aggrovated = true;
             shooting = true;
+
+            aggroRoar.Play();
         }
 
         shapeDeathCheck();
         if (health <= 0)
         {
             GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+
+            deathRoar.Play();
+            Destroy(gameObject, 2.26f);
         }
     }
 
@@ -171,7 +175,11 @@ public class Boss_Script : Enemy_Script
     {
         foreach (GameObject x in shapes)
         {
-            if (x.GetComponent<Shape_Script>().health <= 0) x.SetActive(false);
+            if (x.GetComponent<Shape_Script>().health <= 0)
+            {
+                x.SetActive(false);
+                surprised.Play();
+            }
         }
     }
 
