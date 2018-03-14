@@ -345,38 +345,45 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testPlayer = new GameObject().AddComponent<Player_Script>();
         int testAmmo = 20;
+        testPlayer.maxAmmo = testAmmo;
 
         yield return null;
 
         //Act
 
         //Assert
+        Assert.AreEqual(testAmmo, testPlayer.getAmmo());
     }
 
     [UnityTest]
     public IEnumerator getColourPlayerTest()
     {
         //Arrange
-
+        var testPlayer = new GameObject().AddComponent<Player_Script>();
+        colour testColour = colour.red;
+        
 
         yield return null;
 
         //Act
 
         //Assert
+        Assert.AreEqual(testColour, testPlayer.getColour());
     }
 
     [UnityTest]
     public IEnumerator getDirectionPlayerTest()
     {
         //Arrange
-
+        var testPlayer = new GameObject().AddComponent<Player_Script>();
+        bool testDirection = true;      //true = facing right, false = facing left
 
         yield return null;
 
         //Act
 
         //Assert
+        Assert.AreEqual(testDirection, testPlayer.returnDirection());
     }
     //End
 
