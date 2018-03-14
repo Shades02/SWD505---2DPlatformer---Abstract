@@ -18,7 +18,7 @@ public class Player_Script : MonoBehaviour
     public GameObject rightShootPoint;
     public GameObject leftShootPoint;
     public GameObject bulletPrefab;
-    public GameObject gameOverScreen;
+    private GameObject gameOverScreen;
 
     private float currentShootCD;
     private float currentAmmoRegenTime;
@@ -43,6 +43,7 @@ public class Player_Script : MonoBehaviour
         Colour_Changer_Script.setColour(gameObject, currentColour);     //set colour and colour layer
         health = maxHealth;
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
+        gameOverScreen = GameObject.Find("Canvas").transform.GetChild(3).gameObject;                //Since GameOver is always at index 3 of the canvas prefab
         currentInvTime = maxInvDuration;    //so that you dont start the level invincible
 
         //Temporary

@@ -6,7 +6,7 @@ walking sound		Done
 music			Done
 tweaked UI		Done
 gamepad
-add game over screen in private code to player
+add game over screen in private code to player		Done
 Landing sound
 chnage jump to work when holding key - get key instead of get key down
 
