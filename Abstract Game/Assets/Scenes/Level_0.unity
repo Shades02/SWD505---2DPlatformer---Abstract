@@ -4005,7 +4005,7 @@ Prefab:
     - target: {fileID: 114605465876821412, guid: c6c9c2c8bd44ac146a425d7b0b2b5cd7,
         type: 2}
       propertyPath: wallColour
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6c9c2c8bd44ac146a425d7b0b2b5cd7, type: 2}

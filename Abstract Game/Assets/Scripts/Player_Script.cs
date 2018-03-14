@@ -35,6 +35,9 @@ public class Player_Script : MonoBehaviour
     private Animator myAnim;
     private Sound_Manager_Script soundManager;
 
+    private GameObject objectLastFrame = null;       //the gameobject that the player was "on top of" in the last frame
+    private GameObject objectThisFrame;             //the gameobject that the layer is "on top of" this frame
+
     void Start ()
     {
         myRigid = GetComponent<Rigidbody2D>();
@@ -123,8 +126,8 @@ public class Player_Script : MonoBehaviour
         myRigid.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRigid.velocity.y);
         myAnim.SetFloat("runSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));        //set velocity for animator to decide if the player is moving
 
-        //check for movement for movement sound
-        if(myRigid.velocity.x != 0 && myRigid.velocity.y == 0)
+        //check for movement for walking sound
+        if(myRigid.velocity.x != 0 && myRigid.velocity.y == 0)          //only plays when there is lateral movement but not when moving vertically (i.e in the air)
         {
             if(!gameObject.GetComponent<AudioSource>().isPlaying)
                 gameObject.GetComponent<AudioSource>().Play();
@@ -149,14 +152,36 @@ public class Player_Script : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
         }
 
-
+        //Prep jump linecasts
         float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;        
         Vector3 linecastStart = new Vector3(transform.position.x, transform.position.y - spriteHeight / 2 - 0.1f, transform.position.z);
         Debug.DrawLine(linecastStart + new Vector3(0.2f, 0,0), linecastStart + new Vector3(0.2f, -0.1f, 0));        //Remove this!!!
         Debug.DrawLine(linecastStart + new Vector3(-0.2f, 0, 0), linecastStart + new Vector3(-0.2f, -0.1f, 0));        //Remove this!!!
 
+        //Landing sound test
+        var hit = Physics2D.Linecast(linecastStart, linecastStart + new Vector3(0, -0.1f, 0));      //check what is below the player
+        if(hit)     //if the player is standing on something
+        {
+            objectThisFrame = hit.collider.gameObject;      //collect what the player is standing on
+
+            if(1 << objectThisFrame.layer == 1 << LayerMask.NameToLayer("Land") ||
+                1 << objectThisFrame.layer == 1 << LayerMask.NameToLayer(currentColour.ToString()))      //if they are on "land" or a matching colour object
+            {
+                if(objectLastFrame == null)     //if the player hit something this frame, and was in air last frame, thats a landing
+                {
+                    soundManager.PlaySFX("PlayerLanding");
+                }
+            }
+
+            objectLastFrame = objectThisFrame;      //before the test ends, set the last frame object to this ready for the next frame
+        }
+        else
+        {
+            objectLastFrame = null;     //if there is no hit, the player is in air, so set last frame to null, ready for the next frame
+        }
+    
         //jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             if (Physics2D.Linecast(linecastStart + new Vector3(0.2f, 0, 0),                           //off set the linecast down to avoid it finding itself
                 linecastStart + new Vector3(0.2f, -0.1f, 0),                                          //distance down slightly more than half the height of the sprite
