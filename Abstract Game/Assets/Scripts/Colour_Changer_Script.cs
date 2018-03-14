@@ -110,7 +110,7 @@ public class Colour_Changer_Script : MonoBehaviour
                 main.startColor = new Color(205, 11, 11, 1);     //Red ;
                 break;
             case colour.blue:
-                main.startColor = new Color(15/256, 40/256, 229/256, 1);     //Blue;
+                main.startColor = convertColourToGradient(15, 40, 229, 255);     //Blue;
                 //main.startColor = Color.blue;
                 break;
             case colour.yellow:
@@ -128,7 +128,6 @@ public class Colour_Changer_Script : MonoBehaviour
         }
     }
 
-
     static Vector4 RGBValuesToColorValues(Vector4 values) // helpful website https://www.rapidtables.com/web/color/RGB_Color.html
     {
         values.x /= 255;
@@ -138,4 +137,15 @@ public class Colour_Changer_Script : MonoBehaviour
 
         return values;
     }
+
+    static Color convertColourToGradient(int r, int g, int b, int a)
+    {
+        float rg = r / 255;
+        float gg = g / 255;
+        float bg = b / 255;
+        float ag = a / 255;
+
+        return new Color(rg, gg, bg, ag);
+    }
+    
 }
