@@ -40,13 +40,14 @@ MonoBehaviour:
     y: 585
     width: 1090
     height: 402
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 21}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 22}
   m_Panes:
-  - {fileID: 21}
+  - {fileID: 22}
+  - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -70,7 +71,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 102
+  controlID: 104
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,14 +87,14 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 483
+    y: 444
     width: 436
-    height: 504
+    height: 543
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 19}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 70
+  controlID: 72
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,13 +138,13 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 436
-    height: 483
+    height: 444
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 17}
-  - {fileID: 22}
+  - {fileID: 18}
+  - {fileID: 23}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &7
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 101
+  controlID: 103
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,11 +192,11 @@ MonoBehaviour:
     height: 987
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_ActualView: {fileID: 19}
   m_Panes:
-  - {fileID: 18}
-  - {fileID: 15}
-  - {fileID: 13}
+  - {fileID: 19}
+  - {fileID: 16}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &9
@@ -280,16 +281,453 @@ MonoBehaviour:
     y: 0
     width: 1090
     height: 585
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 20}
-  - {fileID: 16}
-  - {fileID: 14}
+  - {fileID: 21}
+  - {fileID: 17}
+  - {fileID: 15}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 2
 --- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AutoRepaintOnSceneChange: 0
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_DepthBufferBits: 0
+  m_Pos:
+    serializedVersion: 2
+    x: 438
+    y: 677
+    width: 1086
+    height: 381
+  m_IsSceneBased: 0
+  m_TestTypeToolbarIndex: 1
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 0}
+    newResultList: []
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 13}
+    newResultList:
+    - id: '[Abstract Game][suite]'
+      name: Abstract Game
+      fullName: Abstract Game
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[C:/Users/Shades02/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
+        Game/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+      name: Assembly-CSharp-Editor.dll
+      fullName: C:/Users/Shades02/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
+        Game/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+      resultStatus: 2
+      duration: 0.0717157
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting][suite]'
+      name: UnitTesting
+      fullName: UnitTesting
+      resultStatus: 2
+      duration: 0.0641613
+      messages: One or more child tests had errors
+      output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
+        is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
+        your script can inherit from ScriptableObject or no base class at all\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.dispenseTest]'
+      name: dispenseTest
+      fullName: UnitTesting.dispenseTest
+      resultStatus: 1
+      duration: 0.0053173
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getAmmoPlayerTest]'
+      name: getAmmoPlayerTest
+      fullName: UnitTesting.getAmmoPlayerTest
+      resultStatus: 2
+      duration: 0.0292548
+      messages: "  Expected: 20\r\n  But was:  0\r\n"
+      output: 
+      stacktrace: "at UnitTesting+<getAmmoPlayerTest>c__Iterator16.MoveNext () [0x00081]
+        in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:355\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getColourBulletTest]'
+      name: getColourBulletTest
+      fullName: UnitTesting.getColourBulletTest
+      resultStatus: 2
+      duration: 0.0294438
+      messages: "  Expected: red\r\n  But was:  white\r\n"
+      output: 
+      stacktrace: "at UnitTesting+<getColourBulletTest>c__Iterator2.MoveNext () [0x0009e]
+        in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:60\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getColourPlayerTest]'
+      name: getColourPlayerTest
+      fullName: UnitTesting.getColourPlayerTest
+      resultStatus: 1
+      duration: 0.0069577
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getDamageTest]'
+      name: getDamageTest
+      fullName: UnitTesting.getDamageTest
+      resultStatus: 1
+      duration: 0.0292653
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getDirectionPlayerTest]'
+      name: getDirectionPlayerTest
+      fullName: UnitTesting.getDirectionPlayerTest
+      resultStatus: 2
+      duration: 0.0405023
+      messages: "  Expected: True\r\n  But was:  False\r\n"
+      output: 
+      stacktrace: "at UnitTesting+<getDirectionPlayerTest>c__Iterator18.MoveNext ()
+        [0x0006f] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:386\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getHealthPlayerTest]'
+      name: getHealthPlayerTest
+      fullName: UnitTesting.getHealthPlayerTest
+      resultStatus: 2
+      duration: 0.0299532
+      messages: "  Expected: 5\r\n  But was:  0\r\n"
+      output: 
+      stacktrace: "at UnitTesting+<getHealthPlayerTest>c__Iterator15.MoveNext () [0x00080]
+        in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:339\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.playSFXTest]'
+      name: playSFXTest
+      fullName: UnitTesting.playSFXTest
+      resultStatus: 1
+      duration: 0.0033212
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.quitGameFromPauseTest]'
+      name: quitGameFromPauseTest
+      fullName: UnitTesting.quitGameFromPauseTest
+      resultStatus: 1
+      duration: 0.0068512
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.quitGameTest]'
+      name: quitGameTest
+      fullName: UnitTesting.quitGameTest
+      resultStatus: 1
+      duration: 0.0033416
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.restartLevelTest]'
+      name: restartLevelTest
+      fullName: UnitTesting.restartLevelTest
+      resultStatus: 1
+      duration: 0.0034009
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.resumeTest]'
+      name: resumeTest
+      fullName: UnitTesting.resumeTest
+      resultStatus: 1
+      duration: 0.0040001
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.returnDirectionTest]'
+      name: returnDirectionTest
+      fullName: UnitTesting.returnDirectionTest
+      resultStatus: 1
+      duration: 0.0032802
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.returnToMenuTest]'
+      name: returnToMenuTest
+      fullName: UnitTesting.returnToMenuTest
+      resultStatus: 1
+      duration: 0.0043592
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.returnToPauseTest]'
+      name: returnToPauseTest
+      fullName: UnitTesting.returnToPauseTest
+      resultStatus: 1
+      duration: 0.0033001
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.RGBToColourValuesTest]'
+      name: RGBToColourValuesTest
+      fullName: UnitTesting.RGBToColourValuesTest
+      resultStatus: 1
+      duration: 0.0033525
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourAndLayerTest]'
+      name: setColourAndLayerTest
+      fullName: UnitTesting.setColourAndLayerTest
+      resultStatus: 1
+      duration: 0.0038807
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourBulletTest]'
+      name: setColourBulletTest
+      fullName: UnitTesting.setColourBulletTest
+      resultStatus: 2
+      duration: 0.0241503
+      messages: "  Expected: white\r\n  But was:  red\r\n"
+      output: 
+      stacktrace: "at UnitTesting+<setColourBulletTest>c__Iterator1.MoveNext () [0x0009e]
+        in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:41\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourWithoutLayerTest]'
+      name: setColourWithoutLayerTest
+      fullName: UnitTesting.setColourWithoutLayerTest
+      resultStatus: 1
+      duration: 0.0032843
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setFullscreenTest]'
+      name: setFullscreenTest
+      fullName: UnitTesting.setFullscreenTest
+      resultStatus: 1
+      duration: 0.0033547
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setLowQualityTest]'
+      name: setLowQualityTest
+      fullName: UnitTesting.setLowQualityTest
+      resultStatus: 1
+      duration: 0.0033932
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setTagBulletTest]'
+      name: setTagBulletTest
+      fullName: UnitTesting.setTagBulletTest
+      resultStatus: 1
+      duration: 0.0150054
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.settingsFromPauseTest]'
+      name: settingsFromPauseTest
+      fullName: UnitTesting.settingsFromPauseTest
+      resultStatus: 1
+      duration: 0.0034149
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.settingsTest]'
+      name: settingsTest
+      fullName: UnitTesting.settingsTest
+      resultStatus: 1
+      duration: 0.0035781
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.startGameTest]'
+      name: startGameTest
+      fullName: UnitTesting.startGameTest
+      resultStatus: 1
+      duration: 0.0035275
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.takeDamagePlayerTest]'
+      name: takeDamagePlayerTest
+      fullName: UnitTesting.takeDamagePlayerTest
+      resultStatus: 1
+      duration: 0.0278428
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    - id: '[Assembly-CSharp-Editor.dll][UnitTesting.takeDamageTest]'
+      name: takeDamageTest
+      fullName: UnitTesting.takeDamageTest
+      resultStatus: 1
+      duration: 0.003314
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+    m_ResultText: "getDirectionPlayerTest (0.041s)\n---\nExpected: True\r\n  But was:
+      \ False\n---\nat UnitTesting+<getDirectionPlayerTest>c__Iterator18.MoveNext
+      () [0x0006f] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+      Game\\Assets\\Editor\\UnitTesting.cs:386\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+      () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97"
+    m_ResultStacktrace: "at UnitTesting+<getDirectionPlayerTest>c__Iterator18.MoveNext
+      () [0x0006f] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+      Game\\Assets\\Editor\\UnitTesting.cs:386\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+      () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 04e342d9
+      m_LastClickedID: -649927932
+      m_ExpandedIDs: 546f33ae38c151d7dfb2bee4ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -315,7 +753,7 @@ MonoBehaviour:
     y: 92
     width: 387
     height: 966
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -337,13 +775,21 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 339
+    x: 438
     y: 92
-    width: 1190
-    height: 523
+    width: 1086
+    height: 564
   m_ViewPositions:
-    m_KeySerializationHelper: []
-    m_ValueSerializationHelper: []
+    m_KeySerializationHelper:
+    - {fileID: 1107528696079082648, guid: 95dacfb348d7e1041851fc85fd5517b1, type: 2}
+    - {fileID: 1107245204484530176, guid: d63aeffe8380a3247a6131bc7aff7948, type: 2}
+    - {fileID: 1107708343002197332, guid: bd8f035c549c13147884f8b40ef7b054, type: 2}
+    - {fileID: 1107662575633402540, guid: b5b898e48d84c1c48a78e027c6e80781, type: 2}
+    m_ValueSerializationHelper:
+    - {x: 615.60004, y: 320.40002}
+    - {x: 615.60004, y: 320.40002}
+    - {x: 615.60004, y: 340.40002}
+    - {x: 615.60004, y: 320.40002}
   m_PreviewAnimator: {fileID: 0}
   m_AnimatorController: {fileID: 0}
   m_BreadCrumbs: []
@@ -357,7 +803,7 @@ MonoBehaviour:
   m_CurrentEditor: 0
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -388,7 +834,7 @@ MonoBehaviour:
   - https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_RegisteredViewInstances:
   - {fileID: 0}
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -414,7 +860,7 @@ MonoBehaviour:
     y: 92
     width: 1082
     height: 523
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -439,7 +885,7 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 434
-    height: 462
+    height: 423
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -452,20 +898,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: 51
   m_LastProjectPath: C:\Users\Shades02\Documents\GitHub\SWD505---2DPlatformer---Abstract\Abstract
     Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 582c0000
-    m_LastClickedID: 11352
-    m_ExpandedIDs: 00000000002c0000062c00002e2c0000722c00007a2c0000522f0000542f000000ca9a3bffffff7f
+    m_SelectedIDs: 822b0000
+    m_LastClickedID: 11138
+    m_ExpandedIDs: 00000000822b0000882b0000a42b0000ea2b0000f22b0000782e00007a2e00009a2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -493,7 +939,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000002c0000062c00002e2c0000722c00007a2c0000522f0000542f0000
+    m_ExpandedIDs: 00000000822b0000882b0000a42b0000ea2b0000f22b0000782e00007a2e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -548,7 +994,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 51
   m_DirectoriesAreaWidth: 110
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -581,7 +1027,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
---- !u!114 &19
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -604,28 +1050,28 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 575
+    y: 536
     width: 434
-    height: 483
+    height: 522
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 46280000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 74f9ffff00000000
+    m_SelectedIDs: ace20000
+    m_LastClickedID: 58028
+    m_ExpandedIDs: b235fdffaa36fdffae37fdff7445fdff1462fdff0c72fdff1872fdffde94fdffd8c9fdff6c4ffeff5852feffb27afeffaa96feff5a9afeff949efeff36a3feff74a9feff6ab6feff18fbfeff28fffeffbe2bffffe84cffffc84fffff5652ffff3461ffffd864ffff1c6affff9c6bffff766dffffc46fffff8c71ffff4074ffff4a7affffe88cfffffaf4ffff000000002ce50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Wall
+      m_OriginalName: Wall
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -115120
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -634,7 +1080,7 @@ MonoBehaviour:
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
---- !u!114 &20
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -661,14 +1107,14 @@ MonoBehaviour:
     width: 1086
     height: 564
   m_SceneLighting: 1
-  lastFramingTime: 2808.4180799012975
+  lastFramingTime: 8055.202922061802
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.4818993, y: 3.58783, z: 0}
+    m_Target: {x: 3.8204494, y: 2.5706751, z: 0}
     speed: 2
-    m_Value: {x: 4.4818993, y: 3.58783, z: 0}
+    m_Value: {x: 3.8204494, y: 2.5706751, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -695,9 +1141,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2866416
+    m_Target: 11.674186
     speed: 2
-    m_Value: 6.2866416
+    m_Value: 11.674186
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -708,7 +1154,7 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &21
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -784,7 +1230,7 @@ MonoBehaviour:
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
---- !u!114 &22
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -806,7 +1252,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: -1920
+    x: 0
     y: 92
     width: 434
-    height: 442
+    height: 423
