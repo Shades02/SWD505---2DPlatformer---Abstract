@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4592044794431582}
   - component: {fileID: 212780016577093704}
   - component: {fileID: 61326261388466450}
-  - component: {fileID: 114020868329624030}
+  - component: {fileID: 114759712809465100}
   m_Layer: 12
   m_Name: Mine
   m_TagString: Mine
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6722679, y: 0.11900008}
   m_EdgeRadius: 0
---- !u!114 &114020868329624030
+--- !u!114 &114759712809465100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1850101974448618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3f380e26c66eb4d9c4e6ef16ba81eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a2e62cb88bc5784aa264f43fe492cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5

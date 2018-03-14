@@ -322,7 +322,7 @@ MonoBehaviour:
   maxHealth: 5
   maxAmmo: 20
   maxShootCD: 0.2
-  ammoRegenTime: 1
+  ammoRegenTime: 5
   maxInvDuration: 1.5
   rightShootPoint: {fileID: 1497621790430704}
   leftShootPoint: {fileID: 1777586372884808}

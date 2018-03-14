@@ -11,7 +11,7 @@ public class Spike_Script : MonoBehaviour
         
     }
 
-    internal int getDamage()
+    public int getDamage()
     {
         return damage;
     }

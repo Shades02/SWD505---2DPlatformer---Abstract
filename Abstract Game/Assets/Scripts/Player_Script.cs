@@ -201,7 +201,7 @@ public class Player_Script : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Mine"))
         {
-            takeDamage(collision.gameObject.GetComponent<Mine_Script>().getDamage());
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
             Destroy(collision.gameObject);
         }
         else if(collision.gameObject.CompareTag("Water"))
@@ -307,22 +307,22 @@ public class Player_Script : MonoBehaviour
         }
     }
 
-    internal int getHealth()
+    public int getHealth()
     {
         return health;
     }
 
-    internal int getAmmo()
+    public int getAmmo()
     {
         return ammo;
     }
 
-    internal colour getColour()
+    public colour getColour()
     {
         return currentColour;
     }
 
-    internal bool returnDirection()
+    public bool returnDirection()
     {
         return facingRight;
     }
