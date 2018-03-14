@@ -57,16 +57,14 @@ public class Shape_Script : MonoBehaviour
         return startPos;
     }
 
+    public void takeDamage(int damage)      //Deal damage to shape
+    {
+        health -= damage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBullet") &&
-            collision.GetComponent<Bullet_Script>().getColour() == thisColour)
-        {
-            Destroy(collision.gameObject);
-            --health;
-            --Boss.GetComponent<Boss_Script>().health;
-        }
-        else if (collision.CompareTag("Player") &&
+        if (collision.CompareTag("Player") &&
             collision.GetComponent<Player_Script>().getColour() == thisColour)
         {
             collision.GetComponent<Player_Script>().takeDamage(1);

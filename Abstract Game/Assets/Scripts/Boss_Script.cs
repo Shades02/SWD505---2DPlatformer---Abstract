@@ -16,9 +16,6 @@ public class Boss_Script : Enemy_Script
         maxMeleeCD;
     public List<GameObject> shapes;
     public GameObject tear;
-    public AudioSource aggroRoar,
-        surprised,
-        deathRoar;
 
     private Vector2 moveDirection;
     private Vector3 targetPosition,
@@ -29,9 +26,11 @@ public class Boss_Script : Enemy_Script
         aggrovated = false;
     private int p2Health;
     private float meleeCD;
+    private Sound_Manager_Script soundManager;
 
     private void Start()
     {
+        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
         player = GameObject.FindGameObjectWithTag("Player");
         moveDirection = new Vector2(-1, 0);
         foreach (GameObject x in shapes)
@@ -42,6 +41,7 @@ public class Boss_Script : Enemy_Script
         }
 
         p2Health = health / 2;
+        health = 2;
         startPos = transform.position;
     }
 
@@ -72,7 +72,7 @@ public class Boss_Script : Enemy_Script
             aggrovated = true;
             shooting = true;        //Get aggrovated and start shooting
 
-            aggroRoar.Play();       //Play aggrovated roar
+            soundManager.PlaySFX("BossAlerted");       //Play aggrovated roar
         }
 
         shapeDeathCheck();
@@ -80,7 +80,7 @@ public class Boss_Script : Enemy_Script
         {
             GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);        //Creates tear
 
-            deathRoar.Play();       //Plays death roar
+            soundManager.PlaySFX("BossDeath");       //Plays death roar
             Destroy(gameObject, 2.26f);     //Destroy game object
         }
     }
@@ -132,6 +132,7 @@ public class Boss_Script : Enemy_Script
                     setShapeDirectiontoPoint(targetPosition);
                     pushShapesinDirection();       //Charge shapes at player
                     meleeAttacking = true;
+                    soundManager.PlaySFX("BossMelee");      //Play melee attack sound
                 }
             }
             else        //If currently attacking
@@ -179,7 +180,7 @@ public class Boss_Script : Enemy_Script
                 x.GetComponent<Shape_Script>().health <= 0)
             {
                 x.SetActive(false);
-                surprised.Play();
+                soundManager.PlaySFX("BossAlerted");
             }
         }
     }
