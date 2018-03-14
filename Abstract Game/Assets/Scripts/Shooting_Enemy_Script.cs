@@ -41,7 +41,8 @@ public class Shooting_Enemy_Script : Enemy_Script
             {
                 float xDistance = player.transform.position.x - transform.position.x;
                 //check for player range
-                if (Mathf.Abs(xDistance) <= detectRange && player.transform.position.y < transform.position.y + 1 && player.transform.position.y > transform.position.y - 1)
+                if (Mathf.Abs(xDistance) <= detectRange &&      //check detect range
+                    player.transform.position.y < transform.position.y + 1 && player.transform.position.y > transform.position.y - 1)       //check on y level +- 1
                 {
                     if (player.transform.position.x > transform.position.x)         //shoot right
                     {

@@ -56,7 +56,8 @@ public class Melee_Enemy_Script : Enemy_Script
                     myRigid.velocity = new Vector2(moveSpeed * 2, myRigid.velocity.y);
                 }
             }
-            else if (Mathf.Abs(xDistance) <= chargeRange)
+            else if (Mathf.Abs(xDistance) <= chargeRange &&     //check if in charge range
+                player.transform.position.y < transform.position.y + 1 && player.transform.position.y > transform.position.y - 1)       //check if on same y level +- 1
             {
                 //Charge at player
                 

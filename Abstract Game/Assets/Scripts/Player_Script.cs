@@ -149,19 +149,30 @@ public class Player_Script : MonoBehaviour
         }
 
 
-        float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;
+        float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;        
         Vector3 linecastStart = new Vector3(transform.position.x, transform.position.y - spriteHeight / 2 - 0.1f, transform.position.z);
-        Debug.DrawLine(linecastStart, linecastStart + new Vector3(0, -0.1f, 0));
+        Debug.DrawLine(linecastStart + new Vector3(0.2f, 0,0), linecastStart + new Vector3(0.2f, -0.1f, 0));        //Remove this!!!
+        Debug.DrawLine(linecastStart + new Vector3(-0.2f, 0, 0), linecastStart + new Vector3(-0.2f, -0.1f, 0));        //Remove this!!!
 
         //jump
         if (Input.GetButtonDown("Jump"))
         {
-            if (Physics2D.Linecast(linecastStart,                           //off set the linecast down to avoid it finding itself
-                linecastStart + new Vector3(0, -0.1f, 0),                   //distance down slightly more than half the height of the sprite
+            if (Physics2D.Linecast(linecastStart + new Vector3(0.2f, 0, 0),                           //off set the linecast down to avoid it finding itself
+                linecastStart + new Vector3(0.2f, -0.1f, 0),                                          //distance down slightly more than half the height of the sprite
                 1 << LayerMask.NameToLayer("Land")) ||
-                Physics2D.Linecast(linecastStart,                           //second linecast checks if you are standing on an entity of the same colour
-                linecastStart + new Vector3(0, -0.1f, 0),
-                1 << LayerMask.NameToLayer(currentColour.ToString())))
+
+                Physics2D.Linecast(linecastStart + new Vector3(0.2f, 0, 0),                           //second linecast checks if you are standing on an entity of the same colour
+                linecastStart + new Vector3(0.2f, -0.1f, 0),
+                1 << LayerMask.NameToLayer(currentColour.ToString())) ||
+                
+                Physics2D.Linecast(linecastStart + new Vector3(-0.2f, 0, 0),
+                linecastStart + new Vector3(-0.2f, -0.1f, 0),
+                1 << LayerMask.NameToLayer("Land")) ||
+
+                Physics2D.Linecast(linecastStart + new Vector3(-0.2f, 0, 0),                          
+                linecastStart + new Vector3(-0.2f, -0.1f, 0),
+                1 << LayerMask.NameToLayer(currentColour.ToString()))
+                )
             {
                 myRigid.velocity = new Vector2(myRigid.velocity.x, 0);
                 myRigid.AddForce(new Vector2(0, jumpStrength));
