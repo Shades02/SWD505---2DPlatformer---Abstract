@@ -11,6 +11,7 @@ public class Enemy_Script : MonoBehaviour
     protected bool facingRight = true;
     protected Rigidbody2D myRigid;
     protected Animator myAnim;
+    protected bool isDead = false;      //for the death sound
 
     protected GameObject player;
     protected Sound_Manager_Script soundManager;
@@ -35,8 +36,12 @@ public class Enemy_Script : MonoBehaviour
     {
         if(health <= 0)
         {
+            if(!isDead)
+            {
+                soundManager.PlaySFX("EnemyDeath");
+                isDead = true;      //so that the sound only plays once
+            }
             myAnim.SetBool("isDead", true);     //when dead, changes animation
-            soundManager.PlaySFX("EnemyDeath");
             Invoke("destroyEnemy", 0.5f);       //delay may need editing to allow for more the animation
         }
     }

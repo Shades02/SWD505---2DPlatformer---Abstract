@@ -26,6 +26,7 @@ public class Player_Script : MonoBehaviour
     private int health;
     private int ammo = 0;
     private bool facingRight;
+    private bool isDead = false;            //to ensure the death sound is only played once
 
     private colour currentColour;
 
@@ -56,8 +57,12 @@ public class Player_Script : MonoBehaviour
             //Reloads the current scene
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-            myAnim.SetBool("isDead", true);
-            soundManager.PlaySFX("PlayerDeath");    
+            if(!isDead)         //now the sound will play once the player dies, but not more than once
+            {
+                soundManager.PlaySFX("PlayerDeath");
+                isDead = true;
+            }
+            myAnim.SetBool("isDead", true);   
             Invoke("killPlayer", 0.5f);             //calls the function to kill the player after a delay
         }
 
