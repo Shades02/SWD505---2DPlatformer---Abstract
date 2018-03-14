@@ -123,7 +123,7 @@ public class Player_Script : MonoBehaviour
         myAnim.SetFloat("runSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));        //set velocity for animator to decide if the player is moving
 
         //check for movement for movement sound
-        if(myRigid.velocity.x != 0)
+        if(myRigid.velocity.x != 0 && myRigid.velocity.y == 0)
         {
             if(!gameObject.GetComponent<AudioSource>().isPlaying)
                 gameObject.GetComponent<AudioSource>().Play();
