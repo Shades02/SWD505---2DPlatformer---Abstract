@@ -4,9 +4,12 @@ little guys range	Done
 win screen, credits	Done - add credits text
 walking sound		Done
 music			Done
+tweaked UI		Done
 gamepad
 add game over screen in private code to player
 Landing sound
 
 dispensers
 pressure plates
+
+No 2 chargers together - they get stuck

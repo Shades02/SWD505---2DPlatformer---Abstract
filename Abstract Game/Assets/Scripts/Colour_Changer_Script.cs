@@ -94,6 +94,39 @@ public class Colour_Changer_Script : MonoBehaviour
         }
     }
 
+    static public void setParticleColour(GameObject thisObject, colour currentColour)
+    {
+        var main = thisObject.GetComponent<ParticleSystem>().main;      //gets the main part of the particle system
+
+        switch (currentColour)
+        {
+            case colour.white:   
+                main.startColor = new Color(241, 241, 241);     //White
+                break;
+            case colour.black:
+                main.startColor = new Color(51, 51, 51);        //Black;
+                break;
+            case colour.red:
+                main.startColor = new Color(205, 11, 11);     //Red ;
+                break;
+            case colour.blue:
+                main.startColor = new Color(15, 40, 229);     //Blue;
+                break;
+            case colour.yellow:
+                main.startColor = new Color(196, 204, 46);    //Yellow;
+                break;
+            case colour.green:
+                main.startColor = new Color(46, 196, 46);     //Green;
+                break;
+            case colour.orange:
+                main.startColor = new Color(206, 91, 22);     //Orange;
+                break;
+            case colour.purple:
+                main.startColor = new Color(159, 10, 229);    //Purple;
+                break;
+        }
+    }
+
 
     static Vector4 RGBValuesToColorValues(Vector4 values) // helpful website https://www.rapidtables.com/web/color/RGB_Color.html
     {
