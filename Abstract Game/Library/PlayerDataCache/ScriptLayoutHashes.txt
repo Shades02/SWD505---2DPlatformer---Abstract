@@ -145,6 +145,7 @@ b46fcf3bedd4f3838931b44179afcbcc Assembly-CSharp.dll:.Pickup_Script
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Enemy_Front_Script
 1671573a0a636856bed5dc4fdc51596d Assembly-CSharp.dll:.Sound_Manager_Script
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WinScreenScript
 cccfbc1061d118135f7aa0a5a8bf7694 Assembly-CSharp.dll:.PressurePad_Script
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
