@@ -100,29 +100,30 @@ public class Colour_Changer_Script : MonoBehaviour
 
         switch (currentColour)
         {
-            case colour.white:   
-                main.startColor = new Color(241, 241, 241);     //White
+            case colour.white:
+                main.startColor = new Color(241, 241, 241, 1);     //White
                 break;
             case colour.black:
-                main.startColor = new Color(51, 51, 51);        //Black;
+                main.startColor = new Color(51, 51, 51, 1);        //Black;
                 break;
             case colour.red:
-                main.startColor = new Color(205, 11, 11);     //Red ;
+                main.startColor = new Color(205, 11, 11, 1);     //Red ;
                 break;
             case colour.blue:
-                main.startColor = new Color(15, 40, 229);     //Blue;
+                main.startColor = new Color(15/256, 40/256, 229/256, 1);     //Blue;
+                //main.startColor = Color.blue;
                 break;
             case colour.yellow:
-                main.startColor = new Color(196, 204, 46);    //Yellow;
+                main.startColor = new Color(196, 204, 46, 1);    //Yellow;
                 break;
             case colour.green:
-                main.startColor = new Color(46, 196, 46);     //Green;
+                main.startColor = new Color(46, 196, 46, 1);     //Green;
                 break;
             case colour.orange:
-                main.startColor = new Color(206, 91, 22);     //Orange;
+                main.startColor = new Color(206, 91, 22, 1);     //Orange;
                 break;
             case colour.purple:
-                main.startColor = new Color(159, 10, 229);    //Purple;
+                main.startColor = new Color(159, 10, 229, 1);    //Purple;
                 break;
         }
     }

@@ -495,7 +495,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 156097255
+  randomSeed: -1251591490
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2817,7 +2817,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2901,7 +2901,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 4027580415
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
