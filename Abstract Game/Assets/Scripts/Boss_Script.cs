@@ -42,14 +42,12 @@ public class Boss_Script : Enemy_Script
 
         meleePhase = 0;
         p2Health = health / 2;
-        health = 2;
         startPos = transform.position;
     }
 
     private void FixedUpdate()
     {
-        if (meleeAttacking &&
-            meleeCD <= 0) pushShapesinDirection();      //Push shapes out of radius if melee attacking
+        if (meleeAttacking) pushShapesinDirection();      //Push shapes out of radius if melee attacking
         else orbitShapes();     //Orbit shapes within radius if not melee attacking
 
         if (aggrovated)     //If already aggrovated
@@ -99,8 +97,8 @@ public class Boss_Script : Enemy_Script
 
     private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards point
     {
-        targetPosition = point;
-        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().orbitDirection = point - x.transform.position;
+        targetPosition = point;     //Set target position to point
+        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().orbitDirection = point - x.transform.position;      //Set each shape orbit direction towards point
     }
 
     private void orbitShapes()      //Shapes orbit centre of boss
@@ -140,9 +138,8 @@ public class Boss_Script : Enemy_Script
                     if (shapesatPoint(targetPosition))       //When shapes centred...
                     {
                         Debug.Log("MELEE PHASE 2");
-
-                        targetPosition = player.transform.position;
-                        setShapeDirectiontoPoint(targetPosition);
+                        
+                        setShapeDirectiontoPoint(player.transform.position);
                         pushShapesinDirection();       //Charge shapes at player
                         soundManager.PlaySFX("BossMelee");      //Play melee attack sound
 
@@ -150,7 +147,7 @@ public class Boss_Script : Enemy_Script
                     }
                     break;
                 case 3:
-                    if (shapesatPoint(targetPosition))
+                    if (shapesatPoint(targetPosition))      //When shapes hit attack position...
                     {
                         Debug.Log("MELEE PHASE 3");
 
@@ -212,8 +209,8 @@ public class Boss_Script : Enemy_Script
 
     private bool shapesatPoint(Vector3 point)       //Returns true if shapes are at the point
     {
-        return (shapes[0].transform.position.x >= point.x - 0.2 &&
-            shapes[0].transform.position.y >= point.y - 0.2);
+        return (shapes[0].transform.position.x >= point.x - 0.1 &&
+            shapes[0].transform.position.y >= point.y - 0.1);
     }
 
     private bool inDetectRange(GameObject target)       //Returns true if target in detectRange
