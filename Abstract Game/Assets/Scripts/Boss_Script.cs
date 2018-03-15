@@ -30,6 +30,7 @@ public class Boss_Script : Enemy_Script
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");        //Set player as player object
+        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
         moveDirection = new Vector2(-1, 0);     //Set starting move direction to left
 
         //Set health
@@ -84,7 +85,7 @@ public class Boss_Script : Enemy_Script
             aggrovated = true;
             shooting = true;        //Get aggrovated and start shooting
 
-            //soundManager.PlaySFX("BossAlerted");       //Play aggrovated roar
+            soundManager.PlaySFX("BossAlerted");       //Play aggrovated roar
         }
         //If neither, boss is dormant
     }
@@ -142,7 +143,7 @@ public class Boss_Script : Enemy_Script
                         
                         setShapeDirectiontoPoint(player.transform.position);
                         pushShapesinDirection();       //Charge shapes at player
-                        //soundManager.PlaySFX("BossMelee");      //Play melee attack sound
+                        soundManager.PlaySFX("BossMelee");      //Play melee attack sound
 
                         ++meleePhase;       //Proceed to next phase
                     }
