@@ -75,11 +75,4 @@ public class Bullet_Script : Timed_Object_Script
             collision.gameObject.GetComponent<Shape_Script>().takeDamage(damage);
         }
     }
-
-    //-------- For Testing ----------
-
-    public colour getColour()
-    {
-        return currentColour;
-    }
 }

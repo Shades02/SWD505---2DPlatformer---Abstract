@@ -126,7 +126,6 @@ public class Boss_Script : Enemy_Script
             switch (meleePhase)
             {
                 case 0:
-                    Debug.Log("MELEE PHASE 0");
 
                     shooting = false;
                     patrolling = false;
@@ -139,7 +138,6 @@ public class Boss_Script : Enemy_Script
                 case 1:
                     if (shapesatPoint(targetPosition))       //When shapes centred...
                     {
-                        Debug.Log("MELEE PHASE 1");
                         
                         setShapeDirectiontoPoint(player.transform.position);
                         pushShapesinDirection();       //Charge shapes at player
@@ -151,7 +149,6 @@ public class Boss_Script : Enemy_Script
                 case 2:
                     if (shapesatPoint(targetPosition))      //When shapes hit attack position...
                     {
-                        Debug.Log("MELEE PHASE 2");
 
                         setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
 
@@ -161,7 +158,6 @@ public class Boss_Script : Enemy_Script
                 case 3:
                     if (shapesatPoint(targetPosition))       //When shapes recentred...
                     {
-                        Debug.Log("MELEE PHASE 3");
                         meleeAttacking = false;
                         meleeCD = maxMeleeCD;       //Reset meleeCD
 

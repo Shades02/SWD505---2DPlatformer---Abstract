@@ -78,11 +78,4 @@ public class Enemy_Script : MonoBehaviour
             takeDamage(collision.gameObject.GetComponent<Spike_Script>().damage);
         }
     }
-
-    //-------- For Testing ----------
-
-    public void setDirection(bool direction)
-    {
-        facingRight = direction;
-    }
 }

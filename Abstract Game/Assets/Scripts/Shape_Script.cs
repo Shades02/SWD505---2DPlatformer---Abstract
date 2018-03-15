@@ -19,6 +19,10 @@ public class Shape_Script : MonoBehaviour
 
     private float shootCD;
 
+    public GameObject lootDrop;
+    public Vector2 lootPoint1;
+    public Vector2 lootPoint2;
+
     private void Start()
     {
         startPos = transform.position;
@@ -26,7 +30,16 @@ public class Shape_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isDead()) gameObject.SetActive(false);
+        if (isDead())
+        {
+            GameObject go1 = Instantiate(lootDrop, lootPoint1, Quaternion.identity);
+            go1.GetComponent<Pickup_Script>().thisPickupType = Pickup_Script.pickupType.ammo;
+
+            GameObject go2 = Instantiate(lootDrop, lootPoint2, Quaternion.identity);
+            go2.GetComponent<Pickup_Script>().thisPickupType = Pickup_Script.pickupType.health;
+
+            gameObject.SetActive(false);
+        }
         else shootCD -= Time.deltaTime;
     }
 
