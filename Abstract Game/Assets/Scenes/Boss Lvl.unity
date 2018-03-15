@@ -14774,6 +14774,11 @@ Prefab:
       propertyPath: m_Name
       value: Dispenser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
+        type: 2}
+      propertyPath: colourToDrop
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
   m_IsPrefabParent: 0
@@ -15468,6 +15473,11 @@ Prefab:
     - target: {fileID: 1641266981131188, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
       propertyPath: m_Name
       value: Dispenser (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
+        type: 2}
+      propertyPath: colourToDrop
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
@@ -31919,6 +31929,11 @@ Prefab:
     - target: {fileID: 1641266981131188, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
       propertyPath: m_Name
       value: Dispenser (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
+        type: 2}
+      propertyPath: colourToDrop
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
