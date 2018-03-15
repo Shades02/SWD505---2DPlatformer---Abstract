@@ -24,9 +24,9 @@ public class Boss_Script : Enemy_Script
         shooting = false,
         meleeAttacking = false,
         aggrovated = false;
-    private int p2Health;
+    private int p2Health,
+        meleePhase;
     private float meleeCD;
-    private Sound_Manager_Script soundManager;
 
     private void Start()
     {
@@ -40,6 +40,7 @@ public class Boss_Script : Enemy_Script
             x.GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
 
+        meleePhase = 0;
         p2Health = health / 2;
         health = 2;
         startPos = transform.position;
@@ -74,8 +75,7 @@ public class Boss_Script : Enemy_Script
 
             soundManager.PlaySFX("BossAlerted");       //Play aggrovated roar
         }
-
-        shapeDeathCheck();
+        
         if (health <= 0)        //If boss dies
         {
             GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);        //Creates tear
@@ -115,44 +115,66 @@ public class Boss_Script : Enemy_Script
 
     private void meleeAttack()      //Charges at player
     {
-        if (meleeCD <= 0)       //If meleeCD finished counting down
+        if (meleeAttacking)       //If meleeCD finished counting down
         {
-            shooting = false;
-            patrolling = false;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
-
-            if (!meleeAttacking)        //If not currently attacking
+            switch (meleePhase)
             {
-                Debug.Log("MELEE START");
-                setShapeDirectiontoPoint(transform.position);       //Centre shapes
+                case 0:
+                    Debug.Log("MELEE START");
 
-                if (shapesatPoint(transform.position))       //When shapes centred...
-                {
-                    targetPosition = player.transform.position;
-                    setShapeDirectiontoPoint(targetPosition);
-                    pushShapesinDirection();       //Charge shapes at player
-                    meleeAttacking = true;
-                    soundManager.PlaySFX("BossMelee");      //Play melee attack sound
-                }
-            }
-            else        //If currently attacking
-            {
-                if (shapesatPoint(targetPosition)) setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
-                else if (shapesatPoint(transform.position))       //When shapes recentred...
-                {
-                    Debug.Log("MELEE END");
-                    meleeAttacking = false;
-                    meleeCD = maxMeleeCD;       //Reset meleeCD
+                    shooting = false;
+                    patrolling = false;
+                    GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
 
-                    shooting = true;
-                    sendShapestoStartPos();     //Send shapes back to edge
-                    restartPatrolling();        //Return to patrolling & shooting
-                }
+                    ++meleePhase;       //Proceed to next phase
+                    break;
+                case 1:
+                    setShapeDirectiontoPoint(transform.position);       //Centre shapes
+
+                    ++meleePhase;       //Proceed to next phase
+                    break;
+                case 2:
+                    if (shapesatPoint(transform.position))       //When shapes centred...
+                    {
+                        targetPosition = player.transform.position;
+                        setShapeDirectiontoPoint(targetPosition);
+                        pushShapesinDirection();       //Charge shapes at player
+                        soundManager.PlaySFX("BossMelee");      //Play melee attack sound
+
+                        ++meleePhase;       //Proceed to next phase
+                    }
+                    break;
+                case 3:
+                    if (shapesatPoint(targetPosition))
+                    {
+                        setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
+
+                        ++meleePhase;       //Proceed to next phase
+                    }
+                    break;
+                case 4:
+                    if (shapesatPoint(targetPosition))       //When shapes recentred...
+                    {
+                        Debug.Log("MELEE END");
+                        meleeAttacking = false;
+                        meleeCD = maxMeleeCD;       //Reset meleeCD
+
+                        shooting = true;
+                        sendShapestoStartPos();     //Send shapes back to edge
+                        restartPatrolling();        //Return to patrolling & shooting
+
+                        meleePhase = 0;     //Reset melee phase for next time
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         else
         {
             meleeCD -= Time.deltaTime;      //Countdown meleeCD
+
+            if (meleeCD <= 0) meleeAttacking = true;
         }
     }
 
@@ -169,19 +191,6 @@ public class Boss_Script : Enemy_Script
         foreach (GameObject x in shapes)
         {
             x.GetComponent<Shape_Script>().orbitDirection = (x.GetComponent<Shape_Script>().startPos + distanceFromStart) - x.transform.position;
-        }
-    }
-
-    internal void shapeDeathCheck()        //Reorganises shapes array if one dies
-    {
-        foreach (GameObject x in shapes)
-        {
-            if (x.activeSelf &&
-                x.GetComponent<Shape_Script>().health <= 0)
-            {
-                x.SetActive(false);
-                soundManager.PlaySFX("BossAlerted");
-            }
         }
     }
 
