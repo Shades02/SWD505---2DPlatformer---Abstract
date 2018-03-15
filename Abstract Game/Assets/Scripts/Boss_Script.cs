@@ -30,9 +30,11 @@ public class Boss_Script : Enemy_Script
 
     private void Start()
     {
-        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        moveDirection = new Vector2(-1, 0);
+        player = GameObject.FindGameObjectWithTag("Player");        //Set player as player object
+        moveDirection = new Vector2(-1, 0);     //Set starting move direction to left
+
+        //Set health
+        health = 0;
         foreach (GameObject x in shapes)
         {
             health += x.GetComponent<Shape_Script>().health;
@@ -40,9 +42,9 @@ public class Boss_Script : Enemy_Script
             x.GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
 
-        meleePhase = 0;
-        p2Health = health / 2;
-        startPos = transform.position;
+        meleePhase = 0;     //Set melee phase to start
+        p2Health = health / 2;      //Set phase 2 health
+        startPos = transform.position;      //Set start pos as starting pos
     }
 
     private void FixedUpdate()
@@ -125,16 +127,11 @@ public class Boss_Script : Enemy_Script
                     patrolling = false;
                     GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
 
-                    ++meleePhase;       //Proceed to next phase
-                    break;
-                case 1:
-                    Debug.Log("MELEE PHASE 1");
-
                     setShapeDirectiontoPoint(transform.position);       //Centre shapes
 
                     ++meleePhase;       //Proceed to next phase
                     break;
-                case 2:
+                case 1:
                     if (shapesatPoint(targetPosition))       //When shapes centred...
                     {
                         Debug.Log("MELEE PHASE 2");
@@ -146,7 +143,7 @@ public class Boss_Script : Enemy_Script
                         ++meleePhase;       //Proceed to next phase
                     }
                     break;
-                case 3:
+                case 2:
                     if (shapesatPoint(targetPosition))      //When shapes hit attack position...
                     {
                         Debug.Log("MELEE PHASE 3");
@@ -156,7 +153,7 @@ public class Boss_Script : Enemy_Script
                         ++meleePhase;       //Proceed to next phase
                     }
                     break;
-                case 4:
+                case 3:
                     if (shapesatPoint(targetPosition))       //When shapes recentred...
                     {
                         Debug.Log("MELEE PHASE 4");
