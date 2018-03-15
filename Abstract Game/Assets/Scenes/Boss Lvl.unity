@@ -14779,6 +14779,11 @@ Prefab:
       propertyPath: colourToDrop
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
+        type: 2}
+      propertyPath: facingRight
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
   m_IsPrefabParent: 0
@@ -15478,6 +15483,11 @@ Prefab:
         type: 2}
       propertyPath: colourToDrop
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196913020171554, guid: babd8173af2877f42b58e1f4427ccfa7,
+        type: 2}
+      propertyPath: facingRight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: babd8173af2877f42b58e1f4427ccfa7, type: 2}
