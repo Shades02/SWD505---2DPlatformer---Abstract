@@ -44,9 +44,6 @@ public class Boss_Script : Enemy_Script
         meleePhase = 0;     //Set melee phase to start
         p2Health = health / 2;      //Set phase 2 health
         startPos = transform.position;      //Set start pos as starting pos
-
-        //==================TEST==================
-        health = 41;
     }
 
     private void FixedUpdate()
@@ -68,8 +65,8 @@ public class Boss_Script : Enemy_Script
         //Main Control
         if (aggrovated)     //If already aggrovated
         {
-            //if (shooting)
-               //foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
+            if (shooting)
+               foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
 
             if (health <= p2Health)     //If health drops below phase 2 boundaries
             {
