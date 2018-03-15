@@ -110,7 +110,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 321a01bd82d6150268ee36433309dec3 Assembly-CSharp.dll:.Player_Script
 3f3e548ef4c78a2e0ec8cfa04f7f3cd4 Assembly-CSharp.dll:.Boss_Script
-65791e1fac7673fb330aff002cdd228b Assembly-CSharp.dll:.Main_Menu_Script
+c26e6adb8c8c6f55ff72a5d571908f5e Assembly-CSharp.dll:.Main_Menu_Script
 ac5b274916992b9aa1880a57ef7da475 Assembly-CSharp.dll:.Bullet_Script
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -121,7 +121,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 3f39332aaebea465f771a4b7de8b894a Assembly-CSharp.dll:.Shape_Script
 2411a2735f5c756839a6862315efe215 Assembly-CSharp.dll:.PaintDrop_Script
 f60607b9e34b5b0db06a1432ef63e881 Assembly-CSharp.dll:.Enemy_Script
-f2d31b0c26ab97f8d0b5a55595b84938 Assembly-CSharp.dll:.Pause_Menu_Script
+143e50c09b88919fcce0c6791500854d Assembly-CSharp.dll:.Pause_Menu_Script
 a98e70b48df902fc6eaf7b71776d2210 Assembly-CSharp.dll:.Camera_Script
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -145,7 +145,7 @@ b46fcf3bedd4f3838931b44179afcbcc Assembly-CSharp.dll:.Pickup_Script
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Enemy_Front_Script
 1671573a0a636856bed5dc4fdc51596d Assembly-CSharp.dll:.Sound_Manager_Script
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.WinScreenScript
+be28a864a41089226b780796ce4cbf98 Assembly-CSharp.dll:.WinScreenScript
 cccfbc1061d118135f7aa0a5a8bf7694 Assembly-CSharp.dll:.PressurePad_Script
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -154,5 +154,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.Spike_Script
 2806eb56805376b061b2a50979ac3e11 Assembly-CSharp.dll:.UI_Script
-0d9a980b5a26d7192827dc2ae664e4c6 Assembly-CSharp.dll:.Settings_Script
+4c61d342c4cd63add85e41a55ad81c75 Assembly-CSharp.dll:.Settings_Script
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Colour_Changer_Script
