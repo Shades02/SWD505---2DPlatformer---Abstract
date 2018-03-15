@@ -26,15 +26,21 @@ public class Shape_Script : MonoBehaviour
 
     private void FixedUpdate()
     {
-        shootCD -= Time.deltaTime;
+        if (isDead()) gameObject.SetActive(false);
+        else shootCD -= Time.deltaTime;
     }
 
-    internal void moveShape()
+    private bool isDead()       //Returns true if health is 0
+    {
+        return (health <= 0);
+    }
+
+    internal void moveShape()       //Move shape in orbit direction
     {
         transform.Translate(orbitDirection.normalized * orbitSpeed * Time.deltaTime);
     }
 
-    internal void shoot()
+    internal void shoot()       //Fire projectiles from both shoot points
     {
         if (shootCD <= 0)
         {
@@ -52,20 +58,20 @@ public class Shape_Script : MonoBehaviour
         }
     }
 
-    internal Vector3 getStartPos()
+    internal Vector3 getStartPos()      //Returns start position vector
     {
         return startPos;
     }
 
+    public void takeDamage(int damage)      //Deal damage to shape
+    {
+        health -= damage;
+        Boss.GetComponent<Boss_Script>().health -= damage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBullet"))
-        {
-            Destroy(collision);
-            --health;
-            --Boss.GetComponent<Boss_Script>().health;
-        }
-        else if (collision.CompareTag("Player") &&
+        if (collision.CompareTag("Player") &&
             collision.GetComponent<Player_Script>().getColour() == thisColour)
         {
             collision.GetComponent<Player_Script>().takeDamage(1);

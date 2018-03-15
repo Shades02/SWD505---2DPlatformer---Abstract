@@ -72,7 +72,7 @@ public class Bullet_Script : Timed_Object_Script
         {
             soundManager.PlaySFX("ProjectileImpact");
             Destroy(gameObject);
-            //collision.gameObject.GetComponent<Shape_Script>().takeDamage(damage);
+            collision.gameObject.GetComponent<Shape_Script>().takeDamage(damage);
         }
     }
 

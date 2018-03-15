@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Boss_Script : Enemy_Script
 {
-
     public float moveSpeed,
         minX,
         maxX,
@@ -14,7 +13,7 @@ public class Boss_Script : Enemy_Script
         p1ShootCD,
         p2ShootCD,
         maxMeleeCD;
-    public GameObject[] shapes;
+    public List<GameObject> shapes;
     public GameObject tear;
 
     private Vector2 moveDirection;
@@ -24,56 +23,73 @@ public class Boss_Script : Enemy_Script
         shooting = false,
         meleeAttacking = false,
         aggrovated = false;
-    private int p2Health;
+    private int p2Health,
+        meleePhase;
     private float meleeCD;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        moveDirection = new Vector2(-1, 0);
-        for (int i = 0; i < shapes.Length; ++i)
+        player = GameObject.FindGameObjectWithTag("Player");        //Set player as player object
+        moveDirection = new Vector2(-1, 0);     //Set starting move direction to left
+
+        //Set health
+        health = 0;
+        foreach (GameObject x in shapes)
         {
-            health += shapes[i].GetComponent<Shape_Script>().health;
-            shapes[i].GetComponent<Shape_Script>().orbitSpeed = p1OrbitSpeed;
-            shapes[i].GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
+            health += x.GetComponent<Shape_Script>().health;
+            x.GetComponent<Shape_Script>().orbitSpeed = p1OrbitSpeed;
+            x.GetComponent<Shape_Script>().maxShootCD = p1ShootCD;
         }
-        p2Health = health / 2;
-        startPos = transform.position;
+
+        meleePhase = 0;     //Set melee phase to start
+        p2Health = health / 2;      //Set phase 2 health
+        startPos = transform.position;      //Set start pos as starting pos
+
+        //==================TEST==================
+        health = 41;
     }
 
     private void FixedUpdate()
     {
-        if (meleeAttacking &&
-            meleeCD <= 0) pushShapesinDirection();
-        else orbitShapes();
-
-        if (aggrovated)
+        //Death check
+        if (health <= 0)        //If boss dies
         {
-            if (shooting)
-                for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().shoot();
+            GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);        //Creates tear
 
-            if (health <= p2Health)
+            soundManager.PlaySFX("BossDeath");       //Plays death roar
+            Destroy(gameObject, 2.26f);     //Destroy game object
+        }
+
+        //AI
+        //Shape Control
+        if (meleeAttacking) pushShapesinDirection();      //Push shapes out of radius if melee attacking
+        else orbitShapes();     //Orbit shapes within radius if not melee attacking
+
+        //Main Control
+        if (aggrovated)     //If already aggrovated
+        {
+            //if (shooting)
+               //foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().shoot();
+
+            if (health <= p2Health)     //If health drops below phase 2 boundaries
             {
-                for (int i = 0; i < shapes.Length; ++i)
+                foreach (GameObject x in shapes)        //Change orbit and shoot speed
                 {
-                    shapes[i].GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
-                    shapes[i].GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
+                    x.GetComponent<Shape_Script>().orbitSpeed = p2OrbitSpeed;
+                    x.GetComponent<Shape_Script>().maxShootCD = p2ShootCD;
                 }
-                patrol();
-                meleeAttack();
+                patrol();           //Boss patrols
+                meleeAttack();      //Performs melee attack
             }
         }
-        else if (inDetectRange(player))
+        else if (inDetectRange(player))     //If boss sees player when unaggrovated
         {
             aggrovated = true;
-            shooting = true;
-        }
+            shooting = true;        //Get aggrovated and start shooting
 
-        if (health <= 0)
-        {
-            GameObject newTear = Instantiate(tear, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            //soundManager.PlaySFX("BossAlerted");       //Play aggrovated roar
         }
+        //If neither, boss is dormant
     }
 
     private void patrol()       //Boss moves left & right within boundaries
@@ -90,10 +106,8 @@ public class Boss_Script : Enemy_Script
 
     private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards point
     {
-        for (int i = 0; i < shapes.Length; ++i)
-        {
-            shapes[i].GetComponent<Shape_Script>().orbitDirection = point - shapes[i].transform.position;
-        }
+        targetPosition = point;     //Set target position to point
+        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().orbitDirection = point - x.transform.position;      //Set each shape orbit direction towards point
     }
 
     private void orbitShapes()      //Shapes orbit centre of boss
@@ -104,48 +118,71 @@ public class Boss_Script : Enemy_Script
 
     private void pushShapesinDirection()        //Set shape velocity to move direction
     {
-        for (int i = 0; i < shapes.Length; ++i) shapes[i].GetComponent<Shape_Script>().moveShape();
+        foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().moveShape();
     }
 
     private void meleeAttack()      //Charges at player
     {
-        if (meleeCD <= 0)       //If meleeCD finished counting down
+        if (meleeAttacking)       //If meleeCD finished counting down
         {
-            shooting = false;
-            patrolling = false;
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
-
-            if (!meleeAttacking)        //If not currently attacking
+            switch (meleePhase)
             {
-                Debug.Log("MELEE START");
-                setShapeDirectiontoPoint(transform.position);       //Centre shapes
+                case 0:
+                    Debug.Log("MELEE PHASE 0");
 
-                if (shapesatPoint(transform.position))       //When shapes centred...
-                {
-                    targetPosition = player.transform.position;
-                    setShapeDirectiontoPoint(targetPosition);
-                    pushShapesinDirection();       //Charge shapes at player
-                    meleeAttacking = true;
-                }
-            }
-            else        //If currently attacking
-            {
-                if (shapesatPoint(targetPosition)) setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
-                else if (shapesatPoint(transform.position))       //When shapes recentred...
-                {
-                    Debug.Log("MELEE END");
-                    meleeAttacking = false;
-                    meleeCD = maxMeleeCD;       //Reset meleeCD
+                    shooting = false;
+                    patrolling = false;
+                    GetComponent<Rigidbody2D>().velocity = Vector3.zero;     //Stop patrolling & shooting
 
-                    shooting = true;
-                    sendShapestoStartPos();     //Send shapes back to edge
-                    restartPatrolling();        //Return to patrolling & shooting
-                }
+                    setShapeDirectiontoPoint(transform.position);       //Centre shapes
+
+                    ++meleePhase;       //Proceed to next phase
+                    break;
+                case 1:
+                    if (shapesatPoint(targetPosition))       //When shapes centred...
+                    {
+                        Debug.Log("MELEE PHASE 1");
+                        
+                        setShapeDirectiontoPoint(player.transform.position);
+                        pushShapesinDirection();       //Charge shapes at player
+                        //soundManager.PlaySFX("BossMelee");      //Play melee attack sound
+
+                        ++meleePhase;       //Proceed to next phase
+                    }
+                    break;
+                case 2:
+                    if (shapesatPoint(targetPosition))      //When shapes hit attack position...
+                    {
+                        Debug.Log("MELEE PHASE 2");
+
+                        setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
+
+                        ++meleePhase;       //Proceed to next phase
+                    }
+                    break;
+                case 3:
+                    if (shapesatPoint(targetPosition))       //When shapes recentred...
+                    {
+                        Debug.Log("MELEE PHASE 3");
+                        meleeAttacking = false;
+                        meleeCD = maxMeleeCD;       //Reset meleeCD
+
+                        shooting = true;
+                        sendShapestoStartPos();     //Send shapes back to edge
+                        restartPatrolling();        //Return to patrolling & shooting
+
+                        meleePhase = 0;     //Reset melee phase for next time
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         else
         {
             meleeCD -= Time.deltaTime;      //Countdown meleeCD
+
+            if (meleeCD <= 0) meleeAttacking = true;
         }
     }
 
@@ -159,9 +196,9 @@ public class Boss_Script : Enemy_Script
     {
         Vector3 distanceFromStart = transform.position - startPos;
 
-        for (int i = 0; i < shapes.Length; ++i)
+        foreach (GameObject x in shapes)
         {
-            shapes[i].GetComponent<Shape_Script>().orbitDirection = (shapes[i].GetComponent<Shape_Script>().startPos + distanceFromStart) - shapes[i].transform.position;
+            x.GetComponent<Shape_Script>().orbitDirection = (x.GetComponent<Shape_Script>().startPos + distanceFromStart) - x.transform.position;
         }
     }
 
@@ -176,8 +213,14 @@ public class Boss_Script : Enemy_Script
 
     private bool shapesatPoint(Vector3 point)       //Returns true if shapes are at the point
     {
-        return (shapes[0].transform.position.x >= point.x - 0.2 &&
-            shapes[0].transform.position.y >= point.y - 0.2);
+        if (shapes[0].transform.position.x >= point.x - 0.1 &&
+            shapes[0].transform.position.x <= point.x + 0.1 &&
+            shapes[0].transform.position.y >= point.y - 0.1 &&
+            shapes[0].transform.position.y <= point.y + 0.1)
+        {
+            return true;
+        }
+        else return false;
     }
 
     private bool inDetectRange(GameObject target)       //Returns true if target in detectRange
