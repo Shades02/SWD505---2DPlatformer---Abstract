@@ -5,13 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Main_Menu_Script : MonoBehaviour
 {
-    private Sound_Manager_Script soundManager;
     public GameObject settingsMenuCanvas;
-
-	void Start ()
-    {
-        soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
-	}
 	
     public void startGame()
     {

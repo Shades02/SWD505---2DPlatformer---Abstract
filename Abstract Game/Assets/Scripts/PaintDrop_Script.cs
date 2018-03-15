@@ -4,28 +4,11 @@ using UnityEngine;
 
 public class PaintDrop_Script : Timed_Object_Script
 {
-    public colour currentColour;
-
-    private SpriteRenderer myRenderer;
+    public colour currentColour;                    //this contains all the colours, however the drop will only be used as red/blue/yellow
 
 	void Start ()
     {
-        myRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-		switch(currentColour)
-        {
-            case colour.red:
-                myRenderer.color = Color.red;
-                break;
-            case colour.blue:
-                myRenderer.color = Color.blue;
-                break;
-            case colour.yellow:
-                myRenderer.color = Color.yellow;
-                break;
-            default:
-                break;
-        }
-	}
+        Colour_Changer_Script.setColourWithoutLayer(gameObject, currentColour);
+    }
 	
 }

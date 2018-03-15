@@ -49,8 +49,7 @@ public class Player_Script : MonoBehaviour
         gameOverScreen = GameObject.Find("Canvas").transform.GetChild(3).gameObject;                //Since GameOver is always at index 3 of the canvas prefab
         currentInvTime = maxInvDuration;    //so that you dont start the level invincible
 
-        //Temporary
-        ammo = maxAmmo;
+        ammo = maxAmmo;     //start with max ammo
     }
 	
 	void Update ()
@@ -77,11 +76,11 @@ public class Player_Script : MonoBehaviour
         currentInvTime += Time.deltaTime;           //counts up asit counts how long youve been invincible
 
         //Invincibility display
-        if (currentInvTime <= maxInvDuration)        //if you are within the invincibility time
+        if (currentInvTime < maxInvDuration)        //if you are within the invincibility time
         {
-            myRenderer.enabled = !myRenderer.enabled;
+            myRenderer.enabled = !myRenderer.enabled;       //toggle sprite renderer to give the flickering sprite effect
         }
-        else myRenderer.enabled = true;
+        else myRenderer.enabled = true;             //if you're not invincible, the sprite is always displayed
 
         //Ammo Regen
         if (currentAmmoRegenTime <= 0)
@@ -227,7 +226,7 @@ public class Player_Script : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Mine"))
         {
-            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().damage);
             Destroy(collision.gameObject);
         }
         else if(collision.gameObject.CompareTag("Water"))
@@ -319,7 +318,7 @@ public class Player_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Spike"))
         {
-            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().damage);
         }
     }
 

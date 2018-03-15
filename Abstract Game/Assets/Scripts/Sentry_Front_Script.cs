@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sentry_Front_Script : MonoBehaviour
 {
-
     private Animator myAnim;
     private Enemy_Script myEnemy;
 

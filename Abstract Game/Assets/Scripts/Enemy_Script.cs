@@ -66,7 +66,7 @@ public class Enemy_Script : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Mine"))
         {
-            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().damage);
             Destroy(collision.gameObject);
         }
     }
@@ -75,7 +75,7 @@ public class Enemy_Script : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike"))
         {
-            takeDamage(collision.gameObject.GetComponent<Spike_Script>().getDamage());
+            takeDamage(collision.gameObject.GetComponent<Spike_Script>().damage);
         }
     }
 

@@ -59,8 +59,7 @@ public class Shape_Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBullet") &&
-            collision.GetComponent<Bullet_Script>().getColour() == thisColour)
+        if (collision.CompareTag("PlayerBullet"))
         {
             Destroy(collision);
             --health;

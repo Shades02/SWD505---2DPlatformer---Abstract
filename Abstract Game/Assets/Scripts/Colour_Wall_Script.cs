@@ -7,8 +7,6 @@ public class Colour_Wall_Script : MonoBehaviour
     public colour wallColour;
     public bool vertical;
 
-    private SpriteRenderer myRenderer;
-
     void Start()
     {
         Colour_Changer_Script.setColour(gameObject, wallColour);

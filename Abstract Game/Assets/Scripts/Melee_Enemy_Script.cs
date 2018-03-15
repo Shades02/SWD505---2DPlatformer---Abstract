@@ -107,7 +107,7 @@ public class Melee_Enemy_Script : Enemy_Script
         }
         else if(collision.gameObject.CompareTag("Spike"))
         {
-            health -= collision.gameObject.GetComponent<Spike_Script>().getDamage();
+            health -= collision.gameObject.GetComponent<Spike_Script>().damage;
         }
     }
 }

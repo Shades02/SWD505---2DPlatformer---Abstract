@@ -7,12 +7,10 @@ public class Bullet_Script : Timed_Object_Script
     public int damage;
 
     private colour currentColour;
-    private SpriteRenderer myRenderer;
     private Sound_Manager_Script soundManager;
 
     private void Start()
     {
-        myRenderer = GetComponent<SpriteRenderer>();
         soundManager = GameObject.Find("SoundManager").GetComponent<Sound_Manager_Script>();
     }
 
@@ -33,11 +31,6 @@ public class Bullet_Script : Timed_Object_Script
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;        //dont flip if facing right
         }
-    }
-
-    public colour getColour()
-    {
-        return currentColour;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

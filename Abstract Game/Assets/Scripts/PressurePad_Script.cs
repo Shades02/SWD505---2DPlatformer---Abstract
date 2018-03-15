@@ -19,7 +19,7 @@ public class PressurePad_Script : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().sprite = pressedPlate;
+            GetComponent<SpriteRenderer>().sprite = pressedPlate;       //update to the pressed down pressure plate texture
             Destroy(linkedDoor);
         }
     }

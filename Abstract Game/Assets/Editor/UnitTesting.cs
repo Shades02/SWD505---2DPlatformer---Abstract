@@ -39,26 +39,26 @@ public class UnitTesting : MonoBehaviour
         testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
 
         //Assert
-        Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>().getColour());
+        Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>());             //need to "getColour" from bullet
     }
 
-    [UnityTest]
-    public IEnumerator getColourBulletTest()
-    {
-        //Arrange
-        var testObject = new GameObject();
-        testObject.AddComponent<SpriteRenderer>();
-        testObject.AddComponent<Bullet_Script>();
-        colour testColour = colour.red;
+    //[UnityTest]
+    //public IEnumerator getColourBulletTest()
+    //{
+    //    //Arrange
+    //    var testObject = new GameObject();
+    //    testObject.AddComponent<SpriteRenderer>();
+    //    testObject.AddComponent<Bullet_Script>();
+    //    colour testColour = colour.red;
+    //    testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
 
-        yield return null;
+    //    yield return null;
 
-        //Act
-        testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
+    //    //Act     
 
-        //Assert
-        Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>().getColour());
-    }
+    //    //Assert
+    //    Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>().getColour());
+    //}
     //End
 
 
@@ -68,42 +68,37 @@ public class UnitTesting : MonoBehaviour
     public IEnumerator setColourAndLayerTest()
     {
         //Arrange
-
+        var testObject = new GameObject();
+        testObject.AddComponent<SpriteRenderer>();
+        testObject.GetComponent<SpriteRenderer>().color = Color.red;           //set an initial colour
+        colour testColour = colour.blue;        //prepare a test colour
 
         yield return null;
 
         //Act
+        Colour_Changer_Script.setColour(testObject, testColour);
 
         //Assert
+        Assert.AreNotEqual(Color.red, testObject.GetComponent<SpriteRenderer>().color);         //if not equal the colour has been changed
     }
 
     [UnityTest]
     public IEnumerator setColourWithoutLayerTest()
     {
         //Arrange
-
-
-        yield return null;
-
-        //Act
-
-        //Assert
-    }
-
-    [UnityTest]
-    public IEnumerator RGBToColourValuesTest()
-    {
-        //Arrange
-
+        var testObject = new GameObject();
+        testObject.AddComponent<SpriteRenderer>();
+        testObject.GetComponent<SpriteRenderer>().color = Color.red;           //set an initial colour
+        colour testColour = colour.blue;        //prepare a test colour
 
         yield return null;
 
         //Act
+        Colour_Changer_Script.setColour(testObject, testColour);
 
         //Assert
+        Assert.AreNotEqual(Color.red, testObject.GetComponent<SpriteRenderer>().color);         //if not equal the colour has been changed
     }
-    //End
-
 
     //DispenserScript Tests
     //Start
@@ -111,7 +106,9 @@ public class UnitTesting : MonoBehaviour
     public IEnumerator dispenseTest()
     {
         //Arrange
-
+        var testDispenser = new GameObject();
+        testDispenser.AddComponent<Dispenser_Script>();
+        //testDispenser.GetComponent<Dispenser_Script>().paintDrop
 
         yield return null;
 
@@ -402,27 +399,6 @@ public class UnitTesting : MonoBehaviour
 
         //Assert
         Assert.AreEqual(1, 2);
-    }
-    //End
-
-
-    //SpikeScript Tests
-    //Start
-    [UnityTest]
-    public IEnumerator getDamageTest()
-    {
-        //Arrange
-        var testSpike = new GameObject().AddComponent<Spike_Script>();
-        int damageValue = 5;
-        testSpike.damage = damageValue;
-
-        yield return null;
-
-        //Act
-        
-
-        //Assert
-        Assert.AreEqual(damageValue, testSpike.getDamage());
     }
     //End
 

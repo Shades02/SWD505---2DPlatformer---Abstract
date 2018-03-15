@@ -23,18 +23,18 @@ public class Pause_Menu_Script : MonoBehaviour
     void Update ()
     {
         //escape key to pause
-		if(Input.GetButtonDown("Pause") && !inSettingsMenu)        
+		if(Input.GetButtonDown("Pause") && !inSettingsMenu)             //if in game, pauses, if already paused, resumes game
         {
             if (isPaused) resume();
             else pause();
         }
-        else if(Input.GetButtonDown("Pause") && inSettingsMenu)
+        else if(Input.GetButtonDown("Pause") && inSettingsMenu)         //causes pressing pause (esc) from settings to jump back to puase
         {
             returnToPause();
         }
 	}
 
-    public void resume()
+    public void resume()            //resume game from pause menu
     {
         pauseMenuCanvas.SetActive(false);
         inGameUI.SetActive(true);
@@ -42,50 +42,50 @@ public class Pause_Menu_Script : MonoBehaviour
         isPaused = false;
     }
 
-    void pause()
+    private void pause()            //pause from in game
     {
         pauseMenuCanvas.SetActive(true);
         inGameUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
     }
-
-    public void quitGame()
+            
+    public void quitGame()              //quit the application
     {
         Application.Quit();
     }
 
-    public void settings()
+    public void settings()              //access the settings menu, from pause menu
     {
         inSettingsMenu = true;
         settingsMenuCanvas.SetActive(true);
         pauseMenuCanvas.SetActive(false);
     }
 
-    public void returnToPause()
+    public void returnToPause()         //return to pause menu, from settings menu
     {
         inSettingsMenu = false;
         settingsMenuCanvas.SetActive(false);
         pauseMenuCanvas.SetActive(true);
     }
 
-    public void setFullscreen(bool toggle)
+    public void setFullscreen(bool toggle)          //toggle fullscreen mode
     {
         Screen.fullScreen = toggle;
     }
 
-    public void setLowQuality(bool toggle)
+    public void setLowQuality(bool toggle)          //toggle performance mode
     {
         if (toggle) QualitySettings.SetQualityLevel(0);
         else QualitySettings.SetQualityLevel(5);
     }
 
-    public void restartLevel()
+    public void restartLevel()      //restarts the current level
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);       //reload current scene
     }
 
-    public void returnToMenu()
+    public void returnToMenu()      //returns you to the main menu
     {
         SceneManager.LoadScene(0);  //scene 0 is the main menu
     }
