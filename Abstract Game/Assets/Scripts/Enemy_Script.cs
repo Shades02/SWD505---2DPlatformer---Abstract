@@ -79,4 +79,10 @@ public class Enemy_Script : MonoBehaviour
         }
     }
 
+    //-------- For Testing ----------
+
+    public void setDirection(bool direction)
+    {
+        facingRight = direction;
+    }
 }

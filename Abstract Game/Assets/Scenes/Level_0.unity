@@ -1004,7 +1004,7 @@ Prefab:
     - target: {fileID: 114672893325259554, guid: 0ad158fd902a9d143890b9ca95cb3caa,
         type: 2}
       propertyPath: maxInvDuration
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ad158fd902a9d143890b9ca95cb3caa, type: 2}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
+using UnityEngine.SceneManagement;
 
 public class UnitTesting : MonoBehaviour
 {
@@ -108,13 +109,16 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testDispenser = new GameObject();
         testDispenser.AddComponent<Dispenser_Script>();
-        //testDispenser.GetComponent<Dispenser_Script>().paintDrop
+        //GameObject testPrefab = Resources.Load("Tests/Prefab");            //load test prefab
+        //testDispenser.GetComponent<Dispenser_Script>().paintDrop = testPrefab;          //set as prefab for dispenser
 
         yield return null;
 
         //Act
+        //find spawned prefab
 
         //Assert
+        Assert.AreEqual(1, 2);      //check prefabs are the same
     }
     //End
 
@@ -122,29 +126,39 @@ public class UnitTesting : MonoBehaviour
     //EnemyScript Tests
     //Start
     [UnityTest]
-    public IEnumerator takeDamageTest()
+    public IEnumerator takeDamageEnemyTest()
     {
         //Arrange
-
+        var testEnemy = new GameObject();
+        testEnemy.AddComponent<Enemy_Script>();
+        int testHealth = 5;
+        testEnemy.GetComponent<Enemy_Script>().health = testHealth;      //set health
+        int testDamage = 2;
 
         yield return null;
 
         //Act
+        testEnemy.GetComponent<Enemy_Script>().takeDamage(testDamage);
 
         //Assert
+        Assert.AreEqual(testHealth - testDamage, testEnemy.GetComponent<Enemy_Script>().health);
     }
 
     [UnityTest]
-    public IEnumerator returnDirectionTest()
+    public IEnumerator returnDirectionEnemyTest()
     {
         //Arrange
-
+        var testEnemy = new GameObject();
+        testEnemy.AddComponent<Enemy_Script>();
+        bool testDirection = false;
+        testEnemy.GetComponent<Enemy_Script>().setDirection(testDirection);
 
         yield return null;
 
         //Act
 
         //Assert
+        Assert.AreEqual(testDirection, testEnemy.GetComponent<Enemy_Script>().returnDirection());
     }
     //End
 
@@ -162,6 +176,8 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This method uses scene manager to load a different scene, so it is unable to be properly tested
     }
 
     [UnityTest]
@@ -175,13 +191,15 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This can't be tested since it calls application.quit
     }
 
     [UnityTest]
     public IEnumerator settingsTest()
     {
         //Arrange
-
+        var 
 
         yield return null;
 
@@ -218,6 +236,8 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This can't be tested since it calls application.quit
     }
 
     [UnityTest]
@@ -283,6 +303,8 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This method uses scene manager to load a different scene, so it is unable to be properly tested
     }
 
     [UnityTest]
@@ -296,6 +318,8 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This method uses scene manager to load a different scene, so it is unable to be properly tested
     }
     //End
 
