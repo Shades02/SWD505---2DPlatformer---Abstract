@@ -154,8 +154,6 @@ public class Player_Script : MonoBehaviour
         //Prep jump linecasts
         float spriteHeight = gameObject.GetComponent<BoxCollider2D>().bounds.size.y;        
         Vector3 linecastStart = new Vector3(transform.position.x, transform.position.y - spriteHeight / 2 - 0.1f, transform.position.z);
-        Debug.DrawLine(linecastStart + new Vector3(0.2f, 0,0), linecastStart + new Vector3(0.2f, -0.1f, 0));        //Remove this!!!
-        Debug.DrawLine(linecastStart + new Vector3(-0.2f, 0, 0), linecastStart + new Vector3(-0.2f, -0.1f, 0));        //Remove this!!!
 
         //Landing sound test
         var hit = Physics2D.Linecast(linecastStart, linecastStart + new Vector3(0, -0.1f, 0));      //check what is below the player
@@ -356,27 +354,5 @@ public class Player_Script : MonoBehaviour
     {
         gameOverScreen.SetActive(true);         //put up the game over screen
         Destroy(gameObject);                    //Destroy the player
-    }
-
-    //-------- For Testing ----------
-
-    public void setAmmo(int value)
-    {
-        ammo = value;
-    }
-
-    public void setColour(colour input)
-    {
-        currentColour = input;
-    }
-
-    public void setDirection(bool input)
-    {
-        facingRight = input;        
-    }
-
-    public void setHealth(int input)
-    {
-        health = input;
     }
 }
