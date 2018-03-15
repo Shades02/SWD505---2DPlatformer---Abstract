@@ -109,16 +109,18 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testDispenser = new GameObject();
         testDispenser.AddComponent<Dispenser_Script>();
-        //GameObject testPrefab = Resources.Load("Tests/Prefab");            //load test prefab
-        //testDispenser.GetComponent<Dispenser_Script>().paintDrop = testPrefab;          //set as prefab for dispenser
+        var testPrefab = new GameObject();            //create test prefab
+        testPrefab.tag = "PaintDrop";            //set tag so i can find it again
+        testDispenser.GetComponent<Dispenser_Script>().paintDrop = testPrefab;          //set as prefab for dispenser
 
         yield return null;
 
         //Act
-        //find spawned prefab
+        testDispenser.GetComponent<Dispenser_Script>().dispense();
+        var spawnedPrefab = GameObject.FindWithTag("PaintDrop");         //find spawned prefab
 
         //Assert
-        Assert.AreEqual(1, 2);      //check prefabs are the same
+        Assert.AreEqual(testPrefab, spawnedPrefab);      //check prefabs are the same
     }
     //End
 
@@ -199,13 +201,19 @@ public class UnitTesting : MonoBehaviour
     public IEnumerator settingsTest()
     {
         //Arrange
-        
+        var testObject = new GameObject();
+        var testSettingsCanvas = new GameObject();
+        testObject.AddComponent<Main_Menu_Script>();
+        testObject.GetComponent<Main_Menu_Script>().settingsMenuCanvas = testSettingsCanvas;
 
         yield return null;
 
         //Act
+        testSettingsCanvas.SetActive(false);        //intially false
+        testObject.GetComponent<Main_Menu_Script>().settings();         //should set to true
 
         //Assert
+        Assert.AreEqual(true, testSettingsCanvas.activeSelf);
     }
     //End
 
@@ -277,6 +285,8 @@ public class UnitTesting : MonoBehaviour
         //Act
 
         //Assert
+
+        //This can't be tested since fullscreen mode doesn't function in the editor
     }
 
     [UnityTest]
@@ -415,14 +425,21 @@ public class UnitTesting : MonoBehaviour
     public IEnumerator playSFXTest()
     {
         //Arrange
-
+        var testSoundManager = new GameObject();
+        testSoundManager.AddComponent<Sound_Manager_Script>();
+        var testPrefab = new GameObject();            //create test prefab
+        testPrefab.tag = "Tear";                 //set tag so i can find it again
+        testSoundManager.GetComponent<Sound_Manager_Script>().SFXPrefab = testPrefab;          //set as prefab for dispenser
+        testSoundManager.GetComponent<Sound_Manager_Script>().SFXNames.Add("Test");             //Add the name of the sound clip for testing
 
         yield return null;
 
         //Act
+        testSoundManager.GetComponent<Sound_Manager_Script>().PlaySFX("Test");
+        var spawnedPrefab = GameObject.FindWithTag("Tear");         //find spawned prefab
 
         //Assert
-        Assert.AreEqual(1, 2);
+        Assert.AreEqual(testPrefab, spawnedPrefab);      //check prefabs are the same
     }
     //End
 
