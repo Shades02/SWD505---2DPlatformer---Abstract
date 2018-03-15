@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f47bfc0c04362ab4ba32e13e7bdae18c
-timeCreated: 1521129811
+timeCreated: 1521132343
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -216,9 +216,9 @@ TextureImporter:
       name: TileSheet_7
       rect:
         serializedVersion: 2
-        x: 384
+        x: 385
         y: 640
-        width: 128
+        width: 126
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
