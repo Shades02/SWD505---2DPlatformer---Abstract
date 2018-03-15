@@ -358,4 +358,25 @@ public class Player_Script : MonoBehaviour
         Destroy(gameObject);                    //Destroy the player
     }
 
+    //-------- For Testing ----------
+
+    public void setAmmo(int value)
+    {
+        ammo = value;
+    }
+
+    public void setColour(colour input)
+    {
+        currentColour = input;
+    }
+
+    public void setDirection(bool input)
+    {
+        facingRight = input;        
+    }
+
+    public void setHealth(int input)
+    {
+        health = input;
+    }
 }

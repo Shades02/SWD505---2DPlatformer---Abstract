@@ -76,4 +76,10 @@ public class Bullet_Script : Timed_Object_Script
         }
     }
 
+    //-------- For Testing ----------
+
+    public colour getColour()
+    {
+        return currentColour;
+    }
 }

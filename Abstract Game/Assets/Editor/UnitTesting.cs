@@ -40,26 +40,8 @@ public class UnitTesting : MonoBehaviour
         testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
 
         //Assert
-        Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>());             //need to "getColour" from bullet
+        Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>().getColour());             //need to "getColour" from bullet
     }
-
-    //[UnityTest]
-    //public IEnumerator getColourBulletTest()
-    //{
-    //    //Arrange
-    //    var testObject = new GameObject();
-    //    testObject.AddComponent<SpriteRenderer>();
-    //    testObject.AddComponent<Bullet_Script>();
-    //    colour testColour = colour.red;
-    //    testObject.GetComponent<Bullet_Script>().setColour(testColour, true);
-
-    //    yield return null;
-
-    //    //Act     
-
-    //    //Assert
-    //    Assert.AreEqual(testColour, testObject.GetComponent<Bullet_Script>().getColour());
-    //}
     //End
 
 
@@ -100,6 +82,7 @@ public class UnitTesting : MonoBehaviour
         //Assert
         Assert.AreNotEqual(Color.red, testObject.GetComponent<SpriteRenderer>().color);         //if not equal the colour has been changed
     }
+    //End
 
     //DispenserScript Tests
     //Start
@@ -143,7 +126,7 @@ public class UnitTesting : MonoBehaviour
         testEnemy.GetComponent<Enemy_Script>().takeDamage(testDamage);
 
         //Assert
-        Assert.AreEqual(testHealth - testDamage, testEnemy.GetComponent<Enemy_Script>().health);
+        Assert.AreEqual((testHealth - testDamage), testEnemy.GetComponent<Enemy_Script>().health);
     }
 
     [UnityTest]
@@ -217,6 +200,8 @@ public class UnitTesting : MonoBehaviour
     }
     //End
 
+
+    /*
 
     //PauseMenuScript Tests
     //Start
@@ -333,6 +318,7 @@ public class UnitTesting : MonoBehaviour
     }
     //End
 
+    */
 
     //PlayerScript Tests
     //Start
@@ -360,7 +346,7 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testPlayer = new GameObject().AddComponent<Player_Script>();
         int testHealth = 5;
-        testPlayer.maxHealth = testHealth;
+        testPlayer.setHealth(testHealth);
 
         yield return null;
 
@@ -376,7 +362,7 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testPlayer = new GameObject().AddComponent<Player_Script>();
         int testAmmo = 20;
-        testPlayer.maxAmmo = testAmmo;
+        testPlayer.setAmmo(testAmmo);
 
         yield return null;
 
@@ -392,7 +378,7 @@ public class UnitTesting : MonoBehaviour
         //Arrange
         var testPlayer = new GameObject().AddComponent<Player_Script>();
         colour testColour = colour.red;
-        
+        testPlayer.setColour(testColour);
 
         yield return null;
 
@@ -407,7 +393,8 @@ public class UnitTesting : MonoBehaviour
     {
         //Arrange
         var testPlayer = new GameObject().AddComponent<Player_Script>();
-        bool testDirection = true;      //true = facing right, false = facing left
+        bool testDirection = false;      //true = facing right, false = facing left
+        testPlayer.setDirection(testDirection);
 
         yield return null;
 

@@ -22,4 +22,9 @@ public class Main_Menu_Script : MonoBehaviour
     {
         settingsMenuCanvas.SetActive(true);
     }
+
+    private void Update()
+    {
+        
+    }
 }
