@@ -37,17 +37,17 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 585
+    y: 496
     width: 1090
-    height: 402
-  m_MinSize: {x: 204, y: 221}
+    height: 491
+  m_MinSize: {x: 104, y: 121}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 22}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,10 +68,10 @@ MonoBehaviour:
     y: 0
     width: 1090
     height: 987
-  m_MinSize: {x: 204, y: 442}
+  m_MinSize: {x: 204, y: 342}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 23
+  controlID: 92
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 125
+  controlID: 45
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 22
+  controlID: 133
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -280,7 +280,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1090
-    height: 585
+    height: 496
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 21}
@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 438
-    y: 677
+    y: 588
     width: 1086
-    height: 381
+    height: 470
   m_IsSceneBased: 0
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
@@ -388,7 +388,7 @@ MonoBehaviour:
       fullName: C:/Users/Shades02/Documents/GitHub/SWD505---2DPlatformer---Abstract/Abstract
         Game/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 2
-      duration: 0.0434152
+      duration: 0.455697
       messages: One or more child tests had errors
       output: 
       stacktrace: 
@@ -399,7 +399,7 @@ MonoBehaviour:
       name: UnitTesting
       fullName: UnitTesting
       resultStatus: 2
-      duration: 0.0354735
+      duration: 0.4464995
       messages: One or more child tests had errors
       output: "You are trying to create a MonoBehaviour using the 'new' keyword.  This
         is not allowed.  MonoBehaviours can only be added using AddComponent().  Alternatively,
@@ -412,14 +412,14 @@ MonoBehaviour:
       name: dispenseTest
       fullName: UnitTesting.dispenseTest
       resultStatus: 2
-      duration: 0.011218
+      duration: 0.0111812
       messages: 'System.NullReferenceException : Object reference not set to an instance
         of an object'
       output: 
       stacktrace: "  at Dispenser_Script.dispense () [0x000c5] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
         Game\\Assets\\Scripts\\Dispenser_Script.cs:37 \r\n  at UnitTesting+<dispenseTest>c__Iterator4.MoveNext
         () [0x00090] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
-        Game\\Assets\\Editor\\UnitTesting.cs:119 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        Game\\Assets\\Editor\\UnitTesting.cs:102 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
         () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97 "
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -427,8 +427,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getAmmoPlayerTest]'
       name: getAmmoPlayerTest
       fullName: UnitTesting.getAmmoPlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0176715
       messages: 
       output: 
       stacktrace: 
@@ -438,8 +438,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getColourPlayerTest]'
       name: getColourPlayerTest
       fullName: UnitTesting.getColourPlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0110288
       messages: 
       output: 
       stacktrace: 
@@ -449,8 +449,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getDirectionPlayerTest]'
       name: getDirectionPlayerTest
       fullName: UnitTesting.getDirectionPlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0103411
       messages: 
       output: 
       stacktrace: 
@@ -460,8 +460,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.getHealthPlayerTest]'
       name: getHealthPlayerTest
       fullName: UnitTesting.getHealthPlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0100572
       messages: 
       output: 
       stacktrace: 
@@ -472,13 +472,13 @@ MonoBehaviour:
       name: playSFXTest
       fullName: UnitTesting.playSFXTest
       resultStatus: 2
-      duration: 0.0116115
+      duration: 0.0050871
       messages: 'System.NullReferenceException : Object reference not set to an instance
         of an object'
       output: 
-      stacktrace: "  at UnitTesting+<playSFXTest>c__Iterator17.MoveNext () [0x0007f]
+      stacktrace: "  at UnitTesting+<playSFXTest>c__IteratorF.MoveNext () [0x0007f]
         in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
-        Game\\Assets\\Editor\\UnitTesting.cs:431 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        Game\\Assets\\Editor\\UnitTesting.cs:420 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
         () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97 "
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -486,8 +486,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.quitGameTest]'
       name: quitGameTest
       fullName: UnitTesting.quitGameTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0121331
       messages: 
       output: 
       stacktrace: 
@@ -497,8 +497,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.returnDirectionEnemyTest]'
       name: returnDirectionEnemyTest
       fullName: UnitTesting.returnDirectionEnemyTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.016015
       messages: 
       output: 
       stacktrace: 
@@ -508,8 +508,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourAndLayerTest]'
       name: setColourAndLayerTest
       fullName: UnitTesting.setColourAndLayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0142541
       messages: 
       output: 
       stacktrace: 
@@ -519,19 +519,22 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourBulletTest]'
       name: setColourBulletTest
       fullName: UnitTesting.setColourBulletTest
-      resultStatus: 0
-      duration: 0
-      messages: 
+      resultStatus: 2
+      duration: 0.0236284
+      messages: "  Expected: red\r\n  But was:  white\r\n"
       output: 
-      stacktrace: 
+      stacktrace: "at UnitTesting+<setColourBulletTest>c__Iterator1.MoveNext () [0x0009e]
+        in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:43\r\nat UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97\r\n"
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setColourWithoutLayerTest]'
       name: setColourWithoutLayerTest
       fullName: UnitTesting.setColourWithoutLayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0119482
       messages: 
       output: 
       stacktrace: 
@@ -541,8 +544,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.setTagBulletTest]'
       name: setTagBulletTest
       fullName: UnitTesting.setTagBulletTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0094943
       messages: 
       output: 
       stacktrace: 
@@ -553,7 +556,7 @@ MonoBehaviour:
       name: settingsTest
       fullName: UnitTesting.settingsTest
       resultStatus: 1
-      duration: 0.0176829
+      duration: 0.0090016
       messages: 
       output: 
       stacktrace: 
@@ -563,8 +566,8 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.startGameTest]'
       name: startGameTest
       fullName: UnitTesting.startGameTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0091782
       messages: 
       output: 
       stacktrace: 
@@ -574,33 +577,38 @@ MonoBehaviour:
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.takeDamageEnemyTest]'
       name: takeDamageEnemyTest
       fullName: UnitTesting.takeDamageEnemyTest
-      resultStatus: 0
-      duration: 0
-      messages: 
+      resultStatus: 2
+      duration: 0.0116168
+      messages: 'System.NullReferenceException : Object reference not set to an instance
+        of an object'
       output: 
-      stacktrace: 
+      stacktrace: "  at Enemy_Script.takeDamage (Int32 damage) [0x0000c] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Scripts\\Enemy_Script.cs:56 \r\n  at UnitTesting+<takeDamageEnemyTest>c__Iterator5.MoveNext
+        () [0x00089] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
+        Game\\Assets\\Editor\\UnitTesting.cs:126 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+        () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97 "
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
     - id: '[Assembly-CSharp-Editor.dll][UnitTesting.takeDamagePlayerTest]'
       name: takeDamagePlayerTest
       fullName: UnitTesting.takeDamagePlayerTest
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0154174
       messages: 
       output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
-    m_ResultText: "playSFXTest (0.012s)\n---\nSystem.NullReferenceException : Object
-      reference not set to an instance of an object\n---\nat UnitTesting+<playSFXTest>c__Iterator17.MoveNext
+    m_ResultText: "playSFXTest (0.005s)\n---\nSystem.NullReferenceException : Object
+      reference not set to an instance of an object\n---\nat UnitTesting+<playSFXTest>c__IteratorF.MoveNext
       () [0x0007f] in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
-      Game\\Assets\\Editor\\UnitTesting.cs:431 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+      Game\\Assets\\Editor\\UnitTesting.cs:420 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
       () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97"
-    m_ResultStacktrace: "  at UnitTesting+<playSFXTest>c__Iterator17.MoveNext () [0x0007f]
+    m_ResultStacktrace: "  at UnitTesting+<playSFXTest>c__IteratorF.MoveNext () [0x0007f]
       in C:\\Users\\Shades02\\Documents\\GitHub\\SWD505---2DPlatformer---Abstract\\Abstract
-      Game\\Assets\\Editor\\UnitTesting.cs:431 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
+      Game\\Assets\\Editor\\UnitTesting.cs:420 \r\n  at UnityEditor.TestTools.TestRunner.EditModeRunner.InvokeDelegator
       () [0x0005f] in C:\\buildslave\\unity\\build\\Extensions\\TestRunner\\UnityEditor.TestRunner\\TestRunner\\EditModeRunner.cs:97 "
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -806,9 +814,9 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 26}
-    m_SelectedIDs: 122a0000
-    m_LastClickedID: 10770
-    m_ExpandedIDs: 00000000762700007c270000a82700000a28000012280000d82800000e370000103700001237000000ca9a3bffffff7f
+    m_SelectedIDs: 3e290000
+    m_LastClickedID: 10558
+    m_ExpandedIDs: 000000006a26000070260000ac2600001c2700002427000004280000162c0000182c00001a2c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -836,7 +844,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000762700007c270000a82700000a28000012280000d82800000e3700001037000012370000
+    m_ExpandedIDs: 000000006a26000070260000ac2600001c2700002427000004280000162c0000182c00001a2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -952,9 +960,9 @@ MonoBehaviour:
     height: 522
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 8e260000
     m_LastClickedID: 0
-    m_ExpandedIDs: 0ec6feffe4eafeff6409fffff42bffff625dffff7683ffff5cf9ffff000000008031000032690000429f0000
+    m_ExpandedIDs: 22ecffff3cf0ffff0afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -972,8 +980,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
-  m_ExpandedScenes:
-  - Main_Menu
+  m_ExpandedScenes: []
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -1002,7 +1009,7 @@ MonoBehaviour:
     x: 438
     y: 92
     width: 1086
-    height: 564
+    height: 475
   m_SceneLighting: 1
   lastFramingTime: 1158.9711176033425
   m_2DMode: 1
