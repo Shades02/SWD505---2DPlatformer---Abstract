@@ -99,6 +99,7 @@ public class Boss_Script : Enemy_Script
 
     private void setShapeDirectiontoPoint(Vector3 point)     //Set shape velocity to move towards point
     {
+        targetPosition = point;
         foreach (GameObject x in shapes) x.GetComponent<Shape_Script>().orbitDirection = point - x.transform.position;
     }
 
@@ -120,7 +121,7 @@ public class Boss_Script : Enemy_Script
             switch (meleePhase)
             {
                 case 0:
-                    Debug.Log("MELEE START");
+                    Debug.Log("MELEE PHASE 0");
 
                     shooting = false;
                     patrolling = false;
@@ -129,13 +130,17 @@ public class Boss_Script : Enemy_Script
                     ++meleePhase;       //Proceed to next phase
                     break;
                 case 1:
+                    Debug.Log("MELEE PHASE 1");
+
                     setShapeDirectiontoPoint(transform.position);       //Centre shapes
 
                     ++meleePhase;       //Proceed to next phase
                     break;
                 case 2:
-                    if (shapesatPoint(transform.position))       //When shapes centred...
+                    if (shapesatPoint(targetPosition))       //When shapes centred...
                     {
+                        Debug.Log("MELEE PHASE 2");
+
                         targetPosition = player.transform.position;
                         setShapeDirectiontoPoint(targetPosition);
                         pushShapesinDirection();       //Charge shapes at player
@@ -147,6 +152,8 @@ public class Boss_Script : Enemy_Script
                 case 3:
                     if (shapesatPoint(targetPosition))
                     {
+                        Debug.Log("MELEE PHASE 3");
+
                         setShapeDirectiontoPoint(transform.position);        //Recentre shapes when target hit position
 
                         ++meleePhase;       //Proceed to next phase
@@ -155,7 +162,7 @@ public class Boss_Script : Enemy_Script
                 case 4:
                     if (shapesatPoint(targetPosition))       //When shapes recentred...
                     {
-                        Debug.Log("MELEE END");
+                        Debug.Log("MELEE PHASE 4");
                         meleeAttacking = false;
                         meleeCD = maxMeleeCD;       //Reset meleeCD
 
